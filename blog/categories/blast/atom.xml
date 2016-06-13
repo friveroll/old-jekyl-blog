@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: blast | The Grumpy Biochemist]]></title>
+  <link href="http://friveroll.github.io/blog/categories/blast/atom.xml" rel="self"/>
+  <link href="http://friveroll.github.io/"/>
+  <updated>2016-06-13T10:35:11-05:00</updated>
+  <id>http://friveroll.github.io/</id>
+  <author>
+    <name><![CDATA[Felipe Antonio Riveroll Aguirre]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Visualizando resultados para Blast en Mobyle@Pasteur]]></title>
+    <link href="http://friveroll.github.io/blog/2011/05/30/visualizando-resultados-para-blast-en-mobyle-pasteur/"/>
+    <updated>2011-05-30T00:00:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2011/05/30/visualizando-resultados-para-blast-en-mobyle-pasteur</id>
+    <content type="html"><![CDATA[<p>Brevemente, BLAST (<strong>B</strong>asic <strong>L</strong>ocal <strong>A</strong>lignment <strong>S</strong>earch <strong>T</strong>ool) es un método de búsqueda por homología, en el cuál se reta a la base de datos con una secuencia problema (query), para que encuentre secuencias relacionadas a nuestra secuencia problema.</p>
+
+<p>Los resultados que BLAST arroja, son alineamientos pareados junto con los datos de la posición de la secuencia problema (<em>query</em>) con la secuencia que el programa encontró de la base de datos.</p>
+
+<p>Uno de los problemas para hacer un alineamiento múltiple de las secuencias que encontramos en BLAST, es que los resultados solo arrojan links a las secuencias que nos interesan, de modo que hay que recuperar las secuencias una por una y además al hacer esto obtenemos la secuencia completa con residuos adicionales que no corresponden a la región que nos interesa (<em>match</em>) y por tanto obtenemos secuencias con una longitud distinta, lo cuál no es muy deseable para un alineamiento múltiple.</p>
+
+<p>Así que si queremos visualizar los datos en forma de un alineamiento múltiple o generar archivos fasta con las secuencias alineadas, podemos utilizar MView el cual podemos descargar e instalar localmente en una maquina con linux, o también lo podemos utilizar en el portal <a href="http://mobyle.pasteur.fr">Mobyle@pasteur</a>.</p>
+
+<p>Para hacer este análisis pueden seguirse los siguientes pasos:</p>
+
+<ul>
+  <li>Ir a <a href="http://mobyle.pasteur.fr">Mobyle@pasteur</a>.</li>
+  <li>En la pestaña program seleccionamos, database&gt;homology&gt;blast2
+<img src="/images/blast_1.png" /></li>
+  <li>Ahora en la interfase web de blast2, seleccionamos como en la imagen: 
+<img src="/images/blast_2.png" />- Blast program: <strong>blastp</strong></li>
+  <li>Proteín db: <strong>uniprot_sb</strong></li>
+  <li>En la sección <em>query sequence/query</em>, para cargar la secuencia de ejemplo en la base de datos seleccionamos DB, después en la lista desplegable de abajo seleccionamos la base de datos uniprot y en el cuadro diálogo escribimos P25044 y damos click en <em>Select</em>.
+<img src="/images/blast_3.png" /></li>
+  <li>Ahora el portal nos mostrará esta secuencia en el cuadro de diálogo más grande.
+<img src="/images/blast_4.png" /></li>
+  <li>Ahora, vamos hacia la parte de arriba de la ventana y damos click en <em>Run</em>.
+<img src="/images/blast_5.png" /></li>
+  <li>Y ahora el portal nos muestra los resultados.
+<img src="/images/blast_6.png" /></li>
+  <li>Podemos ver que existen tres opciones para visualizar los resultados, como texto, html y de manera visual.</li>
+  <li>Seguido de donde están los resultados en texto, hay una lista desplegable seguida del botón <em>further analysis</em>.</li>
+  <li>Ahora seleccionamos de la lista mview(blast)&gt;Further analysis.
+<img src="/images/blast_7.png" /></li>
+  <li>Enseguida nos aparecerá la interfase web para mview con los resultados de blast, obtenidos anteriormente
+<img src="/images/blast_8.png" /></li>
+  <li>Hay dos opciones que me parecen útiles para dar formato a los resultados de blast, por defecto está seleccionado html, lo que nos mostrará un alineamiento coloreado de la secuencias alineadas en blast. Pero si deseamos seguir trabajando con la secuencia, tenemos que obtener un archivo fasta, con todas las secuencias alineadas. Claro que también como podrán darse cuenta, hay muchas opciones, para poder filtrar las secuancias que queremos obtener, de momento solo vamos a usar otro programa para ver los resultados.</li>
+  <li>Seleccionamos <em>Pearson/FASTA</em> en el menú desplegable de la sección <em>Output format (-out)</em> 
+<img src="/images/blast_9.png" /></li>
+  <li>Y damos click en <em>Run</em>.</li>
+  <li>Ahora podemos ver como resultado un archivo con formato fasta de las secuencias.
+<img src="/images/blast_10.png" /></li>
+  <li>De aqui, podemos seguir haciendo análisis filogenéticos u obtener estadísticas sobre el alineamiento, pero en este ejemplo, vamos a reformatear estos resultados con un programa de la suite <strong>EMBOSS</strong>, llamado <strong>showalign</strong>.</li>
+  <li>Similar a lo que hicimos para mandar los resultados de blast a mview, ahora vamos a seleccionar showalign(sequence).
+<img src="/images/blast_11.png" />
+<img src="/images/blast_12.png" /></li>
+  <li>Utilizando <strong>advanced options</strong> podemos seleccionar varias opciones para como queremos visualizar el alineamiento, como por ejemplo la scoring matrix y como queremos ver los residuos que no son idénticos
+<img src="/images/blast_13.png" />
+<img src="/images/blast_14.png" /></li>
+  <li>Por ejemplo podemos mostrar en los resultados los residuos similares y también ordenarlos de acuerdo a su similaridad con estas opciones
+<img src="/images/blast_15.png" /></li>
+  <li>Para obtener el siguiente resultado:
+<img src="/images/blast_16.png" /></li>
+</ul>
+
+<p><ol class="bibliography"></ol></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Utilizando R para analizar datos de cinética - The Grumpy Biochemist</title>
+  <meta name="author" content="Felipe Antonio Riveroll Aguirre">
+
+  
+  <meta name="description" content="R es un lenguaje de programación estadístico y gráfico, que através del proyecto bioconductor puede ser usado para analisis bioinformáticos, en esta &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://friveroll.github.io/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="The Grumpy Biochemist" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-79218613-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">The Grumpy Biochemist</a></h1>
+  
+    <h2>A blog by Felipe Riveroll Aguirre</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:friveroll.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/pdfs/CV.pdf">CV</a></li>
+  <li><a href="http://feliperiveroll.info">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Utilizando R Para Analizar Datos De Cinética</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-23T21:52:00-05:00" pubdate data-updated="true">May 23<span>rd</span>, 2012</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>R es un lenguaje de programación estadístico y gráfico, que através del proyecto bioconductor puede ser usado para analisis bioinformáticos, en esta ocasión lo utilizaremos para graficar y analizar datos cinéticos.</p>
+
+<p>El siguiente tutorial, está basado en el problema 1 del capítulo 4 del libro <em>Biochemical Calculations</em> de <em>Irwin H Segel</em>,  y se mostrará como obtener $V_{max}$ y $Km$ a partir del análisis de los datos cinéticos por la gráfica de Lineweaver-Burk.</p>
+
+<p>Primero generamos los vectores $S$ y $v$ para los datos del problema</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">S <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">2.50e-06</span><span class="p">,</span> <span class="m">3.33e-06</span><span class="p">,</span> <span class="m">4.00e-06</span><span class="p">,</span> <span class="m">5.00e-06</span><span class="p">,</span>
+</span><span class="line">       <span class="m">1.00e-05</span><span class="p">,</span> <span class="m">2.00e-05</span><span class="p">,</span> <span class="m">4.00e-05</span><span class="p">,</span> <span class="m">1.00e-04</span><span class="p">,</span>
+</span><span class="line">       <span class="m">2.00e-03</span><span class="p">,</span> <span class="m">1.00e-02</span><span class="p">)</span>
+</span><span class="line">v <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">24</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">96</span><span class="p">,</span> <span class="m">109</span><span class="p">,</span> <span class="m">119</span><span class="p">,</span> <span class="m">120</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Podemos visualizarlos en una tabla de la siguiente manera:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">data.frame<span class="p">(</span>S<span class="p">,</span> v<span class="p">)</span> <span class="o">-&gt;</span> datos.cinetica
+</span><span class="line">datos.cinetica
+</span><span class="line">
+</span><span class="line">         S  v
+</span><span class="line"><span class="m">1</span>  <span class="m">2.50e-06</span>  <span class="m">24</span>
+</span><span class="line"><span class="m">2</span>  <span class="m">3.33e-06</span>  <span class="m">30</span>
+</span><span class="line"><span class="m">3</span>  <span class="m">4.00e-06</span>  <span class="m">34</span>
+</span><span class="line"><span class="m">4</span>  <span class="m">5.00e-06</span>  <span class="m">40</span>
+</span><span class="line"><span class="m">5</span>  <span class="m">1.00e-05</span>  <span class="m">60</span>
+</span><span class="line"><span class="m">6</span>  <span class="m">2.00e-05</span>  <span class="m">80</span>
+</span><span class="line"><span class="m">7</span>  <span class="m">4.00e-05</span>  <span class="m">96</span>
+</span><span class="line"><span class="m">8</span>  <span class="m">1.00e-04</span> <span class="m">109</span>
+</span><span class="line"><span class="m">9</span>  <span class="m">2.00e-03</span> <span class="m">119</span>
+</span><span class="line"><span class="m">10</span> <span class="m">1.00e-02</span> <span class="m">120</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Para poder obtener la grafica a partir de los datos anteriores</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">plot<span class="p">(</span>datos.cinetica<span class="p">,</span> main<span class="o">=</span><span class="s">&quot;V Vs. S&quot;</span><span class="p">,</span> xmain<span class="o">=</span><span class="s">&quot;S&quot;</span><span class="p">,</span> ymain<span class="o">=</span><span class="s">&quot;v&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>Ahora necesitamos calcular los recíprocos $(r)$ para $S$ y $v$.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">r.S <span class="o">&lt;-</span> <span class="m">1</span><span class="o">/</span>S
+</span><span class="line">r.v <span class="o">&lt;-</span> <span class="m">1</span><span class="o">/</span>v
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Graficando los recíprocos</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">plot<span class="p">(</span>r.S<span class="p">,</span> r.v<span class="p">,</span> main<span class="o">=</span><span class="s">&quot;Lineweaver-Burk&quot;</span><span class="p">,</span> xlab<span class="o">=</span><span class="s">&quot;1/[S]&quot;</span><span class="p">,</span>  ylab<span class="o">=</span><span class="s">&quot;1/v&quot;</span><span class="p">,</span> pch<span class="o">=</span><span class="m">20</span><span class="p">,</span> col<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Ahora necesitamos hacer la regresion lineal de estos datos y añadir la linea correspondiente a la regresión a nuestra gráfica</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">lm<span class="p">(</span>r.v <span class="o">~</span> r.S<span class="p">)</span> <span class="o">-&gt;</span> lineweaver.reg
+</span><span class="line">abline<span class="p">(</span>lineweaver.reg<span class="p">,</span> col<span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Y la grafica final queda de la siguiente forma:</p>
+
+<p><img src="/images/lineweaver.png" /></p>
+
+<p>Cuando calculamos los datos para la regresión lineal, guardamos los resultados en la siguiente variable:</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">lineweaver.reg
+</span><span class="line">
+</span><span class="line">Call<span class="o">:</span>
+</span><span class="line">lm<span class="p">(</span>formula <span class="o">=</span> r.v <span class="o">~</span> r.S<span class="p">)</span>
+</span><span class="line">
+</span><span class="line">Coefficients<span class="o">:</span>
+</span><span class="line"><span class="p">(</span>Intercept<span class="p">)</span>          r.S
+</span><span class="line">  <span class="m">8.343e-03</span>    <span class="m">8.344e-08</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Intercept, corresponde a la intersección en $Y$, que para este caso es $\frac{1}{V_{max}}$.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">interseccion.y <span class="o">&lt;-</span> coef<span class="p">(</span>lineweaver.reg<span class="p">)[</span><span class="m">1</span><span class="p">]</span>
+</span><span class="line">r.Vmax <span class="o">&lt;-</span> interseccion.y
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Así que para calcular $V_{max}$</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">Vmax <span class="o">&lt;-</span> <span class="m">1</span><span class="o">/</span>r.Vmax
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+<p>La pendiente está en <em>r.S</em> por lo tanto.</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">pendiente <span class="o">&lt;-</span> coef<span class="p">(</span>lineweaver.reg<span class="p">)[</span><span class="m">2</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Para calcular la interseccion en $x$, necesitamos encontrar el valor de $x$ cuando $y = 0$, para la ecuación de la linea recta</p>
+
+<script type="math/tex; mode=display">y = (pendiente)x + interseccion.y</script>
+
+<script type="math/tex; mode=display">0 = (pendiente)x + interseccion.y</script>
+
+<script type="math/tex; mode=display">x=-\frac{interseccion.y}{pendiente}</script>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">interseccion.x <span class="o">&lt;-</span> <span class="o">-</span><span class="p">(</span>interseccion.y<span class="o">/</span>pendiente<span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Y como la intersección en $x$ es $\frac{1}{km}$ en este modelo</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">r.km <span class="o">&lt;-</span> interseccion.x
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Ahora podemos calcular $km$ de la siguiente forma</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">km <span class="o">&lt;-</span> <span class="m">-1</span><span class="o">/</span>r.km
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Ahora guardamos los datos de $Km$ y $V_{max}$ calculados previamente en un vector</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">Lineweaver.Burk <span class="o">&lt;-</span> c<span class="p">(</span>Vmax<span class="o">=</span>as.numeric<span class="p">(</span>Vmax<span class="p">),</span> Km<span class="o">=</span>as.numeric<span class="p">(</span>km<span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Podemos comparar nuestros resultados, con los que se obtienen de la ecuación de Michaelis Menten, por medio de un ajuste no lineal</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">Mfit <span class="o">&lt;-</span> nls<span class="p">(</span>v<span class="o">~</span><span class="p">(</span>Vmax<span class="o">*</span>S<span class="p">)</span><span class="o">/</span><span class="p">(</span>Km<span class="o">+</span>S<span class="p">),</span> datos.cinetica<span class="p">,</span> start<span class="o">=</span>list<span class="p">(</span>Vmax<span class="o">=</span><span class="m">1</span><span class="p">,</span> Km<span class="o">=</span><span class="m">0</span><span class="p">))</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Para poder comparar estos resultados los guardamos en un vector</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">Michaelis.Menten <span class="o">&lt;-</span> c<span class="p">(</span>Vmax<span class="o">=</span>as.numeric<span class="p">(</span>coef<span class="p">(</span>Mfit<span class="p">)[</span><span class="m">1</span><span class="p">]),</span> Km<span class="o">=</span>as.numeric<span class="p">(</span>coef<span class="p">(</span>Mfit<span class="p">)[</span><span class="m">2</span><span class="p">]))</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Y utilizamos el comando rbind, para crear un data.frame con los resultados para los dos modelos</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">rbind<span class="p">(</span>Lineweaver.Burk<span class="p">,</span> Michaelis.Menten<span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Ahora podemos comparar los resultados por ambos modelos</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">                 Vmax           Km
+</span><span class="line">Lineweaver.Burk  <span class="m">119.8564</span> <span class="m">1.000130e-05</span>
+</span><span class="line">Michaelis.Menten <span class="m">119.8967</span> <span class="m">9.997717e-06</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p>Y finalmente si queremos graficar los datos obtenidos del modelo de Michaelis Menten podemos utilizar</p>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+</pre></td><td class="code"><pre><code class="r"><span class="line">plot<span class="p">(</span>S<span class="p">,</span> predict<span class="p">(</span>Mfit<span class="p">),</span> type<span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> main<span class="o">=</span><span class="s">&quot;V Vs. S&quot;</span><span class="p">,</span> xlab<span class="o">=</span><span class="s">&quot;S&quot;</span><span class="p">,</span> ylab<span class="o">=</span><span class="s">&quot;v&quot;</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<p><img src="/images/michaelis.png" /></p>
+
+<ol class="bibliography"><li><span id="1979Segel">Segel, I. H. (1976). Enzymes. In <i>Biochemical Calculations: How to Solve Mathematical Problems in General Biochemistry</i> (2 ed., 208–319). John Wiley and Sons. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/0471774219</span></li></ol>
+
+<p>Código completo</p>
+
+<div><script src="https://gist.github.com/2779025.js"></script>
+<noscript><pre><code>#Data from Problem 1 Chapter 4 from
+#Biochemical Calculations by Irwin H Segel
+
+#Set the initial values and get a data.frame
+S &lt;- c(2.5e-06, 3.33e-06, 4.0e-06, 5.0e-06, 1.0e-05, 2.0e-05, 4.0e-05, 1.0e-04, 2.0e-03, 1.0e-02)
+v &lt;- c(24, 30, 34, 40, 60, 80, 96, 109, 119, 120)
+data.frame(S, v) -&gt; datos.cinetica
+
+#Plot the raw data
+plot(datos.cinetica, type=&quot;l&quot;, main=&quot;V Vs. S&quot;, xmain=&quot;S&quot;, ymain=&quot;v&quot;)
+
+#Get a vector from reciprocal values to apply Lineweaver-Burk model
+r.S &lt;- 1/S
+r.v &lt;- 1/v
+
+#Plot the reciprocal from raw data
+plot(r.S, r.v, main=&quot;Lineweaver-Burk&quot;, xlab=&quot;1/[S]&quot;,  ylab=&quot;1/v&quot;, pch=20, col=&quot;blue&quot;)
+
+
+#Use linear regression to get the Lineweaver-Burk model and add a red line to the graph
+lm(r.v ~ r.S) -&gt; lineweaver.reg
+abline(lineweaver.reg, col=&quot;red&quot;)
+
+#In order to get Vmax we need to look for the values at the regression model and calculate the reciprocal
+interseccion.y &lt;- coef(lineweaver.reg)[1]
+r.Vmax &lt;- interseccion.y
+Vmax &lt;- 1/r.Vmax
+
+#Get the slope from the regression model
+pendiente &lt;- coef(lineweaver.reg)[2]
+
+#Get the X intersection value
+interseccion.x &lt;- -(interseccion.y/pendiente)
+
+#Get the Km value, from the reciprocal of X intersection value
+r.km &lt;- interseccion.x
+km &lt;- -1/r.km
+
+#Get Vmax and Km as an R vector from Lineweaver-Burk model
+Lineweaver.Burk &lt;- c(Vmax=as.numeric(Vmax), Km=as.numeric(km))
+
+#Now we obtain the Vmax and Km from Michaelis Menten equation
+Mfit &lt;- nls(v~(Vmax*S)/(Km+S), 
+            datos.cinetica, 
+            start=list(Vmax=1, Km=0))
+
+#Get a vector with the values Vmax and Km from Michaelis Menten non linear regression
+Michaelis.Menten &lt;- c(Vmax=as.numeric(coef(Mfit)[1]), Km=as.numeric(coef(Mfit)[2]))
+
+#Plot the predicted V values from Michaelis Menten non linear regression model
+plot(S, predict(Mfit), type=&quot;l&quot;, main=&quot;V Vs. S&quot;, xlab=&quot;S&quot;, ylab=&quot;v&quot;)
+
+#And finally get a data.frame for value comparission
+rbind(Lineweaver.Burk, Michaelis.Menten)</code></pre></noscript></div>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Felipe Antonio Riveroll Aguirre</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-05-23T21:52:00-05:00" pubdate data-updated="true">May 23<span>rd</span>, 2012</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/r/'>R</a>, <a class='category' href='/blog/categories/bioquimica/'>bioquímica</a>, <a class='category' href='/blog/categories/cinetica-enzimatica/'>cinetica enzimática</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://friveroll.github.io/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/" data-via="FelipeRiveroll" data-counturl="http://friveroll.github.io/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/" title="Previous Post: Introducción al análisis de microarreglos">&laquo; Introducción al análisis de microarreglos</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro/" title="Next Post: Física con Análisis de Video Utilizando Logger Pro">Física con Análisis de Video Utilizando Logger Pro &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+	<span>
+		<img src="http://www.gravatar.com/avatar/2e15ce001d0d215a6ce6f67fbb91eed2" alt="Gravatar of Felipe Antonio Riveroll Aguirre " title="Gravatar of Felipe Antonio Riveroll Aguirre" />
+	</span>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/06/06/western-blotting-parte-ii-blotting/">Western Blotting Parte II: Blotting</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/02/western-blotting-parte-i-electroforesis/">Western Blotting Parte I: Electroforesis</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/23/modelos-animales-de-estres-en-farmacologia/">Modelos animales de estrés en farmacología</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro/">Física con Análisis de Video Utilizando Logger Pro</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/">Utilizando R para analizar datos de cinética</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/friveroll">@friveroll</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'friveroll',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/friveroll?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/friveroll">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+FelipeRiverollAguirre?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+<section class="twitterOct">
+  <h1 style="margin-bottom: 0.4em"> Tweets </h1>
+  <a class="twitter-timeline"
+   data-dnt="true" href="https://twitter.com/FelipeRiveroll" 
+     data-widget-id="423250617667051521">
+     
+     Tweets by @FelipeRiveroll
+  </a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Felipe Antonio Riveroll Aguirre -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'friveroll';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://friveroll.github.io/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/';
+        var disqus_url = 'http://friveroll.github.io/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

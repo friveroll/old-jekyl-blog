@@ -1,0 +1,382 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Búsqueda de motivos en proteínas - The Grumpy Biochemist</title>
+  <meta name="author" content="Felipe Antonio Riveroll Aguirre">
+
+  
+  <meta name="description" content="Para descubrir las funciones de una proteína, que no corresponde a ninguna de las secuencias en las bases de datos. Lo cual ocurre frecuentemente, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://friveroll.github.io/blog/2011/06/08/busqueda-de-motivos-en-proteinas/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="The Grumpy Biochemist" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-79218613-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">The Grumpy Biochemist</a></h1>
+  
+    <h2>A blog by Felipe Riveroll Aguirre</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:friveroll.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/pdfs/CV.pdf">CV</a></li>
+  <li><a href="http://feliperiveroll.info">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Búsqueda De Motivos en Proteínas</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-08T00:00:00-05:00" pubdate data-updated="true">Jun 8<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Para descubrir las funciones de una proteína,  que no corresponde a ninguna de las secuencias en las bases de datos. Lo cual ocurre frecuentemente, para las proteínas predichas de un genoma recién completado, que no tiene homólogos identificables.</p>
+
+<p>Aún si no se conocen homólogos, una proteína puede tener características tales como, dominios transmembranales, sitios potenciales de fosforilación o estructura secundaria predicha. Estos rasgos dan pistas de la estructura y/o función de una proteína.</p>
+
+<p>Para proteínas que tienen ortólogos y/o parálogos, existen regiones de identidad significativa en aminoácidos, que comparten características estructurales sustanciales y/o identidad de secuencias, lo cual tiene una variedad de nombres como: firmas, dominios, módulos, elementos modulares, motivos, patrones o repetidos.</p>
+
+<p>En esta ocasión, dedicaremos esta sección a los motivos:</p>
+
+<p>Podemos definir un motivo como un patrón conservado de aminoácidos, que puede ser encontrado en una o más proteínas, que pertenecen a un grupo de proteínas con actividad bioquímica similar, los cuales frecuentemente estan cerca del sitio activo de una proteína.</p>
+
+<p>Algunas de las herramientas en línea para buscar motivos en proteínas son las siguientes:</p>
+
+<ul>
+  <li>
+    <p><a href="http://mnm.engr.uconn.edu/MNM/SMSSearchServlet">MnM 2.0</a> <em>Minimotif miner</em>, analiza la presencia de motivos funcionales, involucrados en las modificaciones posttraduccionales, unión a otras proteínas, ácidos nucléicos o pequeñas moléculas o tráfico de proteínas.</p>
+  </li>
+  <li>
+    <p><a href="http://myhits.isb-sib.ch/cgi-bin/motif_scan">Motif Scan</a> Busca todos los motivos conocidos en una secuencia.</p>
+  </li>
+  <li>
+    <p><a href="http://www.cbs.dtu.dk/services/NetPhosK/">NetPhosK 1.0 Server</a> Predice sitios de fosforilación por cinasas de eucariotes por medio de redes neuronales, de las siguientes cinasas: PKA, PKC, PKG, CKII, Cdc2, CaM-II, ATM, DNA PK, Cdk5, p38 MAPK, GSK3, CKI, PKB, RSK, INSR, EGFR and Src.</p>
+  </li>
+  <li>
+    <p><a href="http://www.cbs.dtu.dk/services/NetPhos/">NetPhos 2.0 Server</a> Predice por redes neuronales, sitios de fosforilación en serina, treonina y tirosina para proteínas de eucariotes.</p>
+  </li>
+</ul>
+
+<ol class="bibliography"><li><span id="Balla2006">Balla, S., Thapar, V., Verma, S., Luong, Tb., Faghri, T., Huang, C.-H., Rajasekaran, S., del Campo, J. J., Shinn, J. H., Mohler, W. A., &#38; et al. (2006). Minimotif Miner: a tool for investigating protein function. <i>Nature Methods</i>, <i>3</i>(3), 175–177. doi:10.1038/nmeth856</span></li>
+<li><span id="citeulike:263008">Mount, D. (2013). <i>Bioinformatics: Sequence and Genome Analysis</i> (2 ed.). Cold Spring Harbor Laboratory Press. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/0879697121</span></li>
+<li><span id="citeulike:13242889">Pevsner, J. (2013). <i>Bioinformatics and Functional Genomics</i> (2 ed.). Cold Spring Harbor Laboratory Press. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/B004KPVA46</span></li></ol>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Felipe Antonio Riveroll Aguirre</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-06-08T00:00:00-05:00" pubdate data-updated="true">Jun 8<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bioinformatica/'>bioinformática</a>, <a class='category' href='/blog/categories/bioquimica/'>bioquímica</a>, <a class='category' href='/blog/categories/proteinas/'>proteínas</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://friveroll.github.io/blog/2011/06/08/busqueda-de-motivos-en-proteinas/" data-via="FelipeRiveroll" data-counturl="http://friveroll.github.io/blog/2011/06/08/busqueda-de-motivos-en-proteinas/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/05/30/visualizando-resultados-para-blast-en-mobyle-pasteur/" title="Previous Post: Visualizando resultados para Blast en Mobyle@Pasteur">&laquo; Visualizando resultados para Blast en Mobyle@Pasteur</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2011/07/24/comparacion-estructural-de-proteinas/" title="Next Post: Comparación estructural de proteínas">Comparación estructural de proteínas &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+	<span>
+		<img src="http://www.gravatar.com/avatar/2e15ce001d0d215a6ce6f67fbb91eed2" alt="Gravatar of Felipe Antonio Riveroll Aguirre " title="Gravatar of Felipe Antonio Riveroll Aguirre" />
+	</span>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/06/06/western-blotting-parte-ii-blotting/">Western Blotting Parte II: Blotting</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/02/western-blotting-parte-i-electroforesis/">Western Blotting Parte I: Electroforesis</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/23/modelos-animales-de-estres-en-farmacologia/">Modelos animales de estrés en farmacología</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro/">Física con Análisis de Video Utilizando Logger Pro</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/">Utilizando R para analizar datos de cinética</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/friveroll">@friveroll</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'friveroll',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/friveroll?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/friveroll">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+FelipeRiverollAguirre?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+<section class="twitterOct">
+  <h1 style="margin-bottom: 0.4em"> Tweets </h1>
+  <a class="twitter-timeline"
+   data-dnt="true" href="https://twitter.com/FelipeRiveroll" 
+     data-widget-id="423250617667051521">
+     
+     Tweets by @FelipeRiveroll
+  </a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Felipe Antonio Riveroll Aguirre -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'friveroll';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://friveroll.github.io/blog/2011/06/08/busqueda-de-motivos-en-proteinas/';
+        var disqus_url = 'http://friveroll.github.io/blog/2011/06/08/busqueda-de-motivos-en-proteinas/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

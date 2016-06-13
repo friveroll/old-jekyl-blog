@@ -1,0 +1,395 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Comparación estructural de proteínas - The Grumpy Biochemist</title>
+  <meta name="author" content="Felipe Antonio Riveroll Aguirre">
+
+  
+  <meta name="description" content="Las proteinas se componen de un juego de 20 aminoácidos distintos, unidos en cualquier orden lineal. La secuencia de aminoácidos se denomina, &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://friveroll.github.io/blog/2011/07/24/comparacion-estructural-de-proteinas/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="The Grumpy Biochemist" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<!-- mathjax config similar to math.stackexchange -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  jax: ["input/TeX", "output/HTML-CSS"],
+  tex2jax: {
+    inlineMath: [ ['$', '$'] ],
+    displayMath: [ ['$$', '$$']],
+    processEscapes: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  },
+  messageStyle: "none",
+  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
+});
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-79218613-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">The Grumpy Biochemist</a></h1>
+  
+    <h2>A blog by Felipe Riveroll Aguirre</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:friveroll.github.io" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/pdfs/CV.pdf">CV</a></li>
+  <li><a href="http://feliperiveroll.info">About</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Comparación Estructural De Proteínas</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-24T00:00:00-05:00" pubdate data-updated="true">Jul 24<span>th</span>, 2011</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p><img src="/images/proteinas.png" /> Las proteinas se componen de un juego de 20 aminoácidos distintos, unidos en cualquier orden lineal. La secuencia de aminoácidos se denomina, secuencia primaria, ésta última, forma estructuras secundarias a través de interacciones intermoleculares, que a su vez forman estructuras terciarias.</p>
+
+<p>La estructura tridimensional de las proteínas, en la mayoría de los casos, da luz a los mecanismos catalíticos e interacciones potenciales entre otras moléculas, ambos aspectos ayudan a inferir la función molecular de una proteína.</p>
+
+<p>Cuando se necesita hacer una comparación entre proteínas, se recurre en bioinformática a un alineamiento, ya sea por pares o múltiple, sin embargo a este nivel solo podemos obtener información a nivel de residuos aminoacídicos, lo cual puede darnos una idea de la similaridad entre las secuencias de las proteínas analizadas,  si estas últimas son conservadas, resultarán estructuras similares. Sin embargo, la estructura de las proteínas, es más conservada que las secuencias durante la evolución, lo cual facilita que se conserve la función biológica de las proteínas. Esto es muy útil para establecer relaciones evolutivas distantes, no detectables por métodos basados en secuencias.</p>
+
+<p>La comparación de estructuras puede servirnos para:</p>
+
+<ul>
+  <li>El análisis de cambios conformacionales, respecto a la unión de ligando.</li>
+  <li>La detección de relaciones evolutivas distantes.</li>
+  <li>El análisis de la relación estructural en las familias de proteínas.</li>
+  <li>La identificación de motivos estructurales comunes.</li>
+</ul>
+
+<p>A continuación se listan algunos de los recursos en internet para la comparación de estructuras, de proteínas.</p>
+
+<ul>
+  <li><a href="http://biowulf.bu.edu/FAST/">FAST</a></li>
+  <li><a href="http://bioinfo3d.cs.tau.ac.il/MultiProt/">MultiProt</a></li>
+  <li><a href="http://wishart.biology.ualberta.ca/SuperPose/">SuperPose 1.0</a></li>
+  <li><a href="http://salilab.org/DBAli/?page=tools&amp;action=f_salign">SALIGN</a></li>
+  <li><a href="http://zlab.bu.edu/k2sa/">K2, KSA</a></li>
+  <li><a href="http://cl.sdsc.edu/ce.html">CE, server</a></li>
+  <li><a href="http://www.ebi.ac.uk/Tools/dalilite/">Dalite</a></li>
+  <li><a href="http://protein3dfit.tu-bs.de/cgi-bin/3daligner.py">Protein3Dfit</a></li>
+  <li><a href="http://opaas.ibms.sinica.edu.tw/">OPAAS</a></li>
+  <li><a href="http://fatcat.burnham.org/fatcat-cgi/cgi/fatcat.pl?-func=pairwise">FATCAT</a></li>
+  <li><a href="http://www.rcsb.org/pdb/workbench/workbench.do">RCSB Protein comparision tool</a></li>
+  <li><a href="http://fatcat.burnham.org/POSA/">POSA</a></li>
+  <li><a href="http://agknapp.chemie.fu-berlin.de/gplus/index.php">GANGSTA+</a></li>
+  <li><a href="http://topmatch.services.came.sbg.ac.at/">TopMatch</a></li>
+  <li><a href="http://www.pdbj.org/ash/index.html">PDBj superposition server</a></li>
+  <li><a href="http://bioinfo3d.cs.tau.ac.il/c_alpha_match/">C-alpha match</a></li>
+  <li><a href="http://www.ebi.ac.uk/msd-srv/ssm/">SSM</a></li>
+  <li><a href="http://epsf.bmad.bii.a-star.edu.sg/struct_server.html">deconSTRUCT</a></li>
+  <li><a href="http://aladyn.escience-lab.org/">ALADYN</a></li>
+  <li><a href="http://sacan.biomed.drexel.edu/Smolign/">Smolign</a></li>
+</ul>
+
+<ol class="bibliography"><li><span id="citeulike:2847102">Eidhammer, I., Jonassen, I., &#38; Taylor, W. R. (2004). <i>Protein Bioinformatics: An Algorithmic Approach to Sequence and Structure Analysis</i> (1 ed.). Wiley. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/0470848391</span></li>
+<li><span id="Meng2005">Meng, E. C. (2005, April). Online Structure Alignment Resources. Retrieved from http://www.cgl.ucsf.edu/home/meng/grpmt/structalign.html</span></li>
+<li><span id="structaln">Structural alignment Structural alignment. Retrieved from http://en.wikipedia.org/wiki/Structural_alignment</span></li></ol>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Felipe Antonio Riveroll Aguirre</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-07-24T00:00:00-05:00" pubdate data-updated="true">Jul 24<span>th</span>, 2011</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bioinformatica/'>bioinformática</a>, <a class='category' href='/blog/categories/bioquimica/'>bioquímica</a>, <a class='category' href='/blog/categories/proteinas/'>proteínas</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://friveroll.github.io/blog/2011/07/24/comparacion-estructural-de-proteinas/" data-via="FelipeRiveroll" data-counturl="http://friveroll.github.io/blog/2011/07/24/comparacion-estructural-de-proteinas/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2011/06/08/busqueda-de-motivos-en-proteinas/" title="Previous Post: Búsqueda de motivos en proteínas">&laquo; Búsqueda de motivos en proteínas</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/" title="Next Post: Introducción al análisis de microarreglos">Introducción al análisis de microarreglos &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    
+<section>
+	<span>
+		<img src="http://www.gravatar.com/avatar/2e15ce001d0d215a6ce6f67fbb91eed2" alt="Gravatar of Felipe Antonio Riveroll Aguirre " title="Gravatar of Felipe Antonio Riveroll Aguirre" />
+	</span>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2016/06/06/western-blotting-parte-ii-blotting/">Western Blotting Parte II: Blotting</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2015/03/02/western-blotting-parte-i-electroforesis/">Western Blotting Parte I: Electroforesis</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/06/23/modelos-animales-de-estres-en-farmacologia/">Modelos animales de estrés en farmacología</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro/">Física con Análisis de Video Utilizando Logger Pro</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/">Utilizando R para analizar datos de cinética</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/friveroll">@friveroll</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'friveroll',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <div id="delicious"></div>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/friveroll?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
+  <p><a href="http://delicious.com/friveroll">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/+FelipeRiverollAguirre?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+<section class="twitterOct">
+  <h1 style="margin-bottom: 0.4em"> Tweets </h1>
+  <a class="twitter-timeline"
+   data-dnt="true" href="https://twitter.com/FelipeRiveroll" 
+     data-widget-id="423250617667051521">
+     
+     Tweets by @FelipeRiveroll
+  </a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</section>
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2016 - Felipe Antonio Riveroll Aguirre -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'friveroll';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://friveroll.github.io/blog/2011/07/24/comparacion-estructural-de-proteinas/';
+        var disqus_url = 'http://friveroll.github.io/blog/2011/07/24/comparacion-estructural-de-proteinas/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

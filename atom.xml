@@ -1,129 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>The Grumpy Biochemist</title>
-  <meta name="author" content="Felipe Antonio Riveroll Aguirre">
-
-  
-  <meta name="description" content="La transferencia de proteínas o ácidos nucléicos a una membrana inmovilizante, es referida como “blotting”, la transferencia puede ser realizada por &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://friveroll.github.io/">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="/javascripts/ender.js"></script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="The Grumpy Biochemist" type="application/atom+xml">
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<!-- mathjax config similar to math.stackexchange -->
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-  jax: ["input/TeX", "output/HTML-CSS"],
-  tex2jax: {
-    inlineMath: [ ['$', '$'] ],
-    displayMath: [ ['$$', '$$']],
-    processEscapes: true,
-    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-  },
-  messageStyle: "none",
-  "HTML-CSS": { preferredFont: "TeX", availableFonts: ["STIX","TeX"] }
-});
-</script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML" type="text/javascript"></script>
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-79218613-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">The Grumpy Biochemist</a></h1>
-  
-    <h2>A blog by Felipe Riveroll Aguirre</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:friveroll.github.io" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/pdfs/CV.pdf">CV</a></li>
-  <li><a href="http://feliperiveroll.info">About</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[The Grumpy Biochemist]]></title>
+  <link href="http://friveroll.github.io/atom.xml" rel="self"/>
+  <link href="http://friveroll.github.io/"/>
+  <updated>2016-06-13T10:35:11-05:00</updated>
+  <id>http://friveroll.github.io/</id>
+  <author>
+    <name><![CDATA[Felipe Antonio Riveroll Aguirre]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2016/06/06/western-blotting-parte-ii-blotting/">Western Blotting Parte II: Blotting</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2016-06-06T23:00:00-05:00" pubdate data-updated="true">Jun 6<span>th</span>, 2016</time>
-        
-         | <a href="/blog/2016/06/06/western-blotting-parte-ii-blotting/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>La transferencia de proteínas o ácidos nucléicos a una membrana inmovilizante, es referida como “<em>blotting</em>”, la transferencia puede ser realizada por difusión molecular, por un flujo de buffer inducido por la succión (microfiltración) o acción capilar, el método utilizado de manera más frecuente es la electrotransferencia.</p>
+  <entry>
+    <title type="html"><![CDATA[Western Blotting Parte II: Blotting]]></title>
+    <link href="http://friveroll.github.io/blog/2016/06/06/western-blotting-parte-ii-blotting/"/>
+    <updated>2016-06-06T23:00:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2016/06/06/western-blotting-parte-ii-blotting</id>
+    <content type="html"><![CDATA[<p>La transferencia de proteínas o ácidos nucléicos a una membrana inmovilizante, es referida como “<em>blotting</em>”, la transferencia puede ser realizada por difusión molecular, por un flujo de buffer inducido por la succión (microfiltración) o acción capilar, el método utilizado de manera más frecuente es la electrotransferencia.</p>
 
 <p>La <em>difusión</em> es un método simple pero muy ineficiente para aplicar a la mayoría de las transferencias, exepto para las transferencias de geles de agarosa. Generalmente las proteínas separadas en geles de poliacrlilamida se procesan por electroblotting, que utiliza la furza motriz de un campo eléctrico para que las proteínas eluyan desde el gel para inmovilizarlos en una matriz. Este método es rápido, eficiente y mantiene una alta resolución del patrón de bandas de las proteínas separadas por electroforesis.</p>
 
@@ -133,13 +28,13 @@ MathJax.Hub.Config({
   <li><a href="http://www.benchfly.com/video/34/western-blot-transfer-wet-apparatus/">Transferencia húmeda</a>: En la transferencia húmeda, el gel y la membrana se ponen en forma de sandwich entre la esponja y el papel (esponja/papel filtro/membrana/gel/papel filtro/esponja) y todo está sujeto firmemente, después de asegurarse que no existen burbujas de aire entre el gel y la membrana. El sandwich se sumerge en el buffer de transferencia al cuál se le aplica un campo eléctrico. Las proteínas cargadas negativamente viajan a través del electrodo cargado positivamente, pero la membrana las detiene, al unirlas previniendo que sigan avanzando.</li>
 </ul>
 
-<p><img src="/images/transferencia_humeda.png" alt="Transferencia húmeda" /></p>
+<p><img src="http://friveroll.github.io/images/transferencia_humeda.png" alt="Transferencia húmeda" /></p>
 
 <ul>
   <li><a href="http://www.benchfly.com/video/95/how-to-use-a-semi-dry-transfer-apparatus/">Transferencia semi-seca</a>: Para este tipo de transferencia, el gel y la membrana se colocan en forma de sandwich horizontalmente entre dos papeles filtro gruesos mojados con buffer (placa del ánodo/papel filtro/membrana/gel/papel filtro/placa del cátodo), los cuales están en contacto directo con dos placas sólidas de electrodos que están muy cerca una de la otra (la distancia entre ellas se limita solamente por el grosor del sandwich), también debe cuidarse en este método que no se generen burbujas entre el gel y la membrana, esto se hace después de colocar el segundo papel filtro haciendo rodar un pequeño tubo de ensaye por la superficie del filtro. El término semi-seca se refiere a la limitada cantidad de buffer.</li>
 </ul>
 
-<p><img src="/images/transferencia_semi-seca.png" alt="Transferencia semi-seca" /></p>
+<p><img src="http://friveroll.github.io/images/transferencia_semi-seca.png" alt="Transferencia semi-seca" /></p>
 
 <p>En la siguiente tabla podemos ver una comparación del buffer de transferencia para ambos métodos:</p>
 
@@ -262,44 +157,15 @@ MathJax.Hub.Config({
 <li><span id="eltit">Bjerrum, O. J., &#38; Heegaard, N. Hh. (2001). Western Blotting: Immunoblotting. In <i>eLS</i>. John Wiley &#38; SonsLtd. doi:10.1002/9780470015902.a0000995.pub2</span></li>
 <li><span id="Towbin01091979">Towbin, H., Staehelin, T., &#38; Gordon, J. (1979). Electrophoretic transfer of proteins from polyacrylamide gels to nitrocellulose sheets: procedure and some applications. <i>Proceedings of the National Academy of Sciences</i>, <i>76</i>(9), 4350-4354. Retrieved from http://www.pnas.org/content/76/9/4350.abstract</span></li>
 <li><span id="WB-Garcia">Nieto García, S. La ciencia del Western Blott: Estrategias para mejorar los WB’s. Retrieved from http://friveroll.github.io/pdfs/WB.pdf</span></li></ol>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/03/02/western-blotting-parte-i-electroforesis/">Western Blotting Parte I: Electroforesis</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-03-02T12:00:00-06:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2015</time>
-        
-         | <a href="/blog/2015/03/02/western-blotting-parte-i-electroforesis/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>El western blott o inmunoblott es un inmunoensayo en el cuál anticuerpos específicos son utilizados como sondas marcadas. Esta técnica permite comparar la abundancia de las proteínas separadas por electroforesis en gel, utilizando carriles distintos para cada una de las muestras.</p>
+  <entry>
+    <title type="html"><![CDATA[Western Blotting Parte I: Electroforesis]]></title>
+    <link href="http://friveroll.github.io/blog/2015/03/02/western-blotting-parte-i-electroforesis/"/>
+    <updated>2015-03-02T12:00:00-06:00</updated>
+    <id>http://friveroll.github.io/blog/2015/03/02/western-blotting-parte-i-electroforesis</id>
+    <content type="html"><![CDATA[<p>El western blott o inmunoblott es un inmunoensayo en el cuál anticuerpos específicos son utilizados como sondas marcadas. Esta técnica permite comparar la abundancia de las proteínas separadas por electroforesis en gel, utilizando carriles distintos para cada una de las muestras.</p>
 
 <p>La técnica puede dividirse en 5 pasos</p>
 
@@ -362,44 +228,15 @@ MathJax.Hub.Config({
 <li><span id="eltit">Bjerrum, O. J., &#38; Heegaard, N. Hh. (2001). Western Blotting: Immunoblotting. In <i>eLS</i>. John Wiley &#38; SonsLtd. doi:10.1002/9780470015902.a0000995.pub2</span></li>
 <li><span id="Hames1998">Hames, B. D. (1998). <i>Gel electrophoresis of proteins: a practical approach</i>. Practical approach series. Oxford University Press. Retrieved from https://books.google.com.mx/books?id=jtNqAAAAMAAJ</span></li>
 <li><span id="Twyman2013">Twyman, R. M. (2013). <i>Principles of Proteomics</i>. Taylor &#38; Francis Group. Retrieved from https://books.google.com.mx/books?id=fTMmAgAAQBAJ</span></li></ol>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/23/modelos-animales-de-estres-en-farmacologia/">Modelos Animales De Estrés en Farmacología</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-23T10:30:00-05:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2014</time>
-        
-         | <a href="/blog/2014/06/23/modelos-animales-de-estres-en-farmacologia/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Los modelos animales, ofrecen la mejor aproximación, para entender los procesos de estrés en organismos biopsicosociales. 
+  <entry>
+    <title type="html"><![CDATA[Modelos animales de estrés en farmacología]]></title>
+    <link href="http://friveroll.github.io/blog/2014/06/23/modelos-animales-de-estres-en-farmacologia/"/>
+    <updated>2014-06-23T10:30:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2014/06/23/modelos-animales-de-estres-en-farmacologia</id>
+    <content type="html"><![CDATA[<p>Los modelos animales, ofrecen la mejor aproximación, para entender los procesos de estrés en organismos biopsicosociales. 
 En el laboratorio, se utilizan estresores psicológicos y físicos. Ejemplos de los últimos, son la restricción corporal y la exposición a un ambiente frío. Los procedimientos de estrés psicológico usualmente implican un proceso de aprendizaje, que requiere de más de una condición de tratamiento experimental, de manera que los componentes psicológicos, puedan ser extraídos puramente del estresor físico. </p>
 
 <p>Algunos de los procedimientos utilizados más comúnmente en el laboratorio son los siguientes.</p>
@@ -430,44 +267,15 @@ La intensidad es la magnitud de inmovilización o restricción al que el roedor 
 <li><span id="Holsboer2010">Holsboer, F., &#38; Ising, M. (2010). Stress Hormone Regulation: Biological Role and Translation into Therapy. <i>Annual Review of Psychology</i>, <i>61</i>(1), 81–109. doi:10.1146/annurev.psych.093008.100321</span></li>
 <li><span id="Paré1993413">Paré, W. P., &#38; Glavin, G. B. (1993). Chapter 16 - Animal models of stress in pharmacology . In F. van Haaren (Ed.), <i>Methods in Behavioral Pharmacology</i>, Techniques in the Behavioral and Neural Sciences  (Vol. 10, 413 - 441). Elsevier. doi:http://dx.doi.org/10.1016/B978-0-444-81444-9.50021-3</span></li>
 <li><span id="Radek2010">Radek, K. A. (2010). Antimicrobial anxiety: the impact of stress on antimicrobial immunity. <i>Journal of Leukocyte Biology</i>, <i>88</i>(2), 263–277. doi:10.1189/jlb.1109740</span></li></ol>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro/">Física Con Análisis De Video Utilizando Logger Pro</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-06T10:44:00-06:00" pubdate data-updated="true">Jan 6<span>th</span>, 2014</time>
-        
-         | <a href="/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>La tecnología de análisis de video permite a los estudiantes hacer mediciones precisas de la posición de un objeto en el transcurso del tiempo durante su movimiento. Los Maestros de Física y docentes de todos los niveles, encontrarán que esta tecnología hace posible un análisis detallado de situaciones físicas que normalmente no sería posible analizar debido a las dificultades de medición, tiempo, costo y/o consideraciones de seguridad. Los Maestros de matemáticas también podrán descubrir que el análisis de video es un método económico y útil para estudiar ejemplos de fenómenos del mundo real que pueden ser descritos por gráficas y relaciones lineales, cuadráticas, hiperbólicas y sinusoidales.</p>
+  <entry>
+    <title type="html"><![CDATA[Física con Análisis de Video Utilizando Logger Pro]]></title>
+    <link href="http://friveroll.github.io/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro/"/>
+    <updated>2014-01-06T10:44:00-06:00</updated>
+    <id>http://friveroll.github.io/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro</id>
+    <content type="html"><![CDATA[<p>La tecnología de análisis de video permite a los estudiantes hacer mediciones precisas de la posición de un objeto en el transcurso del tiempo durante su movimiento. Los Maestros de Física y docentes de todos los niveles, encontrarán que esta tecnología hace posible un análisis detallado de situaciones físicas que normalmente no sería posible analizar debido a las dificultades de medición, tiempo, costo y/o consideraciones de seguridad. Los Maestros de matemáticas también podrán descubrir que el análisis de video es un método económico y útil para estudiar ejemplos de fenómenos del mundo real que pueden ser descritos por gráficas y relaciones lineales, cuadráticas, hiperbólicas y sinusoidales.</p>
 
 <p>El Análisis de Video consiste en utilizar una cámara de video para “registrar“ los datos de posición y tiempo, que pueden ser utilizados para modelar matemáticamente todo lo relacionado con la posición y/o el movimiento del objeto. Utilizando las características de avance cuadro por cuadro del video digital y marcando el cambio de posición de un objeto cuadro por cuadro, los estudiantes serán capaces de determinar de una manera precisa los detalles del movimiento estudiado. Una vez que se han obtenido los datos que consisten en el tiempo y posición del objeto de estudio, los estudiantes pueden determinar la velocidad y la aceleración del objeto, si la masa del objeto es conocida se pueden obtener valores tales como la energía cinética y potencial, fuerza, momento, etc. Y de esta forma obtener gráficas de los datos registrados y calculados.</p>
 
@@ -583,44 +391,15 @@ gráfica.</li>
 <li><span id="bryan-2005-b">Bryan, J. A. (2005). Physics instruction using video analysis technology.</span></li>
 <li><span id="bryan-2005-c">Bryan, J. A. (2005). Video analysis software and the investigation of the conservation of mechanical energy. <i>Contemporary Issues in Technology and Teacher  Education</i>, <i>4</i>(3), 248–298.</span></li></ol>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/">Utilizando R Para Analizar Datos De Cinética</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-23T21:52:00-05:00" pubdate data-updated="true">May 23<span>rd</span>, 2012</time>
-        
-         | <a href="/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>R es un lenguaje de programación estadístico y gráfico, que através del proyecto bioconductor puede ser usado para analisis bioinformáticos, en esta ocasión lo utilizaremos para graficar y analizar datos cinéticos.</p>
+  <entry>
+    <title type="html"><![CDATA[Utilizando R para analizar datos de cinética]]></title>
+    <link href="http://friveroll.github.io/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/"/>
+    <updated>2012-05-23T21:52:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica</id>
+    <content type="html"><![CDATA[<p>R es un lenguaje de programación estadístico y gráfico, que através del proyecto bioconductor puede ser usado para analisis bioinformáticos, en esta ocasión lo utilizaremos para graficar y analizar datos cinéticos.</p>
 
 <p>El siguiente tutorial, está basado en el problema 1 del capítulo 4 del libro <em>Biochemical Calculations</em> de <em>Irwin H Segel</em>,  y se mostrará como obtener $V_{max}$ y $Km$ a partir del análisis de los datos cinéticos por la gráfica de Lineweaver-Burk.</p>
 
@@ -697,7 +476,7 @@ gráfica.</li>
 
 <p>Y la grafica final queda de la siguiente forma:</p>
 
-<p><img src="/images/lineweaver.png" /></p>
+<p><img src="http://friveroll.github.io/images/lineweaver.png" /></p>
 
 <p>Cuando calculamos los datos para la regresión lineal, guardamos los resultados en la siguiente variable:</p>
 
@@ -802,7 +581,7 @@ gráfica.</li>
 </pre></td><td class="code"><pre><code class="r"><span class="line">plot<span class="p">(</span>S<span class="p">,</span> predict<span class="p">(</span>Mfit<span class="p">),</span> type<span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> main<span class="o">=</span><span class="s">&quot;V Vs. S&quot;</span><span class="p">,</span> xlab<span class="o">=</span><span class="s">&quot;S&quot;</span><span class="p">,</span> ylab<span class="o">=</span><span class="s">&quot;v&quot;</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p><img src="/images/michaelis.png" /></p>
+<p><img src="http://friveroll.github.io/images/michaelis.png" /></p>
 
 <ol class="bibliography"><li><span id="1979Segel">Segel, I. H. (1976). Enzymes. In <i>Biochemical Calculations: How to Solve Mathematical Problems in General Biochemistry</i> (2 ed., 208–319). John Wiley and Sons. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/0471774219</span></li></ol>
 
@@ -864,44 +643,15 @@ plot(S, predict(Mfit), type=&quot;l&quot;, main=&quot;V Vs. S&quot;, xlab=&quot;
 #And finally get a data.frame for value comparission
 rbind(Lineweaver.Burk, Michaelis.Menten)</code></pre></noscript></div>
 
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/">Introducción Al Análisis De Microarreglos</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-20T21:16:00-05:00" pubdate data-updated="true">May 20<span>th</span>, 2012</time>
-        
-         | <a href="/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Los datos que utilizaremos vienen de un estudio de Chiaretti et al.  sobre la leucemia linfoblastica aguda (ALL), la cual fue conducida con chips de microarreglos HG-U95Av2 de Aymetrix. El paquete de datos ALL contiene los datos de expresion del experimento, normalizados con rma (las intensidades estan en escala log2), junto con las anotaciones de las muestras. </p>
+  <entry>
+    <title type="html"><![CDATA[Introducción al análisis de microarreglos]]></title>
+    <link href="http://friveroll.github.io/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/"/>
+    <updated>2012-05-20T21:16:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2012/05/20/introduccion-al-analisis-de-microarreglos</id>
+    <content type="html"><![CDATA[<p>Los datos que utilizaremos vienen de un estudio de Chiaretti et al.  sobre la leucemia linfoblastica aguda (ALL), la cual fue conducida con chips de microarreglos HG-U95Av2 de Aymetrix. El paquete de datos ALL contiene los datos de expresion del experimento, normalizados con rma (las intensidades estan en escala log2), junto con las anotaciones de las muestras. </p>
 
 <p>Para ello utilizaremos R /Bioconductor Si no has instalado Bioconductor previemente necesitas correr las siguientes líneas</p>
 
@@ -1043,7 +793,7 @@ rbind(Lineweaver.Burk, Michaelis.Menten)</code></pre></noscript></div>
 </pre></td><td class="code"><pre><code class="r"><span class="line">hist<span class="p">(</span>pt<span class="p">,</span> <span class="m">50</span><span class="p">)</span>
 </span></code></pre></td></tr></table></div></figure></notextile></div>
 
-<p><img src="/images/histogram-pt.png" /></p>
+<p><img src="http://friveroll.github.io/images/histogram-pt.png" /></p>
 
 <p>La función <code>mt.rawp2adjp</code> de el paquete multtest contiene distintos procedimeintos de prueba (Checa la página de ayuda para esta función). Para obtener el ajuste de p-value en términos de FDR (False Discovery Rate) utilizaremos el método de  Benjamini y Hochberg. ¿Cuántos genes obtendremos si imponemos un FDR de 0.1?</p>
 
@@ -1645,44 +1395,15 @@ allRes
 gt &lt;- printGenes(GOdataMF, whichTerms = &quot;GO:0004713&quot;, chip = &quot;hgu95av2.db&quot;,
                  numChar = 40)
 gt</code></pre></noscript></div>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/24/comparacion-estructural-de-proteinas/">Comparación Estructural De Proteínas</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-07-24T00:00:00-05:00" pubdate data-updated="true">Jul 24<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/07/24/comparacion-estructural-de-proteinas/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/images/proteinas.png" /> Las proteinas se componen de un juego de 20 aminoácidos distintos, unidos en cualquier orden lineal. La secuencia de aminoácidos se denomina, secuencia primaria, ésta última, forma estructuras secundarias a través de interacciones intermoleculares, que a su vez forman estructuras terciarias.</p>
+  <entry>
+    <title type="html"><![CDATA[Comparación estructural de proteínas]]></title>
+    <link href="http://friveroll.github.io/blog/2011/07/24/comparacion-estructural-de-proteinas/"/>
+    <updated>2011-07-24T00:00:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2011/07/24/comparacion-estructural-de-proteinas</id>
+    <content type="html"><![CDATA[<p><img src="http://friveroll.github.io/images/proteinas.png" /> Las proteinas se componen de un juego de 20 aminoácidos distintos, unidos en cualquier orden lineal. La secuencia de aminoácidos se denomina, secuencia primaria, ésta última, forma estructuras secundarias a través de interacciones intermoleculares, que a su vez forman estructuras terciarias.</p>
 
 <p>La estructura tridimensional de las proteínas, en la mayoría de los casos, da luz a los mecanismos catalíticos e interacciones potenciales entre otras moléculas, ambos aspectos ayudan a inferir la función molecular de una proteína.</p>
 
@@ -1725,44 +1446,15 @@ gt</code></pre></noscript></div>
 <ol class="bibliography"><li><span id="citeulike:2847102">Eidhammer, I., Jonassen, I., &#38; Taylor, W. R. (2004). <i>Protein Bioinformatics: An Algorithmic Approach to Sequence and Structure Analysis</i> (1 ed.). Wiley. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/0470848391</span></li>
 <li><span id="Meng2005">Meng, E. C. (2005, April). Online Structure Alignment Resources. Retrieved from http://www.cgl.ucsf.edu/home/meng/grpmt/structalign.html</span></li>
 <li><span id="structaln">Structural alignment Structural alignment. Retrieved from http://en.wikipedia.org/wiki/Structural_alignment</span></li></ol>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/08/busqueda-de-motivos-en-proteinas/">Búsqueda De Motivos en Proteínas</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-08T00:00:00-05:00" pubdate data-updated="true">Jun 8<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/06/08/busqueda-de-motivos-en-proteinas/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Para descubrir las funciones de una proteína,  que no corresponde a ninguna de las secuencias en las bases de datos. Lo cual ocurre frecuentemente, para las proteínas predichas de un genoma recién completado, que no tiene homólogos identificables.</p>
+  <entry>
+    <title type="html"><![CDATA[Búsqueda de motivos en proteínas]]></title>
+    <link href="http://friveroll.github.io/blog/2011/06/08/busqueda-de-motivos-en-proteinas/"/>
+    <updated>2011-06-08T00:00:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2011/06/08/busqueda-de-motivos-en-proteinas</id>
+    <content type="html"><![CDATA[<p>Para descubrir las funciones de una proteína,  que no corresponde a ninguna de las secuencias en las bases de datos. Lo cual ocurre frecuentemente, para las proteínas predichas de un genoma recién completado, que no tiene homólogos identificables.</p>
 
 <p>Aún si no se conocen homólogos, una proteína puede tener características tales como, dominios transmembranales, sitios potenciales de fosforilación o estructura secundaria predicha. Estos rasgos dan pistas de la estructura y/o función de una proteína.</p>
 
@@ -1792,44 +1484,15 @@ gt</code></pre></noscript></div>
 <ol class="bibliography"><li><span id="Balla2006">Balla, S., Thapar, V., Verma, S., Luong, Tb., Faghri, T., Huang, C.-H., Rajasekaran, S., del Campo, J. J., Shinn, J. H., Mohler, W. A., &#38; et al. (2006). Minimotif Miner: a tool for investigating protein function. <i>Nature Methods</i>, <i>3</i>(3), 175–177. doi:10.1038/nmeth856</span></li>
 <li><span id="citeulike:263008">Mount, D. (2013). <i>Bioinformatics: Sequence and Genome Analysis</i> (2 ed.). Cold Spring Harbor Laboratory Press. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/0879697121</span></li>
 <li><span id="citeulike:13242889">Pevsner, J. (2013). <i>Bioinformatics and Functional Genomics</i> (2 ed.). Cold Spring Harbor Laboratory Press. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/B004KPVA46</span></li></ol>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/30/visualizando-resultados-para-blast-en-mobyle-pasteur/">Visualizando Resultados Para Blast en Mobyle@Pasteur</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-05-30T00:00:00-05:00" pubdate data-updated="true">May 30<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/05/30/visualizando-resultados-para-blast-en-mobyle-pasteur/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Brevemente, BLAST (<strong>B</strong>asic <strong>L</strong>ocal <strong>A</strong>lignment <strong>S</strong>earch <strong>T</strong>ool) es un método de búsqueda por homología, en el cuál se reta a la base de datos con una secuencia problema (query), para que encuentre secuencias relacionadas a nuestra secuencia problema.</p>
+  <entry>
+    <title type="html"><![CDATA[Visualizando resultados para Blast en Mobyle@Pasteur]]></title>
+    <link href="http://friveroll.github.io/blog/2011/05/30/visualizando-resultados-para-blast-en-mobyle-pasteur/"/>
+    <updated>2011-05-30T00:00:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2011/05/30/visualizando-resultados-para-blast-en-mobyle-pasteur</id>
+    <content type="html"><![CDATA[<p>Brevemente, BLAST (<strong>B</strong>asic <strong>L</strong>ocal <strong>A</strong>lignment <strong>S</strong>earch <strong>T</strong>ool) es un método de búsqueda por homología, en el cuál se reta a la base de datos con una secuencia problema (query), para que encuentre secuencias relacionadas a nuestra secuencia problema.</p>
 
 <p>Los resultados que BLAST arroja, son alineamientos pareados junto con los datos de la posición de la secuencia problema (<em>query</em>) con la secuencia que el programa encontró de la base de datos.</p>
 
@@ -1842,82 +1505,53 @@ gt</code></pre></noscript></div>
 <ul>
   <li>Ir a <a href="http://mobyle.pasteur.fr">Mobyle@pasteur</a>.</li>
   <li>En la pestaña program seleccionamos, database&gt;homology&gt;blast2
-<img src="/images/blast_1.png" /></li>
+<img src="http://friveroll.github.io/images/blast_1.png" /></li>
   <li>Ahora en la interfase web de blast2, seleccionamos como en la imagen: 
-<img src="/images/blast_2.png" />- Blast program: <strong>blastp</strong></li>
+<img src="http://friveroll.github.io/images/blast_2.png" />- Blast program: <strong>blastp</strong></li>
   <li>Proteín db: <strong>uniprot_sb</strong></li>
   <li>En la sección <em>query sequence/query</em>, para cargar la secuencia de ejemplo en la base de datos seleccionamos DB, después en la lista desplegable de abajo seleccionamos la base de datos uniprot y en el cuadro diálogo escribimos P25044 y damos click en <em>Select</em>.
-<img src="/images/blast_3.png" /></li>
+<img src="http://friveroll.github.io/images/blast_3.png" /></li>
   <li>Ahora el portal nos mostrará esta secuencia en el cuadro de diálogo más grande.
-<img src="/images/blast_4.png" /></li>
+<img src="http://friveroll.github.io/images/blast_4.png" /></li>
   <li>Ahora, vamos hacia la parte de arriba de la ventana y damos click en <em>Run</em>.
-<img src="/images/blast_5.png" /></li>
+<img src="http://friveroll.github.io/images/blast_5.png" /></li>
   <li>Y ahora el portal nos muestra los resultados.
-<img src="/images/blast_6.png" /></li>
+<img src="http://friveroll.github.io/images/blast_6.png" /></li>
   <li>Podemos ver que existen tres opciones para visualizar los resultados, como texto, html y de manera visual.</li>
   <li>Seguido de donde están los resultados en texto, hay una lista desplegable seguida del botón <em>further analysis</em>.</li>
   <li>Ahora seleccionamos de la lista mview(blast)&gt;Further analysis.
-<img src="/images/blast_7.png" /></li>
+<img src="http://friveroll.github.io/images/blast_7.png" /></li>
   <li>Enseguida nos aparecerá la interfase web para mview con los resultados de blast, obtenidos anteriormente
-<img src="/images/blast_8.png" /></li>
+<img src="http://friveroll.github.io/images/blast_8.png" /></li>
   <li>Hay dos opciones que me parecen útiles para dar formato a los resultados de blast, por defecto está seleccionado html, lo que nos mostrará un alineamiento coloreado de la secuencias alineadas en blast. Pero si deseamos seguir trabajando con la secuencia, tenemos que obtener un archivo fasta, con todas las secuencias alineadas. Claro que también como podrán darse cuenta, hay muchas opciones, para poder filtrar las secuancias que queremos obtener, de momento solo vamos a usar otro programa para ver los resultados.</li>
   <li>Seleccionamos <em>Pearson/FASTA</em> en el menú desplegable de la sección <em>Output format (-out)</em> 
-<img src="/images/blast_9.png" /></li>
+<img src="http://friveroll.github.io/images/blast_9.png" /></li>
   <li>Y damos click en <em>Run</em>.</li>
   <li>Ahora podemos ver como resultado un archivo con formato fasta de las secuencias.
-<img src="/images/blast_10.png" /></li>
+<img src="http://friveroll.github.io/images/blast_10.png" /></li>
   <li>De aqui, podemos seguir haciendo análisis filogenéticos u obtener estadísticas sobre el alineamiento, pero en este ejemplo, vamos a reformatear estos resultados con un programa de la suite <strong>EMBOSS</strong>, llamado <strong>showalign</strong>.</li>
   <li>Similar a lo que hicimos para mandar los resultados de blast a mview, ahora vamos a seleccionar showalign(sequence).
-<img src="/images/blast_11.png" />
-<img src="/images/blast_12.png" /></li>
+<img src="http://friveroll.github.io/images/blast_11.png" />
+<img src="http://friveroll.github.io/images/blast_12.png" /></li>
   <li>Utilizando <strong>advanced options</strong> podemos seleccionar varias opciones para como queremos visualizar el alineamiento, como por ejemplo la scoring matrix y como queremos ver los residuos que no son idénticos
-<img src="/images/blast_13.png" />
-<img src="/images/blast_14.png" /></li>
+<img src="http://friveroll.github.io/images/blast_13.png" />
+<img src="http://friveroll.github.io/images/blast_14.png" /></li>
   <li>Por ejemplo podemos mostrar en los resultados los residuos similares y también ordenarlos de acuerdo a su similaridad con estas opciones
-<img src="/images/blast_15.png" /></li>
+<img src="http://friveroll.github.io/images/blast_15.png" /></li>
   <li>Para obtener el siguiente resultado:
-<img src="/images/blast_16.png" /></li>
+<img src="http://friveroll.github.io/images/blast_16.png" /></li>
 </ul>
 
 <ol class="bibliography"><li><span id="Neron2009">Neron, B., Menager, H., Maufrais, C., Joly, N., Maupetit, J., Letort, S., Carrere, S., Tuffery, P., &#38; Letondal, C. (2009). Mobyle: a new full web bioinformatics framework. <i>Bioinformatics</i>, <i>25</i>(22), 3005–3011. doi:10.1093/bioinformatics/btp493</span></li></ol>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/28/maartens-retrieval-system/">Maartens Retrieval System (MRS)</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-28T00:00:00-05:00" pubdate data-updated="true">Apr 28<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/28/maartens-retrieval-system/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://mrs.cmbi.ru.nl">Maartens Retrieval System (MRS)</a>  es un metabuscador de bases de datos biológicas múy útil, algo así como un google para la minería de datos, el pasado 22 de marzo de 2011 hubo un curso en el <a href="http://www.ccg.unam.mx">CCG-UNAM</a> impartido por <a href="http://folk.uio.no/georgios/">George Magklaras</a> sobre como combinar el uso de <a href="http://emboss.sourceforge.net/what">EMBOSS</a> y <a href="http://mrs.cmbi.ru.nl">MRS</a>.</p>
+  <entry>
+    <title type="html"><![CDATA[Maartens Retrieval System (MRS)]]></title>
+    <link href="http://friveroll.github.io/blog/2011/04/28/maartens-retrieval-system/"/>
+    <updated>2011-04-28T00:00:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2011/04/28/maartens-retrieval-system</id>
+    <content type="html"><![CDATA[<p><a href="http://mrs.cmbi.ru.nl">Maartens Retrieval System (MRS)</a>  es un metabuscador de bases de datos biológicas múy útil, algo así como un google para la minería de datos, el pasado 22 de marzo de 2011 hubo un curso en el <a href="http://www.ccg.unam.mx">CCG-UNAM</a> impartido por <a href="http://folk.uio.no/georgios/">George Magklaras</a> sobre como combinar el uso de <a href="http://emboss.sourceforge.net/what">EMBOSS</a> y <a href="http://mrs.cmbi.ru.nl">MRS</a>.</p>
 
 <p>Desde mi punto de vista, la documentación del proyecto es algo pobre, pero su interfase web es muy intuitiva.</p>
 
@@ -1937,176 +1571,7 @@ gt</code></pre></noscript></div>
 </ul>
 
 <ol class="bibliography"><li><span id="Hekkelman2005">Hekkelman, M. L., &#38; Vriend, G. (2005). MRS: a fast and compact retrieval system for biological data. <i>Nucleic Acids Research</i>, <i>33</i>(Web Server), W766–W769. doi:10.1093/nar/gki422</span></li></ol>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    
-<section>
-	<span>
-		<img src="http://www.gravatar.com/avatar/2e15ce001d0d215a6ce6f67fbb91eed2" alt="Gravatar of Felipe Antonio Riveroll Aguirre " title="Gravatar of Felipe Antonio Riveroll Aguirre" />
-	</span>
-</section>
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2016/06/06/western-blotting-parte-ii-blotting/">Western Blotting Parte II: Blotting</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2015/03/02/western-blotting-parte-i-electroforesis/">Western Blotting Parte I: Electroforesis</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/06/23/modelos-animales-de-estres-en-farmacologia/">Modelos animales de estrés en farmacología</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro/">Física con Análisis de Video Utilizando Logger Pro</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/">Utilizando R para analizar datos de cinética</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/friveroll">@friveroll</a> on GitHub
-  
-  <script type="text/javascript">
-    $.domReady(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'friveroll',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-<section>
-  <h1>On Delicious</h1>
-  <div id="delicious"></div>
-  <script type="text/javascript" src="http://feeds.delicious.com/v2/json/friveroll?count=3&amp;sort=date&amp;callback=renderDeliciousLinks"></script>
-  <p><a href="http://delicious.com/friveroll">My Delicious Bookmarks &raquo;</a></p>
-</section>
-
-
-<section class="googleplus">
-  <h1>
-    <a href="https://plus.google.com/+FelipeRiverollAguirre?rel=author">
-      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
-      Google+
-    </a>
-  </h1>
-</section>
-
-
-
-<section class="twitterOct">
-  <h1 style="margin-bottom: 0.4em"> Tweets </h1>
-  <a class="twitter-timeline"
-   data-dnt="true" href="https://twitter.com/FelipeRiveroll" 
-     data-widget-id="423250617667051521">
-     
-     Tweets by @FelipeRiveroll
-  </a>
-  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</section>
-
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2016 - Felipe Antonio Riveroll Aguirre -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'friveroll';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>

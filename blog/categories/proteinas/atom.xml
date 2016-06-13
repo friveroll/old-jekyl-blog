@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: proteínas | The Grumpy Biochemist]]></title>
+  <link href="http://friveroll.github.io/blog/categories/proteinas/atom.xml" rel="self"/>
+  <link href="http://friveroll.github.io/"/>
+  <updated>2016-06-13T10:35:11-05:00</updated>
+  <id>http://friveroll.github.io/</id>
+  <author>
+    <name><![CDATA[Felipe Antonio Riveroll Aguirre]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Western Blotting Parte II: Blotting]]></title>
+    <link href="http://friveroll.github.io/blog/2016/06/06/western-blotting-parte-ii-blotting/"/>
+    <updated>2016-06-06T23:00:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2016/06/06/western-blotting-parte-ii-blotting</id>
+    <content type="html"><![CDATA[<p>La transferencia de proteínas o ácidos nucléicos a una membrana inmovilizante, es referida como “<em>blotting</em>”, la transferencia puede ser realizada por difusión molecular, por un flujo de buffer inducido por la succión (microfiltración) o acción capilar, el método utilizado de manera más frecuente es la electrotransferencia.</p>
+
+<p>La <em>difusión</em> es un método simple pero muy ineficiente para aplicar a la mayoría de las transferencias, exepto para las transferencias de geles de agarosa. Generalmente las proteínas separadas en geles de poliacrlilamida se procesan por electroblotting, que utiliza la furza motriz de un campo eléctrico para que las proteínas eluyan desde el gel para inmovilizarlos en una matriz. Este método es rápido, eficiente y mantiene una alta resolución del patrón de bandas de las proteínas separadas por electroforesis.</p>
+
+<p>Existen dos principales configuraciones para este método:</p>
+
+<ul>
+  <li><a href="http://www.benchfly.com/video/34/western-blot-transfer-wet-apparatus/">Transferencia húmeda</a>: En la transferencia húmeda, el gel y la membrana se ponen en forma de sandwich entre la esponja y el papel (esponja/papel filtro/membrana/gel/papel filtro/esponja) y todo está sujeto firmemente, después de asegurarse que no existen burbujas de aire entre el gel y la membrana. El sandwich se sumerge en el buffer de transferencia al cuál se le aplica un campo eléctrico. Las proteínas cargadas negativamente viajan a través del electrodo cargado positivamente, pero la membrana las detiene, al unirlas previniendo que sigan avanzando.</li>
+</ul>
+
+<p><img src="/images/transferencia_humeda.png" alt="Transferencia húmeda" /></p>
+
+<ul>
+  <li><a href="http://www.benchfly.com/video/95/how-to-use-a-semi-dry-transfer-apparatus/">Transferencia semi-seca</a>: Para este tipo de transferencia, el gel y la membrana se colocan en forma de sandwich horizontalmente entre dos papeles filtro gruesos mojados con buffer (placa del ánodo/papel filtro/membrana/gel/papel filtro/placa del cátodo), los cuales están en contacto directo con dos placas sólidas de electrodos que están muy cerca una de la otra (la distancia entre ellas se limita solamente por el grosor del sandwich), también debe cuidarse en este método que no se generen burbujas entre el gel y la membrana, esto se hace después de colocar el segundo papel filtro haciendo rodar un pequeño tubo de ensaye por la superficie del filtro. El término semi-seca se refiere a la limitada cantidad de buffer.</li>
+</ul>
+
+<p><img src="/images/transferencia_semi-seca.png" alt="Transferencia semi-seca" /></p>
+
+<p>En la siguiente tabla podemos ver una comparación del buffer de transferencia para ambos métodos:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right"> </th>
+      <th style="text-align: center">Húmeda</th>
+      <th style="text-align: center">Semi-Seca</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right">Tris base</td>
+      <td style="text-align: center">25 mM</td>
+      <td style="text-align: center">50 mM</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">Glicina</td>
+      <td style="text-align: center">192 mM</td>
+      <td style="text-align: center">40 mM</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">pH</td>
+      <td style="text-align: center">8.2</td>
+      <td style="text-align: center">N/D</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">SDS</td>
+      <td style="text-align: center">N/D</td>
+      <td style="text-align: center">0.04 % (p/v)</td>
+    </tr>
+    <tr>
+      <td style="text-align: right">Metanol</td>
+      <td style="text-align: center">20 %</td>
+      <td style="text-align: center">20 %</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Como puede notarse la transferencia Semiseca utiliza menos glicina y permite una transferencia más rápida pero no es muy efectiva para proteínas mayores a 120 KDa.</p>
+
+<p>En la siguiente tabla podemos ver una comparación entre ambos sistemas</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left"> </th>
+      <th style="text-align: left"><em>Transferencia Húmeda</em></th>
+      <th style="text-align: left"><em>Transferencia Semi-seca</em></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Flexibilidad</td>
+      <td style="text-align: left">Condiciones flexibles de voltaje, tiempo de blotting y requerimentos de enfriamiento del buffer; posiciones flexibles para los electrodos</td>
+      <td style="text-align: left">Dedicada a la transferencia rápida con un volúmen mínimo de buffer, sin necesidad de enfriamiento.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Resultados cuantitativos Vs. cualitativos</td>
+      <td style="text-align: left">Transferencia cuantitativa de proteínas de bajo peso molecular bajo condiciones que permitan la unión eficiente a la membrana.</td>
+      <td style="text-align: left">Algunas de las moléculas de bajo peso molecular pueden ser transferidas a través de la membrana sin unirse cuantitativamente.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Rango de peso molecular</td>
+      <td style="text-align: left">Amplio rango de peso molecular</td>
+      <td style="text-align: left">Eficiencia variable de transferencia para proteínas mayores a 120 KDa (puede ser mejorado con un sistema de buffer discontinuo); las proteínas de bajo peso molecular pueden ser transferidas a través de la membrana.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Tiempo de transferencia</td>
+      <td style="text-align: left">Tiempo extendido (hasta 24 hr) posible sin la depleción del buffer; pueden obenerse transferencias rápidas (15 a 60 min) bajo condiciones de alta intensidad.</td>
+      <td style="text-align: left">Transferencias rápidas; no puede haber transferencias extendidas debido a la depleción del buffer</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Control de temperatura</td>
+      <td style="text-align: left">Regulación específica de la temperatura con un refrigerante y agua refrigerada a través de un recirculador; que permite transferencias a bajas temperaturas ( $4$ a $10^o C$ ).</td>
+      <td style="text-align: left">No es posible la regulación de la temperatura por enfriamiento externo.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">Capacidad amortiguadora</td>
+      <td style="text-align: left">Hasta 10 a 12 L o tan bajo como 450 mL; la duración del tiempo para la transferencia no está restringida por una capacidad de buffer limitada.</td>
+      <td style="text-align: left">Mínimo 250 ml por experimento; se reduce el costo de los reactivos y el tiempo del experimento</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Para la transferencia <em>semi-seca</em>, una concentración elevada de SDS, puede bloquear la unión de las proteínas a las membranas, pero el 0.01% facilita la transferencia, especialmente de proteínas grandes. La adición del 20% de metanol contraresta el hinchamiento del gel e incrementa la unión de proteínas obteniendo una buena resolución de bandas, además el metanol disminuye la posibilidad de que las proteínas se salgan del gel e incrementa su exposición a la membrana al incrementar la capacidad para que se peguen quitando el SDS de la superficie (esto beneficia a las proteínas más pequeñas) de la membrana, sin embargo, también impide la transferencia y deben ser balanceadas las concentraciones para esto. También deben ser equilibradas la corriente y el tiempo de transferencia dado que geles gruesos de poliacrilamida y moléculas hidrofóbicas y grandes (como los receptores) toman más tiempo de elución, mientras que, contrariamente las proteínas pequeñas transferidas a membranas para blotting con un tamaño grande del poro pueden pasar a través de la membrana si existe una saturación local para la unión de proteínas, causando su pérdida. </p>
+
+<p>Además de lo mencionado anteriormente los siguientes factores determinan si una proteína se unirá durante la transferencia se enumeran a continuación.</p>
+
+<ul>
+  <li>Velocidad de elución desde el gel
+    <ul>
+      <li>Masa</li>
+      <li>Valores de corriente/voltaje</li>
+      <li>Propiedades fisicoquímicas de la proteína
+        <ul>
+          <li>hidrofobicidad</li>
+          <li>punto isoeléctrico</li>
+        </ul>
+      </li>
+      <li>Modificaciones post-traduccionales, como por ejemplo el grado de glicosilación</li>
+      <li>Cantidad de SDS asociado a las proteínas: el SDS cubre a la proteína y le da una densidad de carga negativa
+        <ul>
+          <li>Gracias a esto la proteína se une rápidamente por la membrana</li>
+          <li>Limita la oportunidad para interactuar entre la membrana y las proteínas para su unión.</li>
+          <li>Permite que se solubilizen las proteínas y esto ayuda a las proteínas grandes como las proteínas de membrana.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>Se utilizan dos tipos de membranas, las de nitrocelulosa, con tamaño de poro de 0.45 $\mu  m$ y floruro de polivinilidieno ó PVDF (polyvinylidene difluoride), poseen un tamaño de poro de 0.45 y 0.22 $\mu  m$  las cuales presentan solo pequeñas diferencias respecto a su capacidad de unión y la compatibilidad para el teñido. Su capacidad de unión a proteínas está al rededor de 100-200 $\frac{\mu g}{cm^{-2}}$.</p>
+
+<p>Una vez que las proteínas se han transferido a la membarana, son más accesibles para varios ligandos que cuando estaban en el gel. En el blot ( la matriz inmovilizante que contiene las proteínas transferidas) se hace reaccionar con distintas sondas, tales como anticuerpos para la identificación del antígeno correspondiente. El blot generalmente requiere una cantidad pequeña de reactivos, las proteínas transferidas en las membranas pueden almacenarse por varias semanas después de su uso y también pueden ser utilizadas para análisis sucesivos.</p>
+
+<p><ol class="bibliography"></ol></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Western Blotting Parte I: Electroforesis]]></title>
+    <link href="http://friveroll.github.io/blog/2015/03/02/western-blotting-parte-i-electroforesis/"/>
+    <updated>2015-03-02T12:00:00-06:00</updated>
+    <id>http://friveroll.github.io/blog/2015/03/02/western-blotting-parte-i-electroforesis</id>
+    <content type="html"><![CDATA[<p>El western blott o inmunoblott es un inmunoensayo en el cuál anticuerpos específicos son utilizados como sondas marcadas. Esta técnica permite comparar la abundancia de las proteínas separadas por electroforesis en gel, utilizando carriles distintos para cada una de las muestras.</p>
+
+<p>La técnica puede dividirse en 5 pasos</p>
+
+<ul>
+  <li>Electroforesis</li>
+  <li>Blotting</li>
+  <li>Inmunodetección</li>
+  <li>Imagen</li>
+  <li>Análisis (Cuantificación)</li>
+</ul>
+
+<h2 id="electroforesis">Electroforesis</h2>
+
+<p>Cualquier molécula cargada en solución, migrará en un campo eléctrico aplicado, un fenómeno conocido como electroforesis. La velocidad de migración dependerá del campo eléctrico y de la densidad de carga de la molécula, esto es, la relación de masa/carga. Debido a que las proteínas disueltas tienen una carga neta, una solución que contiene una mezcla de proteínas, puede en teoría ser resuelta por una electroforesis, dado que las proteínas distintas con densidades de carga diferentes, migran hacia los electrodos apropiados a diferentes velocidades, sin embargo una separación efectiva nunca se alcanza dado que todas las proteínas están inicialmente distribuídas en la solución. La respuesta a este problema, es cargar la solución de proteínas en un amortiguador (buffer), permitiendo que las proteínas con densidades de carga distintas migren a zonas discretas.</p>
+
+<p>La electroforesis puede ser de una sola dimensión (p.e un solo plano de separación) o de dos dimensiones, la separación bidimensional de proteínas puede ser utilizada para resolver todas las proteínas de una célula.</p>
+
+<p>Si las proteías se separan en un gel de poliacrilamida el procedimiento es abreviado como SDS-PAGE (para Sodium Dodecyl Sulfate PolyAcrylamide Gel Electroforesis).</p>
+
+<p>Los geles de poliacrilamida son formados por la polimerización de dos compuestos, la Acrilamida y la N-N-metilenbisacrilamida (o para abreviar Bis). Bis es un agente de anclaje cruzado (más cross linking) para los geles. La polimerización es inicada por la adición de persulfato de amonio junto con DMAP o TEMED. Los geles son redes tridimensionales, neutras e hidrofílicas de hidrocarburos largos entrecruzados por grupos metileno.</p>
+
+<p>La separación de las moléculas dentro del gel es determinada por el tamaño de los poros formados en el gel. El tamaño del poro es determinado por dos factores: - La cantidad total de acrilamida presente designada como %T. - La proporción del agente de entrcruzamiento (cross linker). Conforme aumenta la cantidad de acrilamida presente, disminuye el temaño del poro. Los geles se determinan como soluciones en porcentaje y tienen dos parámetros necesarios. El total de acrilamida es dado como porcentaje (w/v) de acrilamida más la bis-acrilamida.</p>
+
+<p>Regla de oro: Mientras más pequeña sea la proteína de interés, deberá ser mayor el porcentaje de mono/bis. Mientras más grande la proteína de interés, menor será el porcentaje mono/bis.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Tamaño de proteína (kDa)</th>
+      <th style="text-align: center">Porcentaje de Gel (%)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">14 - 40</td>
+      <td style="text-align: center">20</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">12 - 45</td>
+      <td style="text-align: center">15</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">10 - 70</td>
+      <td style="text-align: center">12.5</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">15 - 100</td>
+      <td style="text-align: center">10</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">25 - 200</td>
+      <td style="text-align: center">8</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>Nota</em>: La acrilamida es una potente neurotoxina acumulativa: utilize guantes todo el tiempo. Coloque los geles en el tanque de electroforesis como lo indica el fabricante bañado en buffer.</p>
+
+<p><ol class="bibliography"></ol></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Comparación estructural de proteínas]]></title>
+    <link href="http://friveroll.github.io/blog/2011/07/24/comparacion-estructural-de-proteinas/"/>
+    <updated>2011-07-24T00:00:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2011/07/24/comparacion-estructural-de-proteinas</id>
+    <content type="html"><![CDATA[<p><img src="/images/proteinas.png" /> Las proteinas se componen de un juego de 20 aminoácidos distintos, unidos en cualquier orden lineal. La secuencia de aminoácidos se denomina, secuencia primaria, ésta última, forma estructuras secundarias a través de interacciones intermoleculares, que a su vez forman estructuras terciarias.</p>
+
+<p>La estructura tridimensional de las proteínas, en la mayoría de los casos, da luz a los mecanismos catalíticos e interacciones potenciales entre otras moléculas, ambos aspectos ayudan a inferir la función molecular de una proteína.</p>
+
+<p>Cuando se necesita hacer una comparación entre proteínas, se recurre en bioinformática a un alineamiento, ya sea por pares o múltiple, sin embargo a este nivel solo podemos obtener información a nivel de residuos aminoacídicos, lo cual puede darnos una idea de la similaridad entre las secuencias de las proteínas analizadas,  si estas últimas son conservadas, resultarán estructuras similares. Sin embargo, la estructura de las proteínas, es más conservada que las secuencias durante la evolución, lo cual facilita que se conserve la función biológica de las proteínas. Esto es muy útil para establecer relaciones evolutivas distantes, no detectables por métodos basados en secuencias.</p>
+
+<p>La comparación de estructuras puede servirnos para:</p>
+
+<ul>
+  <li>El análisis de cambios conformacionales, respecto a la unión de ligando.</li>
+  <li>La detección de relaciones evolutivas distantes.</li>
+  <li>El análisis de la relación estructural en las familias de proteínas.</li>
+  <li>La identificación de motivos estructurales comunes.</li>
+</ul>
+
+<p>A continuación se listan algunos de los recursos en internet para la comparación de estructuras, de proteínas.</p>
+
+<ul>
+  <li><a href="http://biowulf.bu.edu/FAST/">FAST</a></li>
+  <li><a href="http://bioinfo3d.cs.tau.ac.il/MultiProt/">MultiProt</a></li>
+  <li><a href="http://wishart.biology.ualberta.ca/SuperPose/">SuperPose 1.0</a></li>
+  <li><a href="http://salilab.org/DBAli/?page=tools&amp;action=f_salign">SALIGN</a></li>
+  <li><a href="http://zlab.bu.edu/k2sa/">K2, KSA</a></li>
+  <li><a href="http://cl.sdsc.edu/ce.html">CE, server</a></li>
+  <li><a href="http://www.ebi.ac.uk/Tools/dalilite/">Dalite</a></li>
+  <li><a href="http://protein3dfit.tu-bs.de/cgi-bin/3daligner.py">Protein3Dfit</a></li>
+  <li><a href="http://opaas.ibms.sinica.edu.tw/">OPAAS</a></li>
+  <li><a href="http://fatcat.burnham.org/fatcat-cgi/cgi/fatcat.pl?-func=pairwise">FATCAT</a></li>
+  <li><a href="http://www.rcsb.org/pdb/workbench/workbench.do">RCSB Protein comparision tool</a></li>
+  <li><a href="http://fatcat.burnham.org/POSA/">POSA</a></li>
+  <li><a href="http://agknapp.chemie.fu-berlin.de/gplus/index.php">GANGSTA+</a></li>
+  <li><a href="http://topmatch.services.came.sbg.ac.at/">TopMatch</a></li>
+  <li><a href="http://www.pdbj.org/ash/index.html">PDBj superposition server</a></li>
+  <li><a href="http://bioinfo3d.cs.tau.ac.il/c_alpha_match/">C-alpha match</a></li>
+  <li><a href="http://www.ebi.ac.uk/msd-srv/ssm/">SSM</a></li>
+  <li><a href="http://epsf.bmad.bii.a-star.edu.sg/struct_server.html">deconSTRUCT</a></li>
+  <li><a href="http://aladyn.escience-lab.org/">ALADYN</a></li>
+  <li><a href="http://sacan.biomed.drexel.edu/Smolign/">Smolign</a></li>
+</ul>
+
+<p><ol class="bibliography"></ol></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Búsqueda de motivos en proteínas]]></title>
+    <link href="http://friveroll.github.io/blog/2011/06/08/busqueda-de-motivos-en-proteinas/"/>
+    <updated>2011-06-08T00:00:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2011/06/08/busqueda-de-motivos-en-proteinas</id>
+    <content type="html"><![CDATA[<p>Para descubrir las funciones de una proteína,  que no corresponde a ninguna de las secuencias en las bases de datos. Lo cual ocurre frecuentemente, para las proteínas predichas de un genoma recién completado, que no tiene homólogos identificables.</p>
+
+<p>Aún si no se conocen homólogos, una proteína puede tener características tales como, dominios transmembranales, sitios potenciales de fosforilación o estructura secundaria predicha. Estos rasgos dan pistas de la estructura y/o función de una proteína.</p>
+
+<p>Para proteínas que tienen ortólogos y/o parálogos, existen regiones de identidad significativa en aminoácidos, que comparten características estructurales sustanciales y/o identidad de secuencias, lo cual tiene una variedad de nombres como: firmas, dominios, módulos, elementos modulares, motivos, patrones o repetidos.</p>
+
+<p>En esta ocasión, dedicaremos esta sección a los motivos:</p>
+
+<p>Podemos definir un motivo como un patrón conservado de aminoácidos, que puede ser encontrado en una o más proteínas, que pertenecen a un grupo de proteínas con actividad bioquímica similar, los cuales frecuentemente estan cerca del sitio activo de una proteína.</p>
+
+<p>Algunas de las herramientas en línea para buscar motivos en proteínas son las siguientes:</p>
+
+<ul>
+  <li>
+    <p><a href="http://mnm.engr.uconn.edu/MNM/SMSSearchServlet">MnM 2.0</a> <em>Minimotif miner</em>, analiza la presencia de motivos funcionales, involucrados en las modificaciones posttraduccionales, unión a otras proteínas, ácidos nucléicos o pequeñas moléculas o tráfico de proteínas.</p>
+  </li>
+  <li>
+    <p><a href="http://myhits.isb-sib.ch/cgi-bin/motif_scan">Motif Scan</a> Busca todos los motivos conocidos en una secuencia.</p>
+  </li>
+  <li>
+    <p><a href="http://www.cbs.dtu.dk/services/NetPhosK/">NetPhosK 1.0 Server</a> Predice sitios de fosforilación por cinasas de eucariotes por medio de redes neuronales, de las siguientes cinasas: PKA, PKC, PKG, CKII, Cdc2, CaM-II, ATM, DNA PK, Cdk5, p38 MAPK, GSK3, CKI, PKB, RSK, INSR, EGFR and Src.</p>
+  </li>
+  <li>
+    <p><a href="http://www.cbs.dtu.dk/services/NetPhos/">NetPhos 2.0 Server</a> Predice por redes neuronales, sitios de fosforilación en serina, treonina y tirosina para proteínas de eucariotes.</p>
+  </li>
+</ul>
+
+<p><ol class="bibliography"></ol></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Visualizando resultados para Blast en Mobyle@Pasteur]]></title>
+    <link href="http://friveroll.github.io/blog/2011/05/30/visualizando-resultados-para-blast-en-mobyle-pasteur/"/>
+    <updated>2011-05-30T00:00:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2011/05/30/visualizando-resultados-para-blast-en-mobyle-pasteur</id>
+    <content type="html"><![CDATA[<p>Brevemente, BLAST (<strong>B</strong>asic <strong>L</strong>ocal <strong>A</strong>lignment <strong>S</strong>earch <strong>T</strong>ool) es un método de búsqueda por homología, en el cuál se reta a la base de datos con una secuencia problema (query), para que encuentre secuencias relacionadas a nuestra secuencia problema.</p>
+
+<p>Los resultados que BLAST arroja, son alineamientos pareados junto con los datos de la posición de la secuencia problema (<em>query</em>) con la secuencia que el programa encontró de la base de datos.</p>
+
+<p>Uno de los problemas para hacer un alineamiento múltiple de las secuencias que encontramos en BLAST, es que los resultados solo arrojan links a las secuencias que nos interesan, de modo que hay que recuperar las secuencias una por una y además al hacer esto obtenemos la secuencia completa con residuos adicionales que no corresponden a la región que nos interesa (<em>match</em>) y por tanto obtenemos secuencias con una longitud distinta, lo cuál no es muy deseable para un alineamiento múltiple.</p>
+
+<p>Así que si queremos visualizar los datos en forma de un alineamiento múltiple o generar archivos fasta con las secuencias alineadas, podemos utilizar MView el cual podemos descargar e instalar localmente en una maquina con linux, o también lo podemos utilizar en el portal <a href="http://mobyle.pasteur.fr">Mobyle@pasteur</a>.</p>
+
+<p>Para hacer este análisis pueden seguirse los siguientes pasos:</p>
+
+<ul>
+  <li>Ir a <a href="http://mobyle.pasteur.fr">Mobyle@pasteur</a>.</li>
+  <li>En la pestaña program seleccionamos, database&gt;homology&gt;blast2
+<img src="/images/blast_1.png" /></li>
+  <li>Ahora en la interfase web de blast2, seleccionamos como en la imagen: 
+<img src="/images/blast_2.png" />- Blast program: <strong>blastp</strong></li>
+  <li>Proteín db: <strong>uniprot_sb</strong></li>
+  <li>En la sección <em>query sequence/query</em>, para cargar la secuencia de ejemplo en la base de datos seleccionamos DB, después en la lista desplegable de abajo seleccionamos la base de datos uniprot y en el cuadro diálogo escribimos P25044 y damos click en <em>Select</em>.
+<img src="/images/blast_3.png" /></li>
+  <li>Ahora el portal nos mostrará esta secuencia en el cuadro de diálogo más grande.
+<img src="/images/blast_4.png" /></li>
+  <li>Ahora, vamos hacia la parte de arriba de la ventana y damos click en <em>Run</em>.
+<img src="/images/blast_5.png" /></li>
+  <li>Y ahora el portal nos muestra los resultados.
+<img src="/images/blast_6.png" /></li>
+  <li>Podemos ver que existen tres opciones para visualizar los resultados, como texto, html y de manera visual.</li>
+  <li>Seguido de donde están los resultados en texto, hay una lista desplegable seguida del botón <em>further analysis</em>.</li>
+  <li>Ahora seleccionamos de la lista mview(blast)&gt;Further analysis.
+<img src="/images/blast_7.png" /></li>
+  <li>Enseguida nos aparecerá la interfase web para mview con los resultados de blast, obtenidos anteriormente
+<img src="/images/blast_8.png" /></li>
+  <li>Hay dos opciones que me parecen útiles para dar formato a los resultados de blast, por defecto está seleccionado html, lo que nos mostrará un alineamiento coloreado de la secuencias alineadas en blast. Pero si deseamos seguir trabajando con la secuencia, tenemos que obtener un archivo fasta, con todas las secuencias alineadas. Claro que también como podrán darse cuenta, hay muchas opciones, para poder filtrar las secuancias que queremos obtener, de momento solo vamos a usar otro programa para ver los resultados.</li>
+  <li>Seleccionamos <em>Pearson/FASTA</em> en el menú desplegable de la sección <em>Output format (-out)</em> 
+<img src="/images/blast_9.png" /></li>
+  <li>Y damos click en <em>Run</em>.</li>
+  <li>Ahora podemos ver como resultado un archivo con formato fasta de las secuencias.
+<img src="/images/blast_10.png" /></li>
+  <li>De aqui, podemos seguir haciendo análisis filogenéticos u obtener estadísticas sobre el alineamiento, pero en este ejemplo, vamos a reformatear estos resultados con un programa de la suite <strong>EMBOSS</strong>, llamado <strong>showalign</strong>.</li>
+  <li>Similar a lo que hicimos para mandar los resultados de blast a mview, ahora vamos a seleccionar showalign(sequence).
+<img src="/images/blast_11.png" />
+<img src="/images/blast_12.png" /></li>
+  <li>Utilizando <strong>advanced options</strong> podemos seleccionar varias opciones para como queremos visualizar el alineamiento, como por ejemplo la scoring matrix y como queremos ver los residuos que no son idénticos
+<img src="/images/blast_13.png" />
+<img src="/images/blast_14.png" /></li>
+  <li>Por ejemplo podemos mostrar en los resultados los residuos similares y también ordenarlos de acuerdo a su similaridad con estas opciones
+<img src="/images/blast_15.png" /></li>
+  <li>Para obtener el siguiente resultado:
+<img src="/images/blast_16.png" /></li>
+</ul>
+
+<p><ol class="bibliography"></ol></p>
+]]></content>
+  </entry>
+  
+</feed>

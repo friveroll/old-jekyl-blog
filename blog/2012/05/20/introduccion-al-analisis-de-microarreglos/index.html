@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>The Grumpy Biochemist</title>
+  <title>Introducción al análisis de microarreglos - The Grumpy Biochemist</title>
   <meta name="author" content="Felipe Antonio Riveroll Aguirre">
 
   
-  <meta name="description" content="La transferencia de proteínas o ácidos nucléicos a una membrana inmovilizante, es referida como “blotting”, la transferencia puede ser realizada por &hellip;">
+  <meta name="description" content="Los datos que utilizaremos vienen de un estudio de Chiaretti et al. sobre la leucemia linfoblastica aguda (ALL), la cual fue conducida con chips de &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://friveroll.github.io/">
+  <link rel="canonical" href="http://friveroll.github.io/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script src="/javascripts/modernizr-2.0.js"></script>
@@ -90,793 +90,12 @@ MathJax.Hub.Config({
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2016/06/06/western-blotting-parte-ii-blotting/">Western Blotting Parte II: Blotting</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2016-06-06T23:00:00-05:00" pubdate data-updated="true">Jun 6<span>th</span>, 2016</time>
-        
-         | <a href="/blog/2016/06/06/western-blotting-parte-ii-blotting/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>La transferencia de proteínas o ácidos nucléicos a una membrana inmovilizante, es referida como “<em>blotting</em>”, la transferencia puede ser realizada por difusión molecular, por un flujo de buffer inducido por la succión (microfiltración) o acción capilar, el método utilizado de manera más frecuente es la electrotransferencia.</p>
-
-<p>La <em>difusión</em> es un método simple pero muy ineficiente para aplicar a la mayoría de las transferencias, exepto para las transferencias de geles de agarosa. Generalmente las proteínas separadas en geles de poliacrlilamida se procesan por electroblotting, que utiliza la furza motriz de un campo eléctrico para que las proteínas eluyan desde el gel para inmovilizarlos en una matriz. Este método es rápido, eficiente y mantiene una alta resolución del patrón de bandas de las proteínas separadas por electroforesis.</p>
-
-<p>Existen dos principales configuraciones para este método:</p>
-
-<ul>
-  <li><a href="http://www.benchfly.com/video/34/western-blot-transfer-wet-apparatus/">Transferencia húmeda</a>: En la transferencia húmeda, el gel y la membrana se ponen en forma de sandwich entre la esponja y el papel (esponja/papel filtro/membrana/gel/papel filtro/esponja) y todo está sujeto firmemente, después de asegurarse que no existen burbujas de aire entre el gel y la membrana. El sandwich se sumerge en el buffer de transferencia al cuál se le aplica un campo eléctrico. Las proteínas cargadas negativamente viajan a través del electrodo cargado positivamente, pero la membrana las detiene, al unirlas previniendo que sigan avanzando.</li>
-</ul>
-
-<p><img src="/images/transferencia_humeda.png" alt="Transferencia húmeda" /></p>
-
-<ul>
-  <li><a href="http://www.benchfly.com/video/95/how-to-use-a-semi-dry-transfer-apparatus/">Transferencia semi-seca</a>: Para este tipo de transferencia, el gel y la membrana se colocan en forma de sandwich horizontalmente entre dos papeles filtro gruesos mojados con buffer (placa del ánodo/papel filtro/membrana/gel/papel filtro/placa del cátodo), los cuales están en contacto directo con dos placas sólidas de electrodos que están muy cerca una de la otra (la distancia entre ellas se limita solamente por el grosor del sandwich), también debe cuidarse en este método que no se generen burbujas entre el gel y la membrana, esto se hace después de colocar el segundo papel filtro haciendo rodar un pequeño tubo de ensaye por la superficie del filtro. El término semi-seca se refiere a la limitada cantidad de buffer.</li>
-</ul>
-
-<p><img src="/images/transferencia_semi-seca.png" alt="Transferencia semi-seca" /></p>
-
-<p>En la siguiente tabla podemos ver una comparación del buffer de transferencia para ambos métodos:</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: right"> </th>
-      <th style="text-align: center">Húmeda</th>
-      <th style="text-align: center">Semi-Seca</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: right">Tris base</td>
-      <td style="text-align: center">25 mM</td>
-      <td style="text-align: center">50 mM</td>
-    </tr>
-    <tr>
-      <td style="text-align: right">Glicina</td>
-      <td style="text-align: center">192 mM</td>
-      <td style="text-align: center">40 mM</td>
-    </tr>
-    <tr>
-      <td style="text-align: right">pH</td>
-      <td style="text-align: center">8.2</td>
-      <td style="text-align: center">N/D</td>
-    </tr>
-    <tr>
-      <td style="text-align: right">SDS</td>
-      <td style="text-align: center">N/D</td>
-      <td style="text-align: center">0.04 % (p/v)</td>
-    </tr>
-    <tr>
-      <td style="text-align: right">Metanol</td>
-      <td style="text-align: center">20 %</td>
-      <td style="text-align: center">20 %</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Como puede notarse la transferencia Semiseca utiliza menos glicina y permite una transferencia más rápida pero no es muy efectiva para proteínas mayores a 120 KDa.</p>
-
-<p>En la siguiente tabla podemos ver una comparación entre ambos sistemas</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: left"> </th>
-      <th style="text-align: left"><em>Transferencia Húmeda</em></th>
-      <th style="text-align: left"><em>Transferencia Semi-seca</em></th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">Flexibilidad</td>
-      <td style="text-align: left">Condiciones flexibles de voltaje, tiempo de blotting y requerimentos de enfriamiento del buffer; posiciones flexibles para los electrodos</td>
-      <td style="text-align: left">Dedicada a la transferencia rápida con un volúmen mínimo de buffer, sin necesidad de enfriamiento.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Resultados cuantitativos Vs. cualitativos</td>
-      <td style="text-align: left">Transferencia cuantitativa de proteínas de bajo peso molecular bajo condiciones que permitan la unión eficiente a la membrana.</td>
-      <td style="text-align: left">Algunas de las moléculas de bajo peso molecular pueden ser transferidas a través de la membrana sin unirse cuantitativamente.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Rango de peso molecular</td>
-      <td style="text-align: left">Amplio rango de peso molecular</td>
-      <td style="text-align: left">Eficiencia variable de transferencia para proteínas mayores a 120 KDa (puede ser mejorado con un sistema de buffer discontinuo); las proteínas de bajo peso molecular pueden ser transferidas a través de la membrana.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Tiempo de transferencia</td>
-      <td style="text-align: left">Tiempo extendido (hasta 24 hr) posible sin la depleción del buffer; pueden obenerse transferencias rápidas (15 a 60 min) bajo condiciones de alta intensidad.</td>
-      <td style="text-align: left">Transferencias rápidas; no puede haber transferencias extendidas debido a la depleción del buffer</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Control de temperatura</td>
-      <td style="text-align: left">Regulación específica de la temperatura con un refrigerante y agua refrigerada a través de un recirculador; que permite transferencias a bajas temperaturas ( $4$ a $10^o C$ ).</td>
-      <td style="text-align: left">No es posible la regulación de la temperatura por enfriamiento externo.</td>
-    </tr>
-    <tr>
-      <td style="text-align: left">Capacidad amortiguadora</td>
-      <td style="text-align: left">Hasta 10 a 12 L o tan bajo como 450 mL; la duración del tiempo para la transferencia no está restringida por una capacidad de buffer limitada.</td>
-      <td style="text-align: left">Mínimo 250 ml por experimento; se reduce el costo de los reactivos y el tiempo del experimento</td>
-    </tr>
-  </tbody>
-</table>
-
-<p>Para la transferencia <em>semi-seca</em>, una concentración elevada de SDS, puede bloquear la unión de las proteínas a las membranas, pero el 0.01% facilita la transferencia, especialmente de proteínas grandes. La adición del 20% de metanol contraresta el hinchamiento del gel e incrementa la unión de proteínas obteniendo una buena resolución de bandas, además el metanol disminuye la posibilidad de que las proteínas se salgan del gel e incrementa su exposición a la membrana al incrementar la capacidad para que se peguen quitando el SDS de la superficie (esto beneficia a las proteínas más pequeñas) de la membrana, sin embargo, también impide la transferencia y deben ser balanceadas las concentraciones para esto. También deben ser equilibradas la corriente y el tiempo de transferencia dado que geles gruesos de poliacrilamida y moléculas hidrofóbicas y grandes (como los receptores) toman más tiempo de elución, mientras que, contrariamente las proteínas pequeñas transferidas a membranas para blotting con un tamaño grande del poro pueden pasar a través de la membrana si existe una saturación local para la unión de proteínas, causando su pérdida. </p>
-
-<p>Además de lo mencionado anteriormente los siguientes factores determinan si una proteína se unirá durante la transferencia se enumeran a continuación.</p>
-
-<ul>
-  <li>Velocidad de elución desde el gel
-    <ul>
-      <li>Masa</li>
-      <li>Valores de corriente/voltaje</li>
-      <li>Propiedades fisicoquímicas de la proteína
-        <ul>
-          <li>hidrofobicidad</li>
-          <li>punto isoeléctrico</li>
-        </ul>
-      </li>
-      <li>Modificaciones post-traduccionales, como por ejemplo el grado de glicosilación</li>
-      <li>Cantidad de SDS asociado a las proteínas: el SDS cubre a la proteína y le da una densidad de carga negativa
-        <ul>
-          <li>Gracias a esto la proteína se une rápidamente por la membrana</li>
-          <li>Limita la oportunidad para interactuar entre la membrana y las proteínas para su unión.</li>
-          <li>Permite que se solubilizen las proteínas y esto ayuda a las proteínas grandes como las proteínas de membrana.</li>
-        </ul>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p>Se utilizan dos tipos de membranas, las de nitrocelulosa, con tamaño de poro de 0.45 $\mu  m$ y floruro de polivinilidieno ó PVDF (polyvinylidene difluoride), poseen un tamaño de poro de 0.45 y 0.22 $\mu  m$  las cuales presentan solo pequeñas diferencias respecto a su capacidad de unión y la compatibilidad para el teñido. Su capacidad de unión a proteínas está al rededor de 100-200 $\frac{\mu g}{cm^{-2}}$.</p>
-
-<p>Una vez que las proteínas se han transferido a la membarana, son más accesibles para varios ligandos que cuando estaban en el gel. En el blot ( la matriz inmovilizante que contiene las proteínas transferidas) se hace reaccionar con distintas sondas, tales como anticuerpos para la identificación del antígeno correspondiente. El blot generalmente requiere una cantidad pequeña de reactivos, las proteínas transferidas en las membranas pueden almacenarse por varias semanas después de su uso y también pueden ser utilizadas para análisis sucesivos.</p>
-
-<ol class="bibliography"><li><span id="biorad-pbguide">Biorad Protein Blotting Guide: A guide to transfer and detection. Retrieved from http://friveroll.github.io/pdfs/biorad-pbguide.pdf</span></li>
-<li><span id="citeulike:14067592">Kurien, Bt., &#38; Scofield. (2015). Western Blotting: An Introduction. In B. T. Kurien &#38; R. H. Scofield (Eds.), <i>Western Blotting</i>, Methods in Molecular Biology (Vol. 1312, 17–30). Springer New York. doi:10.1007/978-1-4939-2694-7_5</span></li>
-<li><span id="eltit">Bjerrum, O. J., &#38; Heegaard, N. Hh. (2001). Western Blotting: Immunoblotting. In <i>eLS</i>. John Wiley &#38; SonsLtd. doi:10.1002/9780470015902.a0000995.pub2</span></li>
-<li><span id="Towbin01091979">Towbin, H., Staehelin, T., &#38; Gordon, J. (1979). Electrophoretic transfer of proteins from polyacrylamide gels to nitrocellulose sheets: procedure and some applications. <i>Proceedings of the National Academy of Sciences</i>, <i>76</i>(9), 4350-4354. Retrieved from http://www.pnas.org/content/76/9/4350.abstract</span></li>
-<li><span id="WB-Garcia">Nieto García, S. La ciencia del Western Blott: Estrategias para mejorar los WB’s. Retrieved from http://friveroll.github.io/pdfs/WB.pdf</span></li></ol>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2015/03/02/western-blotting-parte-i-electroforesis/">Western Blotting Parte I: Electroforesis</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2015-03-02T12:00:00-06:00" pubdate data-updated="true">Mar 2<span>nd</span>, 2015</time>
-        
-         | <a href="/blog/2015/03/02/western-blotting-parte-i-electroforesis/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>El western blott o inmunoblott es un inmunoensayo en el cuál anticuerpos específicos son utilizados como sondas marcadas. Esta técnica permite comparar la abundancia de las proteínas separadas por electroforesis en gel, utilizando carriles distintos para cada una de las muestras.</p>
-
-<p>La técnica puede dividirse en 5 pasos</p>
-
-<ul>
-  <li>Electroforesis</li>
-  <li>Blotting</li>
-  <li>Inmunodetección</li>
-  <li>Imagen</li>
-  <li>Análisis (Cuantificación)</li>
-</ul>
-
-<h2 id="electroforesis">Electroforesis</h2>
-
-<p>Cualquier molécula cargada en solución, migrará en un campo eléctrico aplicado, un fenómeno conocido como electroforesis. La velocidad de migración dependerá del campo eléctrico y de la densidad de carga de la molécula, esto es, la relación de masa/carga. Debido a que las proteínas disueltas tienen una carga neta, una solución que contiene una mezcla de proteínas, puede en teoría ser resuelta por una electroforesis, dado que las proteínas distintas con densidades de carga diferentes, migran hacia los electrodos apropiados a diferentes velocidades, sin embargo una separación efectiva nunca se alcanza dado que todas las proteínas están inicialmente distribuídas en la solución. La respuesta a este problema, es cargar la solución de proteínas en un amortiguador (buffer), permitiendo que las proteínas con densidades de carga distintas migren a zonas discretas.</p>
-
-<p>La electroforesis puede ser de una sola dimensión (p.e un solo plano de separación) o de dos dimensiones, la separación bidimensional de proteínas puede ser utilizada para resolver todas las proteínas de una célula.</p>
-
-<p>Si las proteías se separan en un gel de poliacrilamida el procedimiento es abreviado como SDS-PAGE (para Sodium Dodecyl Sulfate PolyAcrylamide Gel Electroforesis).</p>
-
-<p>Los geles de poliacrilamida son formados por la polimerización de dos compuestos, la Acrilamida y la N-N-metilenbisacrilamida (o para abreviar Bis). Bis es un agente de anclaje cruzado (más cross linking) para los geles. La polimerización es inicada por la adición de persulfato de amonio junto con DMAP o TEMED. Los geles son redes tridimensionales, neutras e hidrofílicas de hidrocarburos largos entrecruzados por grupos metileno.</p>
-
-<p>La separación de las moléculas dentro del gel es determinada por el tamaño de los poros formados en el gel. El tamaño del poro es determinado por dos factores: - La cantidad total de acrilamida presente designada como %T. - La proporción del agente de entrcruzamiento (cross linker). Conforme aumenta la cantidad de acrilamida presente, disminuye el temaño del poro. Los geles se determinan como soluciones en porcentaje y tienen dos parámetros necesarios. El total de acrilamida es dado como porcentaje (w/v) de acrilamida más la bis-acrilamida.</p>
-
-<p>Regla de oro: Mientras más pequeña sea la proteína de interés, deberá ser mayor el porcentaje de mono/bis. Mientras más grande la proteína de interés, menor será el porcentaje mono/bis.</p>
-
-<table>
-  <thead>
-    <tr>
-      <th style="text-align: center">Tamaño de proteína (kDa)</th>
-      <th style="text-align: center">Porcentaje de Gel (%)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: center">14 - 40</td>
-      <td style="text-align: center">20</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">12 - 45</td>
-      <td style="text-align: center">15</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">10 - 70</td>
-      <td style="text-align: center">12.5</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">15 - 100</td>
-      <td style="text-align: center">10</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">25 - 200</td>
-      <td style="text-align: center">8</td>
-    </tr>
-  </tbody>
-</table>
-
-<p><em>Nota</em>: La acrilamida es una potente neurotoxina acumulativa: utilize guantes todo el tiempo. Coloque los geles en el tanque de electroforesis como lo indica el fabricante bañado en buffer.</p>
-
-<ol class="bibliography"><li><span id="abcamwb">Abcam Definitive guide to western blot. Retrieved from http://friveroll.github.io/pdfs/wb-beginner.pdf</span></li>
-<li><span id="eltit">Bjerrum, O. J., &#38; Heegaard, N. Hh. (2001). Western Blotting: Immunoblotting. In <i>eLS</i>. John Wiley &#38; SonsLtd. doi:10.1002/9780470015902.a0000995.pub2</span></li>
-<li><span id="Hames1998">Hames, B. D. (1998). <i>Gel electrophoresis of proteins: a practical approach</i>. Practical approach series. Oxford University Press. Retrieved from https://books.google.com.mx/books?id=jtNqAAAAMAAJ</span></li>
-<li><span id="Twyman2013">Twyman, R. M. (2013). <i>Principles of Proteomics</i>. Taylor &#38; Francis Group. Retrieved from https://books.google.com.mx/books?id=fTMmAgAAQBAJ</span></li></ol>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/06/23/modelos-animales-de-estres-en-farmacologia/">Modelos Animales De Estrés en Farmacología</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-06-23T10:30:00-05:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2014</time>
-        
-         | <a href="/blog/2014/06/23/modelos-animales-de-estres-en-farmacologia/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Los modelos animales, ofrecen la mejor aproximación, para entender los procesos de estrés en organismos biopsicosociales. 
-En el laboratorio, se utilizan estresores psicológicos y físicos. Ejemplos de los últimos, son la restricción corporal y la exposición a un ambiente frío. Los procedimientos de estrés psicológico usualmente implican un proceso de aprendizaje, que requiere de más de una condición de tratamiento experimental, de manera que los componentes psicológicos, puedan ser extraídos puramente del estresor físico. </p>
-
-<p>Algunos de los procedimientos utilizados más comúnmente en el laboratorio son los siguientes.</p>
-
-<p>Estresores físicos: Restricción, frío, calor, nadar, ruido, prenatal, destete temprano, hacinamiento, inanición, movimiento, actividad forzada, manipulación, inducido por drogas e inducido por virus.</p>
-
-<p>Estresores psicológicos: Predecibilidad y condicionamiento al miedo, control y afrontamiento, comunicación emocional, conflicto, agresión/defensa y novedad 
-Para evaluar los efectos del estrés, producidos por estos procedimientos, se utilizan medidas dependientes, que representan los índices del estresor y consecuentemente definen la respuesta del estrés, para un estudio en particular, algunas de las más frecuentes se listan a continuación:
-Respuestas de comportamiento: comportamiento de beber y comer, actividad y respuestas aprendidas.
-Respuestas psicológicas: Cambios en el peso corporal, peso del timo y la glándula adrenal, ulceración gástrica, corticosterona plasmática, Dopamina, noradrenalina y producción de serotonina.</p>
-
-<p>El procedimiento más utilizado experimentalmente, para la inducción de estrés utiliza la inmovilización del animal o restricción. Asimismo permite examinar de manera eficiente, síndromes  reproducibles, tanto de disfunciones centrales como periféricas y enfermedades, así como también, la detección de cambios en las hormonas adrenocorticitrópicas, corticoesterona, proteína c-fos, desensibilización de la respuesta del eje HPA y la expresión de la citocinesis. Por otro lado es un procedimiento económico y raramente involucra daño al animal sometido, una vez que termina el periodo de estrés. </p>
-
-<p>La restricción es indolora y carece de debilitamiento duradero. La inmovilización, una variante de la restricción restringe el grado de locomoción, pero no intenta limitar específicamente el movimiento de las extremidades, al igual que lo hacen la mayoría de las técnicas de restricción. Tanto la restricción como la inmovilización constituyen operaciones físicas, que son importantes como modelos de estrés psiquiátrico.</p>
-
-<p>Los cambios psicológicos y fisiológicos asociados con la restricción, parecen resultar de la ansiedad y la naturaleza aversiva de permanecer inmovilizado, en lugar de la activación concurrente de mecanismos de dolor o causar un malestar irreversible.</p>
-
-<p>Común a todos los métodos de restricción e inmovilización de movimiento incluye pero no está necesariamente limitada a lo siguiente: (a) el animal, es colocado en un cono rígido de plexiglás; (b) el animal es colocado en un decapicono (un tubo de plástico, cónico afilado); (c) las extremidades son pegadas con cinta o atadas a una tabla; (d) el animal es colocado en una malla de alambre que lo contiene; (e) un panel de plástico o de plexiglás es utilizado para restringir los movimientos motores  en la esquina de una jaula; (f) el animal es colocado en una botella de plástico o una jaula de restricción; (g) el animal es envuelto en un alambre de gasa; (h) el animal es enrollado en una toalla, exponiendo solamente la cola y el hocico.</p>
-
-<p>Los cambios fisiológicos observados más comúnmente incluyen, el incremento en los niveles de ACTH y corticoesterona, sin embargo esto involucra un decremento en la adquisición de la memoria y la retención, así como también cambios en la motivación. 
-Para que pueda ser efectivo el procedimiento de restricción tienen que controlarse las siguientes variables: frecuencia, duración e intensidad del estresor.
-La frecuencia de un estresor (definido como el número de sesiones por día o semana) ha sido el punto central de muchos estudios con poca preocupación, del mínimo requerido para producir una respuesta a estrés. La severidad del método de restricción determina si el sujeto tiene la oportunidad de habituarse al estresor y disminuir la fuerza de la respuesta de estrés. La frecuencia afecta las variables del evento, así como también la progresión de distintos hallazgos. La aplicación de una sola sesión de estrés, parece ser más común, y es seguida al sacrificio del animal. Sin embargo un número limitado de estudios se preocupan por los efectos a largo plazo del estrés. Frecuentemente se utiliza un periodo de tres semanas de estrés diario de una sola sesión, y los hallazgos reportados generalmente tienden a llegar a la conclusión de que es mejor el período de estrés, en lugar de utilizar intervalos regulares.</p>
-
-<p>La duración, refiere a la longitud de la exposición al estrés en cada sesión, el incremento de la duración no necesariamente implica un incremento de la experiencia de estrés.
-La intensidad es la magnitud de inmovilización o restricción al que el roedor es sujeto. La variación de la intensidad en los tipos de restricción empleada, puede sugerir un cambio en la experiencia del roedor al estrés psicológico. La restricción física causa a un animal a sentir incrementada la sensación de peligro, provocando la necesidad de escapar, o si esto es dibido a una restricción física, el animal es capaz de discriminar que está previniendo su movimiento y puede entonces intentar contrarrestarlo. Los investigadores han especulado que los animales que están restringidos físicamente, pueden adaptarse mejor, debido a que pueden aprender la causa de la restricción, distinto de aquellos que se les administra un fármaco que les impide moverse</p>
-
-<ol class="bibliography"><li><span id="Buynitsky2009">Buynitsky, T., &#38; Mostofsky, D. I. (2009). Restraint stress in biobehavioral research: Recent developments. <i>Neuroscience &#38; Biobehavioral Reviews</i>, <i>33</i>(7), 1089–1098. doi:10.1016/j.neubiorev.2009.05.004</span></li>
-<li><span id="Holsboer2010">Holsboer, F., &#38; Ising, M. (2010). Stress Hormone Regulation: Biological Role and Translation into Therapy. <i>Annual Review of Psychology</i>, <i>61</i>(1), 81–109. doi:10.1146/annurev.psych.093008.100321</span></li>
-<li><span id="Paré1993413">Paré, W. P., &#38; Glavin, G. B. (1993). Chapter 16 - Animal models of stress in pharmacology . In F. van Haaren (Ed.), <i>Methods in Behavioral Pharmacology</i>, Techniques in the Behavioral and Neural Sciences  (Vol. 10, 413 - 441). Elsevier. doi:http://dx.doi.org/10.1016/B978-0-444-81444-9.50021-3</span></li>
-<li><span id="Radek2010">Radek, K. A. (2010). Antimicrobial anxiety: the impact of stress on antimicrobial immunity. <i>Journal of Leukocyte Biology</i>, <i>88</i>(2), 263–277. doi:10.1189/jlb.1109740</span></li></ol>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro/">Física Con Análisis De Video Utilizando Logger Pro</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-01-06T10:44:00-06:00" pubdate data-updated="true">Jan 6<span>th</span>, 2014</time>
-        
-         | <a href="/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>La tecnología de análisis de video permite a los estudiantes hacer mediciones precisas de la posición de un objeto en el transcurso del tiempo durante su movimiento. Los Maestros de Física y docentes de todos los niveles, encontrarán que esta tecnología hace posible un análisis detallado de situaciones físicas que normalmente no sería posible analizar debido a las dificultades de medición, tiempo, costo y/o consideraciones de seguridad. Los Maestros de matemáticas también podrán descubrir que el análisis de video es un método económico y útil para estudiar ejemplos de fenómenos del mundo real que pueden ser descritos por gráficas y relaciones lineales, cuadráticas, hiperbólicas y sinusoidales.</p>
-
-<p>El Análisis de Video consiste en utilizar una cámara de video para “registrar“ los datos de posición y tiempo, que pueden ser utilizados para modelar matemáticamente todo lo relacionado con la posición y/o el movimiento del objeto. Utilizando las características de avance cuadro por cuadro del video digital y marcando el cambio de posición de un objeto cuadro por cuadro, los estudiantes serán capaces de determinar de una manera precisa los detalles del movimiento estudiado. Una vez que se han obtenido los datos que consisten en el tiempo y posición del objeto de estudio, los estudiantes pueden determinar la velocidad y la aceleración del objeto, si la masa del objeto es conocida se pueden obtener valores tales como la energía cinética y potencial, fuerza, momento, etc. Y de esta forma obtener gráficas de los datos registrados y calculados.</p>
-
-<p>La versión de prueba de Logger Pro puede ser descargada desde esta dirección
-<a href="http://www.vernier.com/downloads/logger-pro-demo/">http://www.vernier.com/downloads/logger-pro-demo/</a></p>
-
-<p><em>para utilizar las características de análisis de video debe ser instalado quicktime</em>
-<a href="http://support.apple.com/downloads/#quicktime">http://support.apple.com/downloads/#quicktime</a></p>
-
-<div class="embed-video-container"><iframe src="http://www.youtube.com/embed/hvujbVbqIYg "></iframe></div>
-
-<p>A continuación se presentan una serie de instrucciones para utilizar Logger Pro analizando videos de movimiento.</p>
-
-<ol>
-  <li>Abrir Logger Pro.</li>
-  <li>Insertar el Video
-Insertar &gt; Video &gt; Abra el folder donde se ubica la película &gt; Seleccione el video que
-desea analizar.</li>
-  <li>Dar click en el ícono en la esquina inferior derecha que tiene tres puntos rojos.
-Si usted ubica el puntero del ratón sobre él muestra la leyenda “Activar/Desactivar análisis
-video”</li>
-  <li>Reorganizar la página para arreglar todos sus elementos.
-(Página &gt; Auto organizar)</li>
-  <li>Fijar la escala para el video.
-De click en el ícono que parece una regla
-Encuentre el objeto de referencia en el video para establecer la escala
-Ingrese la distancia en metros que corresponda con su objeto de referencia.</li>
-  <li>Añadir los puntos que marcan la trayectoria del objeto.
-Seleccione el ícono de dice “Añadir Punto”
-Mueva el tiempo del video en el momento que usted desee grabar el movimiento.
-Utilizando las barras cruzadas (+) de click en una parte específica en el objeto. El video
-avanza automáticamente al siguiente cuadro para seguir trazando la trayectoria.
-Seleccione de nuevo el mismo punto en el objeto para registrar el cambio de posición.</li>
-  <li>Establecer el origen de coordenadas de la gráfica.
-Click en el ícono que dice “Establecer Origen”
-Entonces de click en el punto de la película que usted quiere que represente el origen de la
-gráfica.
-En este punto usted debe ya de tener una gráfica con un eje horizontal para el
-tiempo (s) y un eje vertical para la distancia (m) con dos hileras de puntos.
-Un conjunto de puntos representa la posición horizontal del objeto (X(m)) vs. Tiempo(s))
-El otro conjunto de puntos representa la posición vertical del objeto (Y(m)) vs. Tiempo(s)).</li>
-  <li>Si existen previos debe de sincronizar los datos con el tiempo del video.
-En el video vaya al cuadro que represente el inicio del movimiento.
-De click en el botón de la esquina inferior derecha del video que dice “Sinc película a
-gráfica”.
-Cambie el conjunto de datos a 0 segundos. Verifique que esté seleccionada la
-casilla “Sincronizar colec. datos análisis video con colec. datos seleccionada” de click en
-OK</li>
-  <li>Vincular la gráfica al video.
-Analizar &gt; Examinar
-Esta es una de las mejores características de LoggerPro a medida que usted
-desplaza el ratón en la gráfica, el objeto en el video se mueve. Usted puede ver de
-manera simultánea la posición del objeto y sus coordenadas en la gráfica.</li>
-  <li>Determinar la velocidad horizontal y/o vertical del objeto en el video.
-Analizar &gt; Ajuste Lineal
-Si los puntos son lineales, la pendiente de la línea es la velocidad, o la rapidez.
-Si los puntos de Posición vs. tiempo se asemejan más a una curva que a una línea, usted
-puede determinar la aceleración del objeto.</li>
-  <li>Copiar la página.
-Página &gt; Añadir Página… (Seleccione “Copiar página actual”, click en OK)</li>
-  <li>Encontrar la aceleración horizontal y/o vertical del objeto.
-Analizar &gt; Ajuste Lineal
-La aceleración es la pendiente de la gráfica de velocidad, un objeto que no está acelerando
-tiene una pendiente cercana a cero.</li>
-  <li>Otra manera de calcular la velocidad promedio horizontal y/o vertical de un objeto
-Analizar &gt; Estadísticas
-Esto muestra el mínimo, máximo, promedio y mediana para el conjunto de datos.</li>
-  <li>¿Desea cambiar los valores negativos por positivos? Esto puede ser útil para el
-movimiento de caída libre dado que Logger Pro muestra la velocidad como negativa
-porque el objeto va hacia abajo.
-En la tabla de datos, dé doble click en el encabezado de la columna que desee cambiar de
-valores negativos a positivos
-En la caja de la ecuación, escriba “-“ antes de las palabras derivada (“X”, tiempo), para
-cambiar los valores de la velocidad.</li>
-  <li>¿Desea añadir un título para su gráfica?
-Dé click derecho en la gráfica, Entonces seleccione “Opciones gráfica…” Escriba el título
-que desea para su gráfica y de click en aplicar.</li>
-  <li>Otra opción útil en “Opciones gráfica…” es la pestaña de “opciones eje”. En lugar de
-seleccionar “Autoescala” seleccione “Autoescala desde 0” o “Manual”</li>
-  <li>Puede cambiar el color y la forma de los puntos de datos haciendo doble click en el
-encabezado de la columna de la tabla de datos, dando click en la pestaña de “Opciones” y
-seleccionado entonces el color y la forma/estilo que usted quiera.</li>
-  <li>Usted puede añadir puntos para la trayectoria de un segundo y tercer objeto en el video y
-analizar también su movimiento. De click en el ícono “Establecer punto activo” en la barra
-que se ubica a la derecha de el video. Entonces regrese al paso 6 y repita conforme sea
-necesario desde ahi.</li>
-  <li>Otros íconos en la barra ubicada a la derecha del video permiten esconder los puntos de
-trayectoria en el video, así como también la escala y el origen.</li>
-  <li>Puede ver la vista preliminar de impresión utilizando el menú Archivo &gt; Previsualización
-Impresión para ver como se vería impreso su documento.</li>
-  <li>Vea si un ajuste de curva funciona mejor que un ajuste lineal en (Analizar &gt; Ajuste de
-Curva).</li>
-  <li>Intente sincronizar la gráfica con datos recolectados por un sensor Vernier (sensor de
-movimiento, etc.)</li>
-  <li>Cree una nueva columna, ingrese la ecuación, y determine la posición del objeto en el
-futuro. (Datos &gt; Nueva columna calculada)</li>
-  <li>De click en (Analizar &gt; Repetir) para observar el video y la generación los datos y su
-graficación simultáneamente</li>
-  <li>De click en (Analizar &gt; Interpolar) para determinar los valores y otras posiciones de la
-gráfica.</li>
-</ol>
-
-<p>Existen más videos disponibles para el análisis, en esta dirección:
-<a href="http://livephoto.rit.edu/">http://livephoto.rit.edu/</a></p>
-
-<p>El manual de análisis de Video para física se encuentra en la siguiente dirección electrónica:
-<a href="http://www.vernier.com/products/books/pva/">http://www.vernier.com/products/books/pva/</a></p>
-
-<ol class="bibliography"><li><span id="bryan-post">Bryan, J. A. Video Analysis: Real World Investigations for Physics and Mathematics.</span></li>
-<li><span id="bryan-2010">Bryan, J. A. (2010). Investigating the conservation of mechanical energy using video analysis: four cases. <i>Physics Education</i>, <i>45</i>(1), 50–57.</span></li>
-<li><span id="bryan-2006">Bryan, J. A. (2006). Technology for Physics Instruction. Contemporary Issues in Technology and Teacher Education. <i>Contemporary Issues in Technology and Teacher Education</i>, <i>6</i>(2), 230–245.</span></li>
-<li><span id="bryan-2005-a">Bryan, J. A. (2005). Video analysis: Real-world explorations for secondary mathematics. <i>Learning and Leading with Technology</i>, <i>32</i>(6), 22–24.</span></li>
-<li><span id="bryan-2005-b">Bryan, J. A. (2005). Physics instruction using video analysis technology.</span></li>
-<li><span id="bryan-2005-c">Bryan, J. A. (2005). Video analysis software and the investigation of the conservation of mechanical energy. <i>Contemporary Issues in Technology and Teacher  Education</i>, <i>4</i>(3), 248–298.</span></li></ol>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/">Utilizando R Para Analizar Datos De Cinética</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-05-23T21:52:00-05:00" pubdate data-updated="true">May 23<span>rd</span>, 2012</time>
-        
-         | <a href="/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>R es un lenguaje de programación estadístico y gráfico, que através del proyecto bioconductor puede ser usado para analisis bioinformáticos, en esta ocasión lo utilizaremos para graficar y analizar datos cinéticos.</p>
-
-<p>El siguiente tutorial, está basado en el problema 1 del capítulo 4 del libro <em>Biochemical Calculations</em> de <em>Irwin H Segel</em>,  y se mostrará como obtener $V_{max}$ y $Km$ a partir del análisis de los datos cinéticos por la gráfica de Lineweaver-Burk.</p>
-
-<p>Primero generamos los vectores $S$ y $v$ para los datos del problema</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">S <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">2.50e-06</span><span class="p">,</span> <span class="m">3.33e-06</span><span class="p">,</span> <span class="m">4.00e-06</span><span class="p">,</span> <span class="m">5.00e-06</span><span class="p">,</span>
-</span><span class="line">       <span class="m">1.00e-05</span><span class="p">,</span> <span class="m">2.00e-05</span><span class="p">,</span> <span class="m">4.00e-05</span><span class="p">,</span> <span class="m">1.00e-04</span><span class="p">,</span>
-</span><span class="line">       <span class="m">2.00e-03</span><span class="p">,</span> <span class="m">1.00e-02</span><span class="p">)</span>
-</span><span class="line">v <span class="o">&lt;-</span> c<span class="p">(</span><span class="m">24</span><span class="p">,</span> <span class="m">30</span><span class="p">,</span> <span class="m">34</span><span class="p">,</span> <span class="m">40</span><span class="p">,</span> <span class="m">60</span><span class="p">,</span> <span class="m">80</span><span class="p">,</span> <span class="m">96</span><span class="p">,</span> <span class="m">109</span><span class="p">,</span> <span class="m">119</span><span class="p">,</span> <span class="m">120</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Podemos visualizarlos en una tabla de la siguiente manera:</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-<span class="line-number">9</span>
-<span class="line-number">10</span>
-<span class="line-number">11</span>
-<span class="line-number">12</span>
-<span class="line-number">13</span>
-<span class="line-number">14</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">data.frame<span class="p">(</span>S<span class="p">,</span> v<span class="p">)</span> <span class="o">-&gt;</span> datos.cinetica
-</span><span class="line">datos.cinetica
-</span><span class="line">
-</span><span class="line">         S  v
-</span><span class="line"><span class="m">1</span>  <span class="m">2.50e-06</span>  <span class="m">24</span>
-</span><span class="line"><span class="m">2</span>  <span class="m">3.33e-06</span>  <span class="m">30</span>
-</span><span class="line"><span class="m">3</span>  <span class="m">4.00e-06</span>  <span class="m">34</span>
-</span><span class="line"><span class="m">4</span>  <span class="m">5.00e-06</span>  <span class="m">40</span>
-</span><span class="line"><span class="m">5</span>  <span class="m">1.00e-05</span>  <span class="m">60</span>
-</span><span class="line"><span class="m">6</span>  <span class="m">2.00e-05</span>  <span class="m">80</span>
-</span><span class="line"><span class="m">7</span>  <span class="m">4.00e-05</span>  <span class="m">96</span>
-</span><span class="line"><span class="m">8</span>  <span class="m">1.00e-04</span> <span class="m">109</span>
-</span><span class="line"><span class="m">9</span>  <span class="m">2.00e-03</span> <span class="m">119</span>
-</span><span class="line"><span class="m">10</span> <span class="m">1.00e-02</span> <span class="m">120</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Para poder obtener la grafica a partir de los datos anteriores</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">plot<span class="p">(</span>datos.cinetica<span class="p">,</span> main<span class="o">=</span><span class="s">&quot;V Vs. S&quot;</span><span class="p">,</span> xmain<span class="o">=</span><span class="s">&quot;S&quot;</span><span class="p">,</span> ymain<span class="o">=</span><span class="s">&quot;v&quot;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>Ahora necesitamos calcular los recíprocos $(r)$ para $S$ y $v$.</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">r.S <span class="o">&lt;-</span> <span class="m">1</span><span class="o">/</span>S
-</span><span class="line">r.v <span class="o">&lt;-</span> <span class="m">1</span><span class="o">/</span>v
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Graficando los recíprocos</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">plot<span class="p">(</span>r.S<span class="p">,</span> r.v<span class="p">,</span> main<span class="o">=</span><span class="s">&quot;Lineweaver-Burk&quot;</span><span class="p">,</span> xlab<span class="o">=</span><span class="s">&quot;1/[S]&quot;</span><span class="p">,</span>  ylab<span class="o">=</span><span class="s">&quot;1/v&quot;</span><span class="p">,</span> pch<span class="o">=</span><span class="m">20</span><span class="p">,</span> col<span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Ahora necesitamos hacer la regresion lineal de estos datos y añadir la linea correspondiente a la regresión a nuestra gráfica</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">lm<span class="p">(</span>r.v <span class="o">~</span> r.S<span class="p">)</span> <span class="o">-&gt;</span> lineweaver.reg
-</span><span class="line">abline<span class="p">(</span>lineweaver.reg<span class="p">,</span> col<span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Y la grafica final queda de la siguiente forma:</p>
-
-<p><img src="/images/lineweaver.png" /></p>
-
-<p>Cuando calculamos los datos para la regresión lineal, guardamos los resultados en la siguiente variable:</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-<span class="line-number">4</span>
-<span class="line-number">5</span>
-<span class="line-number">6</span>
-<span class="line-number">7</span>
-<span class="line-number">8</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">lineweaver.reg
-</span><span class="line">
-</span><span class="line">Call<span class="o">:</span>
-</span><span class="line">lm<span class="p">(</span>formula <span class="o">=</span> r.v <span class="o">~</span> r.S<span class="p">)</span>
-</span><span class="line">
-</span><span class="line">Coefficients<span class="o">:</span>
-</span><span class="line"><span class="p">(</span>Intercept<span class="p">)</span>          r.S
-</span><span class="line">  <span class="m">8.343e-03</span>    <span class="m">8.344e-08</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Intercept, corresponde a la intersección en $Y$, que para este caso es $\frac{1}{V_{max}}$.</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">interseccion.y <span class="o">&lt;-</span> coef<span class="p">(</span>lineweaver.reg<span class="p">)[</span><span class="m">1</span><span class="p">]</span>
-</span><span class="line">r.Vmax <span class="o">&lt;-</span> interseccion.y
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Así que para calcular $V_{max}$</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">Vmax <span class="o">&lt;-</span> <span class="m">1</span><span class="o">/</span>r.Vmax
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-<p>La pendiente está en <em>r.S</em> por lo tanto.</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">pendiente <span class="o">&lt;-</span> coef<span class="p">(</span>lineweaver.reg<span class="p">)[</span><span class="m">2</span><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Para calcular la interseccion en $x$, necesitamos encontrar el valor de $x$ cuando $y = 0$, para la ecuación de la linea recta</p>
-
-<script type="math/tex; mode=display">y = (pendiente)x + interseccion.y</script>
-
-<script type="math/tex; mode=display">0 = (pendiente)x + interseccion.y</script>
-
-<script type="math/tex; mode=display">x=-\frac{interseccion.y}{pendiente}</script>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">interseccion.x <span class="o">&lt;-</span> <span class="o">-</span><span class="p">(</span>interseccion.y<span class="o">/</span>pendiente<span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Y como la intersección en $x$ es $\frac{1}{km}$ en este modelo</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">r.km <span class="o">&lt;-</span> interseccion.x
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Ahora podemos calcular $km$ de la siguiente forma</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">km <span class="o">&lt;-</span> <span class="m">-1</span><span class="o">/</span>r.km
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Ahora guardamos los datos de $Km$ y $V_{max}$ calculados previamente en un vector</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">Lineweaver.Burk <span class="o">&lt;-</span> c<span class="p">(</span>Vmax<span class="o">=</span>as.numeric<span class="p">(</span>Vmax<span class="p">),</span> Km<span class="o">=</span>as.numeric<span class="p">(</span>km<span class="p">))</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Podemos comparar nuestros resultados, con los que se obtienen de la ecuación de Michaelis Menten, por medio de un ajuste no lineal</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">Mfit <span class="o">&lt;-</span> nls<span class="p">(</span>v<span class="o">~</span><span class="p">(</span>Vmax<span class="o">*</span>S<span class="p">)</span><span class="o">/</span><span class="p">(</span>Km<span class="o">+</span>S<span class="p">),</span> datos.cinetica<span class="p">,</span> start<span class="o">=</span>list<span class="p">(</span>Vmax<span class="o">=</span><span class="m">1</span><span class="p">,</span> Km<span class="o">=</span><span class="m">0</span><span class="p">))</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Para poder comparar estos resultados los guardamos en un vector</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">Michaelis.Menten <span class="o">&lt;-</span> c<span class="p">(</span>Vmax<span class="o">=</span>as.numeric<span class="p">(</span>coef<span class="p">(</span>Mfit<span class="p">)[</span><span class="m">1</span><span class="p">]),</span> Km<span class="o">=</span>as.numeric<span class="p">(</span>coef<span class="p">(</span>Mfit<span class="p">)[</span><span class="m">2</span><span class="p">]))</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Y utilizamos el comando rbind, para crear un data.frame con los resultados para los dos modelos</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">rbind<span class="p">(</span>Lineweaver.Burk<span class="p">,</span> Michaelis.Menten<span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Ahora podemos comparar los resultados por ambos modelos</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-<span class="line-number">2</span>
-<span class="line-number">3</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">                 Vmax           Km
-</span><span class="line">Lineweaver.Burk  <span class="m">119.8564</span> <span class="m">1.000130e-05</span>
-</span><span class="line">Michaelis.Menten <span class="m">119.8967</span> <span class="m">9.997717e-06</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p>Y finalmente si queremos graficar los datos obtenidos del modelo de Michaelis Menten podemos utilizar</p>
-
-<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
-</pre></td><td class="code"><pre><code class="r"><span class="line">plot<span class="p">(</span>S<span class="p">,</span> predict<span class="p">(</span>Mfit<span class="p">),</span> type<span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> main<span class="o">=</span><span class="s">&quot;V Vs. S&quot;</span><span class="p">,</span> xlab<span class="o">=</span><span class="s">&quot;S&quot;</span><span class="p">,</span> ylab<span class="o">=</span><span class="s">&quot;v&quot;</span><span class="p">)</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div>
-
-<p><img src="/images/michaelis.png" /></p>
-
-<ol class="bibliography"><li><span id="1979Segel">Segel, I. H. (1976). Enzymes. In <i>Biochemical Calculations: How to Solve Mathematical Problems in General Biochemistry</i> (2 ed., 208–319). John Wiley and Sons. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/0471774219</span></li></ol>
-
-<p>Código completo</p>
-
-<div><script src="https://gist.github.com/2779025.js"></script>
-<noscript><pre><code>#Data from Problem 1 Chapter 4 from
-#Biochemical Calculations by Irwin H Segel
-
-#Set the initial values and get a data.frame
-S &lt;- c(2.5e-06, 3.33e-06, 4.0e-06, 5.0e-06, 1.0e-05, 2.0e-05, 4.0e-05, 1.0e-04, 2.0e-03, 1.0e-02)
-v &lt;- c(24, 30, 34, 40, 60, 80, 96, 109, 119, 120)
-data.frame(S, v) -&gt; datos.cinetica
-
-#Plot the raw data
-plot(datos.cinetica, type=&quot;l&quot;, main=&quot;V Vs. S&quot;, xmain=&quot;S&quot;, ymain=&quot;v&quot;)
-
-#Get a vector from reciprocal values to apply Lineweaver-Burk model
-r.S &lt;- 1/S
-r.v &lt;- 1/v
-
-#Plot the reciprocal from raw data
-plot(r.S, r.v, main=&quot;Lineweaver-Burk&quot;, xlab=&quot;1/[S]&quot;,  ylab=&quot;1/v&quot;, pch=20, col=&quot;blue&quot;)
-
-
-#Use linear regression to get the Lineweaver-Burk model and add a red line to the graph
-lm(r.v ~ r.S) -&gt; lineweaver.reg
-abline(lineweaver.reg, col=&quot;red&quot;)
-
-#In order to get Vmax we need to look for the values at the regression model and calculate the reciprocal
-interseccion.y &lt;- coef(lineweaver.reg)[1]
-r.Vmax &lt;- interseccion.y
-Vmax &lt;- 1/r.Vmax
-
-#Get the slope from the regression model
-pendiente &lt;- coef(lineweaver.reg)[2]
-
-#Get the X intersection value
-interseccion.x &lt;- -(interseccion.y/pendiente)
-
-#Get the Km value, from the reciprocal of X intersection value
-r.km &lt;- interseccion.x
-km &lt;- -1/r.km
-
-#Get Vmax and Km as an R vector from Lineweaver-Burk model
-Lineweaver.Burk &lt;- c(Vmax=as.numeric(Vmax), Km=as.numeric(km))
-
-#Now we obtain the Vmax and Km from Michaelis Menten equation
-Mfit &lt;- nls(v~(Vmax*S)/(Km+S), 
-            datos.cinetica, 
-            start=list(Vmax=1, Km=0))
-
-#Get a vector with the values Vmax and Km from Michaelis Menten non linear regression
-Michaelis.Menten &lt;- c(Vmax=as.numeric(coef(Mfit)[1]), Km=as.numeric(coef(Mfit)[2]))
-
-#Plot the predicted V values from Michaelis Menten non linear regression model
-plot(S, predict(Mfit), type=&quot;l&quot;, main=&quot;V Vs. S&quot;, xlab=&quot;S&quot;, ylab=&quot;v&quot;)
-
-#And finally get a data.frame for value comparission
-rbind(Lineweaver.Burk, Michaelis.Menten)</code></pre></noscript></div>
-
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/">Introducción Al Análisis De Microarreglos</a></h1>
+      <h1 class="entry-title">Introducción Al Análisis De Microarreglos</h1>
     
     
       <p class="meta">
@@ -894,14 +113,14 @@ rbind(Lineweaver.Burk, Michaelis.Menten)</code></pre></noscript></div>
 
 <time datetime="2012-05-20T21:16:00-05:00" pubdate data-updated="true">May 20<span>th</span>, 2012</time>
         
-         | <a href="/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Los datos que utilizaremos vienen de un estudio de Chiaretti et al.  sobre la leucemia linfoblastica aguda (ALL), la cual fue conducida con chips de microarreglos HG-U95Av2 de Aymetrix. El paquete de datos ALL contiene los datos de expresion del experimento, normalizados con rma (las intensidades estan en escala log2), junto con las anotaciones de las muestras. </p>
+<div class="entry-content"><p>Los datos que utilizaremos vienen de un estudio de Chiaretti et al.  sobre la leucemia linfoblastica aguda (ALL), la cual fue conducida con chips de microarreglos HG-U95Av2 de Aymetrix. El paquete de datos ALL contiene los datos de expresion del experimento, normalizados con rma (las intensidades estan en escala log2), junto con las anotaciones de las muestras. </p>
 
 <p>Para ello utilizaremos R /Bioconductor Si no has instalado Bioconductor previemente necesitas correr las siguientes líneas</p>
 
@@ -1646,102 +865,16 @@ gt &lt;- printGenes(GOdataMF, whichTerms = &quot;GO:0004713&quot;, chip = &quot;
                  numChar = 40)
 gt</code></pre></noscript></div>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/07/24/comparacion-estructural-de-proteinas/">Comparación Estructural De Proteínas</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Felipe Antonio Riveroll Aguirre</span></span>
 
-<time datetime="2011-07-24T00:00:00-05:00" pubdate data-updated="true">Jul 24<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/07/24/comparacion-estructural-de-proteinas/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><img src="/images/proteinas.png" /> Las proteinas se componen de un juego de 20 aminoácidos distintos, unidos en cualquier orden lineal. La secuencia de aminoácidos se denomina, secuencia primaria, ésta última, forma estructuras secundarias a través de interacciones intermoleculares, que a su vez forman estructuras terciarias.</p>
-
-<p>La estructura tridimensional de las proteínas, en la mayoría de los casos, da luz a los mecanismos catalíticos e interacciones potenciales entre otras moléculas, ambos aspectos ayudan a inferir la función molecular de una proteína.</p>
-
-<p>Cuando se necesita hacer una comparación entre proteínas, se recurre en bioinformática a un alineamiento, ya sea por pares o múltiple, sin embargo a este nivel solo podemos obtener información a nivel de residuos aminoacídicos, lo cual puede darnos una idea de la similaridad entre las secuencias de las proteínas analizadas,  si estas últimas son conservadas, resultarán estructuras similares. Sin embargo, la estructura de las proteínas, es más conservada que las secuencias durante la evolución, lo cual facilita que se conserve la función biológica de las proteínas. Esto es muy útil para establecer relaciones evolutivas distantes, no detectables por métodos basados en secuencias.</p>
-
-<p>La comparación de estructuras puede servirnos para:</p>
-
-<ul>
-  <li>El análisis de cambios conformacionales, respecto a la unión de ligando.</li>
-  <li>La detección de relaciones evolutivas distantes.</li>
-  <li>El análisis de la relación estructural en las familias de proteínas.</li>
-  <li>La identificación de motivos estructurales comunes.</li>
-</ul>
-
-<p>A continuación se listan algunos de los recursos en internet para la comparación de estructuras, de proteínas.</p>
-
-<ul>
-  <li><a href="http://biowulf.bu.edu/FAST/">FAST</a></li>
-  <li><a href="http://bioinfo3d.cs.tau.ac.il/MultiProt/">MultiProt</a></li>
-  <li><a href="http://wishart.biology.ualberta.ca/SuperPose/">SuperPose 1.0</a></li>
-  <li><a href="http://salilab.org/DBAli/?page=tools&amp;action=f_salign">SALIGN</a></li>
-  <li><a href="http://zlab.bu.edu/k2sa/">K2, KSA</a></li>
-  <li><a href="http://cl.sdsc.edu/ce.html">CE, server</a></li>
-  <li><a href="http://www.ebi.ac.uk/Tools/dalilite/">Dalite</a></li>
-  <li><a href="http://protein3dfit.tu-bs.de/cgi-bin/3daligner.py">Protein3Dfit</a></li>
-  <li><a href="http://opaas.ibms.sinica.edu.tw/">OPAAS</a></li>
-  <li><a href="http://fatcat.burnham.org/fatcat-cgi/cgi/fatcat.pl?-func=pairwise">FATCAT</a></li>
-  <li><a href="http://www.rcsb.org/pdb/workbench/workbench.do">RCSB Protein comparision tool</a></li>
-  <li><a href="http://fatcat.burnham.org/POSA/">POSA</a></li>
-  <li><a href="http://agknapp.chemie.fu-berlin.de/gplus/index.php">GANGSTA+</a></li>
-  <li><a href="http://topmatch.services.came.sbg.ac.at/">TopMatch</a></li>
-  <li><a href="http://www.pdbj.org/ash/index.html">PDBj superposition server</a></li>
-  <li><a href="http://bioinfo3d.cs.tau.ac.il/c_alpha_match/">C-alpha match</a></li>
-  <li><a href="http://www.ebi.ac.uk/msd-srv/ssm/">SSM</a></li>
-  <li><a href="http://epsf.bmad.bii.a-star.edu.sg/struct_server.html">deconSTRUCT</a></li>
-  <li><a href="http://aladyn.escience-lab.org/">ALADYN</a></li>
-  <li><a href="http://sacan.biomed.drexel.edu/Smolign/">Smolign</a></li>
-</ul>
-
-<ol class="bibliography"><li><span id="citeulike:2847102">Eidhammer, I., Jonassen, I., &#38; Taylor, W. R. (2004). <i>Protein Bioinformatics: An Algorithmic Approach to Sequence and Structure Analysis</i> (1 ed.). Wiley. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/0470848391</span></li>
-<li><span id="Meng2005">Meng, E. C. (2005, April). Online Structure Alignment Resources. Retrieved from http://www.cgl.ucsf.edu/home/meng/grpmt/structalign.html</span></li>
-<li><span id="structaln">Structural alignment Structural alignment. Retrieved from http://en.wikipedia.org/wiki/Structural_alignment</span></li></ol>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/06/08/busqueda-de-motivos-en-proteinas/">Búsqueda De Motivos en Proteínas</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -1753,203 +886,50 @@ gt</code></pre></noscript></div>
   
 
 
-<time datetime="2011-06-08T00:00:00-05:00" pubdate data-updated="true">Jun 8<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/06/08/busqueda-de-motivos-en-proteinas/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Para descubrir las funciones de una proteína,  que no corresponde a ninguna de las secuencias en las bases de datos. Lo cual ocurre frecuentemente, para las proteínas predichas de un genoma recién completado, que no tiene homólogos identificables.</p>
-
-<p>Aún si no se conocen homólogos, una proteína puede tener características tales como, dominios transmembranales, sitios potenciales de fosforilación o estructura secundaria predicha. Estos rasgos dan pistas de la estructura y/o función de una proteína.</p>
-
-<p>Para proteínas que tienen ortólogos y/o parálogos, existen regiones de identidad significativa en aminoácidos, que comparten características estructurales sustanciales y/o identidad de secuencias, lo cual tiene una variedad de nombres como: firmas, dominios, módulos, elementos modulares, motivos, patrones o repetidos.</p>
-
-<p>En esta ocasión, dedicaremos esta sección a los motivos:</p>
-
-<p>Podemos definir un motivo como un patrón conservado de aminoácidos, que puede ser encontrado en una o más proteínas, que pertenecen a un grupo de proteínas con actividad bioquímica similar, los cuales frecuentemente estan cerca del sitio activo de una proteína.</p>
-
-<p>Algunas de las herramientas en línea para buscar motivos en proteínas son las siguientes:</p>
-
-<ul>
-  <li>
-    <p><a href="http://mnm.engr.uconn.edu/MNM/SMSSearchServlet">MnM 2.0</a> <em>Minimotif miner</em>, analiza la presencia de motivos funcionales, involucrados en las modificaciones posttraduccionales, unión a otras proteínas, ácidos nucléicos o pequeñas moléculas o tráfico de proteínas.</p>
-  </li>
-  <li>
-    <p><a href="http://myhits.isb-sib.ch/cgi-bin/motif_scan">Motif Scan</a> Busca todos los motivos conocidos en una secuencia.</p>
-  </li>
-  <li>
-    <p><a href="http://www.cbs.dtu.dk/services/NetPhosK/">NetPhosK 1.0 Server</a> Predice sitios de fosforilación por cinasas de eucariotes por medio de redes neuronales, de las siguientes cinasas: PKA, PKC, PKG, CKII, Cdc2, CaM-II, ATM, DNA PK, Cdk5, p38 MAPK, GSK3, CKI, PKB, RSK, INSR, EGFR and Src.</p>
-  </li>
-  <li>
-    <p><a href="http://www.cbs.dtu.dk/services/NetPhos/">NetPhos 2.0 Server</a> Predice por redes neuronales, sitios de fosforilación en serina, treonina y tirosina para proteínas de eucariotes.</p>
-  </li>
-</ul>
-
-<ol class="bibliography"><li><span id="Balla2006">Balla, S., Thapar, V., Verma, S., Luong, Tb., Faghri, T., Huang, C.-H., Rajasekaran, S., del Campo, J. J., Shinn, J. H., Mohler, W. A., &#38; et al. (2006). Minimotif Miner: a tool for investigating protein function. <i>Nature Methods</i>, <i>3</i>(3), 175–177. doi:10.1038/nmeth856</span></li>
-<li><span id="citeulike:263008">Mount, D. (2013). <i>Bioinformatics: Sequence and Genome Analysis</i> (2 ed.). Cold Spring Harbor Laboratory Press. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/0879697121</span></li>
-<li><span id="citeulike:13242889">Pevsner, J. (2013). <i>Bioinformatics and Functional Genomics</i> (2 ed.). Cold Spring Harbor Laboratory Press. Retrieved from http://www.amazon.com/exec/obidos/redirect?tag=citeulike07-20&#38;path=ASIN/B004KPVA46</span></li></ol>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2012-05-20T21:16:00-05:00" pubdate data-updated="true">May 20<span>th</span>, 2012</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/05/30/visualizando-resultados-para-blast-en-mobyle-pasteur/">Visualizando Resultados Para Blast en Mobyle@Pasteur</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/r/'>R</a>, <a class='category' href='/blog/categories/bioconductor/'>bioconductor</a>, <a class='category' href='/blog/categories/bioinformatica/'>bioinformática</a>, <a class='category' href='/blog/categories/microarreglos/'>microarreglos</a>
+  
+</span>
 
 
-<time datetime="2011-05-30T00:00:00-05:00" pubdate data-updated="true">May 30<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/05/30/visualizando-resultados-para-blast-en-mobyle-pasteur/#disqus_thread">Comments</a>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>Brevemente, BLAST (<strong>B</strong>asic <strong>L</strong>ocal <strong>A</strong>lignment <strong>S</strong>earch <strong>T</strong>ool) es un método de búsqueda por homología, en el cuál se reta a la base de datos con una secuencia problema (query), para que encuentre secuencias relacionadas a nuestra secuencia problema.</p>
-
-<p>Los resultados que BLAST arroja, son alineamientos pareados junto con los datos de la posición de la secuencia problema (<em>query</em>) con la secuencia que el programa encontró de la base de datos.</p>
-
-<p>Uno de los problemas para hacer un alineamiento múltiple de las secuencias que encontramos en BLAST, es que los resultados solo arrojan links a las secuencias que nos interesan, de modo que hay que recuperar las secuencias una por una y además al hacer esto obtenemos la secuencia completa con residuos adicionales que no corresponden a la región que nos interesa (<em>match</em>) y por tanto obtenemos secuencias con una longitud distinta, lo cuál no es muy deseable para un alineamiento múltiple.</p>
-
-<p>Así que si queremos visualizar los datos en forma de un alineamiento múltiple o generar archivos fasta con las secuencias alineadas, podemos utilizar MView el cual podemos descargar e instalar localmente en una maquina con linux, o también lo podemos utilizar en el portal <a href="http://mobyle.pasteur.fr">Mobyle@pasteur</a>.</p>
-
-<p>Para hacer este análisis pueden seguirse los siguientes pasos:</p>
-
-<ul>
-  <li>Ir a <a href="http://mobyle.pasteur.fr">Mobyle@pasteur</a>.</li>
-  <li>En la pestaña program seleccionamos, database&gt;homology&gt;blast2
-<img src="/images/blast_1.png" /></li>
-  <li>Ahora en la interfase web de blast2, seleccionamos como en la imagen: 
-<img src="/images/blast_2.png" />- Blast program: <strong>blastp</strong></li>
-  <li>Proteín db: <strong>uniprot_sb</strong></li>
-  <li>En la sección <em>query sequence/query</em>, para cargar la secuencia de ejemplo en la base de datos seleccionamos DB, después en la lista desplegable de abajo seleccionamos la base de datos uniprot y en el cuadro diálogo escribimos P25044 y damos click en <em>Select</em>.
-<img src="/images/blast_3.png" /></li>
-  <li>Ahora el portal nos mostrará esta secuencia en el cuadro de diálogo más grande.
-<img src="/images/blast_4.png" /></li>
-  <li>Ahora, vamos hacia la parte de arriba de la ventana y damos click en <em>Run</em>.
-<img src="/images/blast_5.png" /></li>
-  <li>Y ahora el portal nos muestra los resultados.
-<img src="/images/blast_6.png" /></li>
-  <li>Podemos ver que existen tres opciones para visualizar los resultados, como texto, html y de manera visual.</li>
-  <li>Seguido de donde están los resultados en texto, hay una lista desplegable seguida del botón <em>further analysis</em>.</li>
-  <li>Ahora seleccionamos de la lista mview(blast)&gt;Further analysis.
-<img src="/images/blast_7.png" /></li>
-  <li>Enseguida nos aparecerá la interfase web para mview con los resultados de blast, obtenidos anteriormente
-<img src="/images/blast_8.png" /></li>
-  <li>Hay dos opciones que me parecen útiles para dar formato a los resultados de blast, por defecto está seleccionado html, lo que nos mostrará un alineamiento coloreado de la secuencias alineadas en blast. Pero si deseamos seguir trabajando con la secuencia, tenemos que obtener un archivo fasta, con todas las secuencias alineadas. Claro que también como podrán darse cuenta, hay muchas opciones, para poder filtrar las secuancias que queremos obtener, de momento solo vamos a usar otro programa para ver los resultados.</li>
-  <li>Seleccionamos <em>Pearson/FASTA</em> en el menú desplegable de la sección <em>Output format (-out)</em> 
-<img src="/images/blast_9.png" /></li>
-  <li>Y damos click en <em>Run</em>.</li>
-  <li>Ahora podemos ver como resultado un archivo con formato fasta de las secuencias.
-<img src="/images/blast_10.png" /></li>
-  <li>De aqui, podemos seguir haciendo análisis filogenéticos u obtener estadísticas sobre el alineamiento, pero en este ejemplo, vamos a reformatear estos resultados con un programa de la suite <strong>EMBOSS</strong>, llamado <strong>showalign</strong>.</li>
-  <li>Similar a lo que hicimos para mandar los resultados de blast a mview, ahora vamos a seleccionar showalign(sequence).
-<img src="/images/blast_11.png" />
-<img src="/images/blast_12.png" /></li>
-  <li>Utilizando <strong>advanced options</strong> podemos seleccionar varias opciones para como queremos visualizar el alineamiento, como por ejemplo la scoring matrix y como queremos ver los residuos que no son idénticos
-<img src="/images/blast_13.png" />
-<img src="/images/blast_14.png" /></li>
-  <li>Por ejemplo podemos mostrar en los resultados los residuos similares y también ordenarlos de acuerdo a su similaridad con estas opciones
-<img src="/images/blast_15.png" /></li>
-  <li>Para obtener el siguiente resultado:
-<img src="/images/blast_16.png" /></li>
-</ul>
-
-<ol class="bibliography"><li><span id="Neron2009">Neron, B., Menager, H., Maufrais, C., Joly, N., Maupetit, J., Letort, S., Carrere, S., Tuffery, P., &#38; Letondal, C. (2009). Mobyle: a new full web bioinformatics framework. <i>Bioinformatics</i>, <i>25</i>(22), 3005–3011. doi:10.1093/bioinformatics/btp493</span></li></ol>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://friveroll.github.io/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/" data-via="FelipeRiveroll" data-counturl="http://friveroll.github.io/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2011/04/28/maartens-retrieval-system/">Maartens Retrieval System (MRS)</a></h1>
-    
-    
-      <p class="meta">
-        
+        <a class="basic-alignment left" href="/blog/2011/07/24/comparacion-estructural-de-proteinas/" title="Previous Post: Comparación estructural de proteínas">&laquo; Comparación estructural de proteínas</a>
+      
+      
+        <a class="basic-alignment right" href="/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/" title="Next Post: Utilizando R para analizar datos de cinética">Utilizando R para analizar datos de cinética &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-04-28T00:00:00-05:00" pubdate data-updated="true">Apr 28<span>th</span>, 2011</time>
-        
-         | <a href="/blog/2011/04/28/maartens-retrieval-system/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><a href="http://mrs.cmbi.ru.nl">Maartens Retrieval System (MRS)</a>  es un metabuscador de bases de datos biológicas múy útil, algo así como un google para la minería de datos, el pasado 22 de marzo de 2011 hubo un curso en el <a href="http://www.ccg.unam.mx">CCG-UNAM</a> impartido por <a href="http://folk.uio.no/georgios/">George Magklaras</a> sobre como combinar el uso de <a href="http://emboss.sourceforge.net/what">EMBOSS</a> y <a href="http://mrs.cmbi.ru.nl">MRS</a>.</p>
-
-<p>Desde mi punto de vista, la documentación del proyecto es algo pobre, pero su interfase web es muy intuitiva.</p>
-
-<p>Su verdadero poder, está en la línea de comandos, sin embargo para poder usarla, se necesita tener acceso por SSH a una servidor con MRS instalado, para poder programar un “pipline or workflow” y hacer una minería de datos, si se tiene por ejemplo una lista de genes resultado de un microarreglo.</p>
-
-<ul>
-  <li>Videos del curso: <a href="http://goo.gl/vY5exy">http://goo.gl/vY5exy</a></li>
-  <li>Apuntes del curso: <a href="http://cursos.nnb.unam.mx/mod/folder/view.php?id=3">http://cursos.nnb.unam.mx/mod/folder/view.php?id=3</a></li>
-</ul>
-
-<p><a href="http://folk.uio.no/georgios/">George Magklaras</a> tiene dos entradas en su blog que hablan sobre la administración de esta plataforma</p>
-
-<ul>
-  <li><a href="http://epistolatory.blogspot.mx/2011/12/bioinformatics-sysadmin-craftmanship.html">The bioinformatics sysadmin craftmanship: The MRS v5 platform: Part 1</a></li>
-  <li><a href="http://epistolatory.blogspot.mx/2012/01/bioinformatics-sysadmin-craftmanship.html">The bioinformatics sysadmin craftmanship: Installing the MRS v5 platform: Part 2</a></li>
-  <li>La dirección para acceder a MRS es: <a href="http://mrs.cmbi.ru.nl">http://mrs.cmbi.ru.nl</a></li>
-</ul>
-
-<ol class="bibliography"><li><span id="Hekkelman2005">Hekkelman, M. L., &#38; Vriend, G. (2005). MRS: a fast and compact retrieval system for biological data. <i>Nucleic Acids Research</i>, <i>33</i>(Web Server), W766–W769. doi:10.1093/nar/gki422</span></li></ol>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  
-  
+  </section>
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     
@@ -1988,7 +968,7 @@ gt</code></pre></noscript></div>
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/friveroll">@friveroll</a> on GitHub
@@ -2048,6 +1028,7 @@ gt</code></pre></noscript></div>
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -2062,7 +1043,10 @@ gt</code></pre></noscript></div>
       var disqus_shortname = 'friveroll';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://friveroll.github.io/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/';
+        var disqus_url = 'http://friveroll.github.io/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: física | The Grumpy Biochemist]]></title>
+  <link href="http://friveroll.github.io/blog/categories/fisica/atom.xml" rel="self"/>
+  <link href="http://friveroll.github.io/"/>
+  <updated>2016-06-13T10:35:11-05:00</updated>
+  <id>http://friveroll.github.io/</id>
+  <author>
+    <name><![CDATA[Felipe Antonio Riveroll Aguirre]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Física con Análisis de Video Utilizando Logger Pro]]></title>
+    <link href="http://friveroll.github.io/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro/"/>
+    <updated>2014-01-06T10:44:00-06:00</updated>
+    <id>http://friveroll.github.io/blog/2014/01/06/fisica-con-analisis-de-video-utilizando-logger-pro</id>
+    <content type="html"><![CDATA[<p>La tecnología de análisis de video permite a los estudiantes hacer mediciones precisas de la posición de un objeto en el transcurso del tiempo durante su movimiento. Los Maestros de Física y docentes de todos los niveles, encontrarán que esta tecnología hace posible un análisis detallado de situaciones físicas que normalmente no sería posible analizar debido a las dificultades de medición, tiempo, costo y/o consideraciones de seguridad. Los Maestros de matemáticas también podrán descubrir que el análisis de video es un método económico y útil para estudiar ejemplos de fenómenos del mundo real que pueden ser descritos por gráficas y relaciones lineales, cuadráticas, hiperbólicas y sinusoidales.</p>
+
+<p>El Análisis de Video consiste en utilizar una cámara de video para “registrar“ los datos de posición y tiempo, que pueden ser utilizados para modelar matemáticamente todo lo relacionado con la posición y/o el movimiento del objeto. Utilizando las características de avance cuadro por cuadro del video digital y marcando el cambio de posición de un objeto cuadro por cuadro, los estudiantes serán capaces de determinar de una manera precisa los detalles del movimiento estudiado. Una vez que se han obtenido los datos que consisten en el tiempo y posición del objeto de estudio, los estudiantes pueden determinar la velocidad y la aceleración del objeto, si la masa del objeto es conocida se pueden obtener valores tales como la energía cinética y potencial, fuerza, momento, etc. Y de esta forma obtener gráficas de los datos registrados y calculados.</p>
+
+<p>La versión de prueba de Logger Pro puede ser descargada desde esta dirección
+<a href="http://www.vernier.com/downloads/logger-pro-demo/">http://www.vernier.com/downloads/logger-pro-demo/</a></p>
+
+<p><em>para utilizar las características de análisis de video debe ser instalado quicktime</em>
+<a href="http://support.apple.com/downloads/#quicktime">http://support.apple.com/downloads/#quicktime</a></p>
+
+<p><div class="embed-video-container"><iframe src="http://www.youtube.com/embed/hvujbVbqIYg "></iframe></div></p>
+
+<p>A continuación se presentan una serie de instrucciones para utilizar Logger Pro analizando videos de movimiento.</p>
+
+<ol>
+  <li>Abrir Logger Pro.</li>
+  <li>Insertar el Video
+Insertar &gt; Video &gt; Abra el folder donde se ubica la película &gt; Seleccione el video que
+desea analizar.</li>
+  <li>Dar click en el ícono en la esquina inferior derecha que tiene tres puntos rojos.
+Si usted ubica el puntero del ratón sobre él muestra la leyenda “Activar/Desactivar análisis
+video”</li>
+  <li>Reorganizar la página para arreglar todos sus elementos.
+(Página &gt; Auto organizar)</li>
+  <li>Fijar la escala para el video.
+De click en el ícono que parece una regla
+Encuentre el objeto de referencia en el video para establecer la escala
+Ingrese la distancia en metros que corresponda con su objeto de referencia.</li>
+  <li>Añadir los puntos que marcan la trayectoria del objeto.
+Seleccione el ícono de dice “Añadir Punto”
+Mueva el tiempo del video en el momento que usted desee grabar el movimiento.
+Utilizando las barras cruzadas (+) de click en una parte específica en el objeto. El video
+avanza automáticamente al siguiente cuadro para seguir trazando la trayectoria.
+Seleccione de nuevo el mismo punto en el objeto para registrar el cambio de posición.</li>
+  <li>Establecer el origen de coordenadas de la gráfica.
+Click en el ícono que dice “Establecer Origen”
+Entonces de click en el punto de la película que usted quiere que represente el origen de la
+gráfica.
+En este punto usted debe ya de tener una gráfica con un eje horizontal para el
+tiempo (s) y un eje vertical para la distancia (m) con dos hileras de puntos.
+Un conjunto de puntos representa la posición horizontal del objeto (X(m)) vs. Tiempo(s))
+El otro conjunto de puntos representa la posición vertical del objeto (Y(m)) vs. Tiempo(s)).</li>
+  <li>Si existen previos debe de sincronizar los datos con el tiempo del video.
+En el video vaya al cuadro que represente el inicio del movimiento.
+De click en el botón de la esquina inferior derecha del video que dice “Sinc película a
+gráfica”.
+Cambie el conjunto de datos a 0 segundos. Verifique que esté seleccionada la
+casilla “Sincronizar colec. datos análisis video con colec. datos seleccionada” de click en
+OK</li>
+  <li>Vincular la gráfica al video.
+Analizar &gt; Examinar
+Esta es una de las mejores características de LoggerPro a medida que usted
+desplaza el ratón en la gráfica, el objeto en el video se mueve. Usted puede ver de
+manera simultánea la posición del objeto y sus coordenadas en la gráfica.</li>
+  <li>Determinar la velocidad horizontal y/o vertical del objeto en el video.
+Analizar &gt; Ajuste Lineal
+Si los puntos son lineales, la pendiente de la línea es la velocidad, o la rapidez.
+Si los puntos de Posición vs. tiempo se asemejan más a una curva que a una línea, usted
+puede determinar la aceleración del objeto.</li>
+  <li>Copiar la página.
+Página &gt; Añadir Página… (Seleccione “Copiar página actual”, click en OK)</li>
+  <li>Encontrar la aceleración horizontal y/o vertical del objeto.
+Analizar &gt; Ajuste Lineal
+La aceleración es la pendiente de la gráfica de velocidad, un objeto que no está acelerando
+tiene una pendiente cercana a cero.</li>
+  <li>Otra manera de calcular la velocidad promedio horizontal y/o vertical de un objeto
+Analizar &gt; Estadísticas
+Esto muestra el mínimo, máximo, promedio y mediana para el conjunto de datos.</li>
+  <li>¿Desea cambiar los valores negativos por positivos? Esto puede ser útil para el
+movimiento de caída libre dado que Logger Pro muestra la velocidad como negativa
+porque el objeto va hacia abajo.
+En la tabla de datos, dé doble click en el encabezado de la columna que desee cambiar de
+valores negativos a positivos
+En la caja de la ecuación, escriba “-“ antes de las palabras derivada (“X”, tiempo), para
+cambiar los valores de la velocidad.</li>
+  <li>¿Desea añadir un título para su gráfica?
+Dé click derecho en la gráfica, Entonces seleccione “Opciones gráfica…” Escriba el título
+que desea para su gráfica y de click en aplicar.</li>
+  <li>Otra opción útil en “Opciones gráfica…” es la pestaña de “opciones eje”. En lugar de
+seleccionar “Autoescala” seleccione “Autoescala desde 0” o “Manual”</li>
+  <li>Puede cambiar el color y la forma de los puntos de datos haciendo doble click en el
+encabezado de la columna de la tabla de datos, dando click en la pestaña de “Opciones” y
+seleccionado entonces el color y la forma/estilo que usted quiera.</li>
+  <li>Usted puede añadir puntos para la trayectoria de un segundo y tercer objeto en el video y
+analizar también su movimiento. De click en el ícono “Establecer punto activo” en la barra
+que se ubica a la derecha de el video. Entonces regrese al paso 6 y repita conforme sea
+necesario desde ahi.</li>
+  <li>Otros íconos en la barra ubicada a la derecha del video permiten esconder los puntos de
+trayectoria en el video, así como también la escala y el origen.</li>
+  <li>Puede ver la vista preliminar de impresión utilizando el menú Archivo &gt; Previsualización
+Impresión para ver como se vería impreso su documento.</li>
+  <li>Vea si un ajuste de curva funciona mejor que un ajuste lineal en (Analizar &gt; Ajuste de
+Curva).</li>
+  <li>Intente sincronizar la gráfica con datos recolectados por un sensor Vernier (sensor de
+movimiento, etc.)</li>
+  <li>Cree una nueva columna, ingrese la ecuación, y determine la posición del objeto en el
+futuro. (Datos &gt; Nueva columna calculada)</li>
+  <li>De click en (Analizar &gt; Repetir) para observar el video y la generación los datos y su
+graficación simultáneamente</li>
+  <li>De click en (Analizar &gt; Interpolar) para determinar los valores y otras posiciones de la
+gráfica.</li>
+</ol>
+
+<p>Existen más videos disponibles para el análisis, en esta dirección:
+<a href="http://livephoto.rit.edu/">http://livephoto.rit.edu/</a></p>
+
+<p>El manual de análisis de Video para física se encuentra en la siguiente dirección electrónica:
+<a href="http://www.vernier.com/products/books/pva/">http://www.vernier.com/products/books/pva/</a></p>
+
+<p><ol class="bibliography"></ol></p>
+
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: R | The Grumpy Biochemist]]></title>
+  <link href="http://friveroll.github.io/blog/categories/r/atom.xml" rel="self"/>
+  <link href="http://friveroll.github.io/"/>
+  <updated>2016-06-13T10:35:11-05:00</updated>
+  <id>http://friveroll.github.io/</id>
+  <author>
+    <name><![CDATA[Felipe Antonio Riveroll Aguirre]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Utilizando R para analizar datos de cinética]]></title>
+    <link href="http://friveroll.github.io/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/"/>
+    <updated>2012-05-23T21:52:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica</id>
+    <content type="html"><![CDATA[<p>R es un lenguaje de programación estadístico y gráfico, que através del proyecto bioconductor puede ser usado para analisis bioinformáticos, en esta ocasión lo utilizaremos para graficar y analizar datos cinéticos.</p>
+
+<p>El siguiente tutorial, está basado en el problema 1 del capítulo 4 del libro <em>Biochemical Calculations</em> de <em>Irwin H Segel</em>,  y se mostrará como obtener $V_{max}$ y $Km$ a partir del análisis de los datos cinéticos por la gráfica de Lineweaver-Burk.</p>
+
+<p>Primero generamos los vectores $S$ y $v$ para los datos del problema</p>
+
+<p><code>r
+S &lt;- c(2.50e-06, 3.33e-06, 4.00e-06, 5.00e-06,
+       1.00e-05, 2.00e-05, 4.00e-05, 1.00e-04,
+       2.00e-03, 1.00e-02)
+v &lt;- c(24, 30, 34, 40, 60, 80, 96, 109, 119, 120)
+</code></p>
+
+<p>Podemos visualizarlos en una tabla de la siguiente manera:</p>
+
+<p>```r
+data.frame(S, v) -&gt; datos.cinetica
+datos.cinetica</p>
+
+<pre><code>     S  v 1  2.50e-06  24 2  3.33e-06  30 3  4.00e-06  34 4  5.00e-06  40 5  1.00e-05  60 6  2.00e-05  80 7  4.00e-05  96 8  1.00e-04 109 9  2.00e-03 119 10 1.00e-02 120 ```
+</code></pre>
+
+<p>Para poder obtener la grafica a partir de los datos anteriores</p>
+
+<p><code>r
+plot(datos.cinetica, main="V Vs. S", xmain="S", ymain="v")
+</code>
+Ahora necesitamos calcular los recíprocos $(r)$ para $S$ y $v$.</p>
+
+<p><code>r
+r.S &lt;- 1/S
+r.v &lt;- 1/v
+</code></p>
+
+<p>Graficando los recíprocos</p>
+
+<p><code>r
+plot(r.S, r.v, main="Lineweaver-Burk", xlab="1/[S]",  ylab="1/v", pch=20, col="blue")
+</code></p>
+
+<p>Ahora necesitamos hacer la regresion lineal de estos datos y añadir la linea correspondiente a la regresión a nuestra gráfica</p>
+
+<p><code>r
+lm(r.v ~ r.S) -&gt; lineweaver.reg
+abline(lineweaver.reg, col="red")
+</code></p>
+
+<p>Y la grafica final queda de la siguiente forma:</p>
+
+<p><img src="/images/lineweaver.png" /></p>
+
+<p>Cuando calculamos los datos para la regresión lineal, guardamos los resultados en la siguiente variable:</p>
+
+<p>```r
+lineweaver.reg</p>
+
+<p>Call:
+lm(formula = r.v ~ r.S)</p>
+
+<p>Coefficients:
+(Intercept)          r.S
+  8.343e-03    8.344e-08
+```</p>
+
+<p>Intercept, corresponde a la intersección en $Y$, que para este caso es $\frac{1}{V_{max}}$.</p>
+
+<p><code>r
+interseccion.y &lt;- coef(lineweaver.reg)[1]
+r.Vmax &lt;- interseccion.y
+</code></p>
+
+<p>Así que para calcular $V_{max}$</p>
+
+<p><code>r
+Vmax &lt;- 1/r.Vmax
+</code>
+La pendiente está en <em>r.S</em> por lo tanto.</p>
+
+<p><code>r
+pendiente &lt;- coef(lineweaver.reg)[2]
+</code></p>
+
+<p>Para calcular la interseccion en $x$, necesitamos encontrar el valor de $x$ cuando $y = 0$, para la ecuación de la linea recta</p>
+
+<script type="math/tex; mode=display">y = (pendiente)x + interseccion.y</script>
+
+<script type="math/tex; mode=display">0 = (pendiente)x + interseccion.y</script>
+
+<script type="math/tex; mode=display">x=-\frac{interseccion.y}{pendiente}</script>
+
+<p><code>r
+interseccion.x &lt;- -(interseccion.y/pendiente)
+</code></p>
+
+<p>Y como la intersección en $x$ es $\frac{1}{km}$ en este modelo</p>
+
+<p><code>r
+r.km &lt;- interseccion.x
+</code></p>
+
+<p>Ahora podemos calcular $km$ de la siguiente forma</p>
+
+<p><code>r
+km &lt;- -1/r.km
+</code></p>
+
+<p>Ahora guardamos los datos de $Km$ y $V_{max}$ calculados previamente en un vector</p>
+
+<p><code>r
+Lineweaver.Burk &lt;- c(Vmax=as.numeric(Vmax), Km=as.numeric(km))
+</code></p>
+
+<p>Podemos comparar nuestros resultados, con los que se obtienen de la ecuación de Michaelis Menten, por medio de un ajuste no lineal</p>
+
+<p><code>r
+Mfit &lt;- nls(v~(Vmax*S)/(Km+S), datos.cinetica, start=list(Vmax=1, Km=0)) 
+</code></p>
+
+<p>Para poder comparar estos resultados los guardamos en un vector</p>
+
+<p><code>r
+Michaelis.Menten &lt;- c(Vmax=as.numeric(coef(Mfit)[1]), Km=as.numeric(coef(Mfit)[2]))
+</code></p>
+
+<p>Y utilizamos el comando rbind, para crear un data.frame con los resultados para los dos modelos</p>
+
+<p><code>r
+rbind(Lineweaver.Burk, Michaelis.Menten) 
+</code></p>
+
+<p>Ahora podemos comparar los resultados por ambos modelos</p>
+
+<p><code>
+                     Vmax           Km
+Lineweaver.Burk  119.8564 1.000130e-05
+Michaelis.Menten 119.8967 9.997717e-06
+</code></p>
+
+<p>Y finalmente si queremos graficar los datos obtenidos del modelo de Michaelis Menten podemos utilizar</p>
+
+<p><code>r
+plot(S, predict(Mfit), type="l", main="V Vs. S", xlab="S", ylab="v")
+</code></p>
+
+<p><img src="/images/michaelis.png" /></p>
+
+<p><ol class="bibliography"></ol></p>
+
+<p>Código completo</p>
+
+<p><div><script src='https://gist.github.com/2779025.js'></script>
+<noscript><pre><code>#Data from Problem 1 Chapter 4 from
+#Biochemical Calculations by Irwin H Segel
+
+#Set the initial values and get a data.frame
+S &lt;- c(2.5e-06, 3.33e-06, 4.0e-06, 5.0e-06, 1.0e-05, 2.0e-05, 4.0e-05, 1.0e-04, 2.0e-03, 1.0e-02)
+v &lt;- c(24, 30, 34, 40, 60, 80, 96, 109, 119, 120)
+data.frame(S, v) -&gt; datos.cinetica
+
+#Plot the raw data
+plot(datos.cinetica, type=&quot;l&quot;, main=&quot;V Vs. S&quot;, xmain=&quot;S&quot;, ymain=&quot;v&quot;)
+
+#Get a vector from reciprocal values to apply Lineweaver-Burk model
+r.S &lt;- 1/S
+r.v &lt;- 1/v
+
+#Plot the reciprocal from raw data
+plot(r.S, r.v, main=&quot;Lineweaver-Burk&quot;, xlab=&quot;1/[S]&quot;,  ylab=&quot;1/v&quot;, pch=20, col=&quot;blue&quot;)
+
+
+#Use linear regression to get the Lineweaver-Burk model and add a red line to the graph
+lm(r.v ~ r.S) -&gt; lineweaver.reg
+abline(lineweaver.reg, col=&quot;red&quot;)
+
+#In order to get Vmax we need to look for the values at the regression model and calculate the reciprocal
+interseccion.y &lt;- coef(lineweaver.reg)[1]
+r.Vmax &lt;- interseccion.y
+Vmax &lt;- 1/r.Vmax
+
+#Get the slope from the regression model
+pendiente &lt;- coef(lineweaver.reg)[2]
+
+#Get the X intersection value
+interseccion.x &lt;- -(interseccion.y/pendiente)
+
+#Get the Km value, from the reciprocal of X intersection value
+r.km &lt;- interseccion.x
+km &lt;- -1/r.km
+
+#Get Vmax and Km as an R vector from Lineweaver-Burk model
+Lineweaver.Burk &lt;- c(Vmax=as.numeric(Vmax), Km=as.numeric(km))
+
+#Now we obtain the Vmax and Km from Michaelis Menten equation
+Mfit &lt;- nls(v~(Vmax*S)/(Km+S), 
+            datos.cinetica, 
+            start=list(Vmax=1, Km=0))
+
+#Get a vector with the values Vmax and Km from Michaelis Menten non linear regression
+Michaelis.Menten &lt;- c(Vmax=as.numeric(coef(Mfit)[1]), Km=as.numeric(coef(Mfit)[2]))
+
+#Plot the predicted V values from Michaelis Menten non linear regression model
+plot(S, predict(Mfit), type=&quot;l&quot;, main=&quot;V Vs. S&quot;, xlab=&quot;S&quot;, ylab=&quot;v&quot;)
+
+#And finally get a data.frame for value comparission
+rbind(Lineweaver.Burk, Michaelis.Menten)</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Introducción al análisis de microarreglos]]></title>
+    <link href="http://friveroll.github.io/blog/2012/05/20/introduccion-al-analisis-de-microarreglos/"/>
+    <updated>2012-05-20T21:16:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2012/05/20/introduccion-al-analisis-de-microarreglos</id>
+    <content type="html"><![CDATA[<p>Los datos que utilizaremos vienen de un estudio de Chiaretti et al.  sobre la leucemia linfoblastica aguda (ALL), la cual fue conducida con chips de microarreglos HG-U95Av2 de Aymetrix. El paquete de datos ALL contiene los datos de expresion del experimento, normalizados con rma (las intensidades estan en escala log2), junto con las anotaciones de las muestras. </p>
+
+<p>Para ello utilizaremos R /Bioconductor Si no has instalado Bioconductor previemente necesitas correr las siguientes líneas</p>
+
+<p><code>r
+source("http://bioconductor.org/biocLite.R")
+biocLite()
+</code>
+Necesitaremos instalar algunas librerías de Bioconductor</p>
+
+<p><code>r
+biocLite(c("affy","ALL","annotate","hgu95av2.db","multtest","topGO","genefilter"))
+</code>
+Ahora, cargamos los datos de microarreglos y los asociamos a un set de expresión con</p>
+
+<p><code>r
+library(ALL)
+data(ALL)
+</code>
+Y para conocer la dimensión de la matriz de expresión</p>
+
+<p><code>r
+dim(exprs(ALL))
+</code></p>
+
+<p><code>[1] 12625 128</code></p>
+
+<p>Por tanto, se trata de 128 columnas (muestras) con 12,625 filas (sondas) Nos interesa seleccionar todas las sondas de las células B (que pueden ser identicadas por la columna BT del ExpressionSet ALL).</p>
+
+<p><code>r
+table(ALL$BT)
+</code></p>
+
+<p><code>
+B B1 B2 B3 B4  T T1 T2 T3 T4 
+5 19 36 23 12  5  1 15 10  2
+</code></p>
+
+<p>Ademas nos interesa la comparacion de las sondas con la fusión del gen BCR/ABL resultante de la traslocacion de los cromosomas 9 y 22</p>
+
+<p><code>r
+table(ALL$mol.biol)
+</code>
+<code>
+ALL1/AF4  BCR/ABL E2A/PBX1      NEG   NUP-98  p15/p16 
+      10       37        5       74        1        1 
+</code></p>
+
+<p>Para seleccionar todos los genes de las células B con la fusión BCR/ABL y del grupo control</p>
+
+<p><code>r
+subset &lt;- intersect(grep("^B", as.character(ALL$BT)),
+                    which(as.character(ALL$mol.biol)
+                          %in% c("BCR/ABL", "NEG")))
+</code></p>
+
+<p>Y creamos un nuevo set de expresión con los genes seleccionados previamente</p>
+
+<p><code>r
+eset &lt;- ALL[, subset]
+</code></p>
+
+<p>Para poder comparar el grupo de los pacientes control con los que presentan la fusión BCR/ABL, necesitamos convertir a factores la columna <code>eset$mol.biol</code></p>
+
+<p><code>r
+eset$mol.biol &lt;- factor(eset$mol.biol)
+table(eset$mol.biol)
+</code></p>
+
+<p><code>
+BCR/ABL     NEG 
+     37      42
+</code></p>
+
+<p>Muchos de los genes en el chip no se expresan en las celulas B estudiados aquí, o podrían solo tener una pequeña variabilidad a traves de las sondas. Trataremos de remover esos genes con un filtro de intensidad (la intensidad de un gen debe de estar arriba de 100 y en al menos el 25 porciento de las sondas);  y un filtro de varianza (el rango intercuartil de las intensidades log2 debera ser al menos de 0.5)</p>
+
+<p><code>r
+library(genefilter)
+f1 &lt;- pOverA(0.25, log2(100))
+f2 &lt;- function(x) (IQR(x) &gt; 0.5)
+ff &lt;- filterfun(f1, f2)
+</code>
+Cuantos genes podemos obtener despues del filtrado?</p>
+
+<p><code>r
+selected &lt;- genefilter(eset, ff)
+sum(selected)
+</code></p>
+
+<p><code>[1] 2391</code></p>
+
+<p>Crearemos un nuevo ExpressionSet que contenga solo los genes que pasaron nuestro filtro.</p>
+
+<p><code>r
+esetSub &lt;- eset[selected, ]
+</code></p>
+
+<p>Ahora estamos listos para analizar la expresion diferencial en los genes seleccionados entre las muetraas BRC/ABL y la normales citogenéticamente. Utilizaremos una prueba t pareada, para identicar los genes expresados de manera diferencial entre los dos grupos.</p>
+
+<p><code>r
+library(multtest)
+</code></p>
+
+<p>La funcion <code>mt.teststat</code> del paquete multtest nos permite calcular varios estadsticos de prueba comunmente usados para todas las las de una matriz de datos (chequen su pagina de ayuda). Primero, calcularemos los p-values nominales</p>
+
+<p><code>r
+library(multtest)
+cl &lt;- as.numeric(esetSub$mol.biol == "BCR/ABL")
+t &lt;- mt.teststat(
+exprs(esetSub),
+classlabel = cl,
+test = "t.equalvar")
+</code>
+La funcion <code>pt</code> nos da la distribucion t.</p>
+
+<p><code>r
+pt &lt;- 2 * pt(-abs(t), df = ncol(exprs(esetSub)))
+</code></p>
+
+<p>Podemos obtener una impresion de la cantidad de genes expresados de manera diferencial, observando en un histograma de la distribucion del valor de p.</p>
+
+<p><code>r
+hist(pt, 50)
+</code></p>
+
+<p><img src="/images/histogram-pt.png" /></p>
+
+<p>La función <code>mt.rawp2adjp</code> de el paquete multtest contiene distintos procedimeintos de prueba (Checa la página de ayuda para esta función). Para obtener el ajuste de p-value en términos de FDR (False Discovery Rate) utilizaremos el método de  Benjamini y Hochberg. ¿Cuántos genes obtendremos si imponemos un FDR de 0.1?</p>
+
+<p><code>r
+pAdjusted &lt;- mt.rawp2adjp(pt, proc = c("BH"))
+sum(pAdjusted$adjp[, "BH"] &lt; 0.1)
+</code></p>
+
+<p><code>[1] 171</code></p>
+
+<p>También esta función retorna los p-values ordenados de menor a mayor. Para obtenerlos ordenados utilizaremos:</p>
+
+<p><code>r
+pBH &lt;- pAdjusted$adjp[order(pAdjusted$index), "BH"]
+names(pBH)&lt;-featureNames(esetSub)
+</code>
+Ahora, queremos conocer cuáles genes son los más significativos, por medio de el análisis de sus valores crudos (raw) y sus p-values ajustados por  distintos métodos. Los símbolos de los genes son obtenidos por medio del paquete de anotación <code>hgu95av2</code>.</p>
+
+<p><code>r
+library(annotate)
+library(hgu95av2.db)
+diff &lt;- pAdjusted$index[1:10]
+genesymbolsDiff &lt;- unlist(mget(featureNames(esetSub)[diff], hgu95av2SYMBOL))
+genesymbolsDiff
+</code></p>
+
+<p><code>
+ 1636_g_at   39730_at    1635_at   40202_at   37027_at 39837_s_at 
+    "ABL1"     "ABL1"     "ABL1"     "KLF9"    "AHNAK"   "ZNF467" 
+40480_s_at   33774_at   36591_at   37014_at 
+     "FYN"    "CASP8"   "TUBA4A"      "MX1" 
+</code></p>
+
+<p>El top 3 de las sondas representan al gen ABL1, el cual es afectado, por la traslocación caracterizada por mas sondas  BCR/ABL. Ahora queremos ver si existen otro conjunto de sondas que representen a este gen, y ver éste ha sido seleccionado por nuestro filtro no específico.</p>
+
+<p><code>r
+geneSymbols = unlist(mget(featureNames(ALL), hgu95av2SYMBOL))
+ABL1probes &lt;- which(geneSymbols == "ABL1")
+selected[ABL1probes]
+</code></p>
+
+<p><code>
+  1635_at 1636_g_at 1656_s_at 2040_s_at 2041_i_at  39730_at 
+     TRUE      TRUE     FALSE     FALSE     FALSE      TRUE
+</code></p>
+
+<p>Así que los otros conjuntos de sondas en el chip representando ABL1 han sido eliminados por el filtro, debido a baja intensidad o baja varianza. Ahora queremos saber si esto indica también expresión diferencial del gen <em>ALB1</em>.</p>
+
+<p><code>r
+tABL1 &lt;- mt.teststat(exprs(eset)[ABL1probes, ], classlabel = cl,
+test = "t.equalvar")
+ptABL1 &lt;- 2 * pt(-abs(tABL1), df = ncol(exprs(esetSub)) - 2)
+sort(ptABL1)
+</code></p>
+
+<p><code>
+[1] 3.762489e-14 4.791997e-13 2.445693e-10 5.486259e-02 5.842693e-01
+[6] 7.570959e-01
+</code></p>
+
+<p>Vemos ahora que solo tres de las seis sondas para <em>ABL1</em> muestran evidencia (de hecho, evidencia muy fuerte) para expresión diferencial. Seria interesante seguir investigando si el conjunto de sondas, en lo que concierne pe. a su localización en la secuencia del transcripto <em>ABL1</em> - en efecto la fusión de genes <em>BCR/ABL</em> resulta de la traslocación del gen normal <em>ABL1</em>. Utilizando la ontología de genes Muchos de los efectos debidos a la traslocación <em>BCR/ABL</em>, son mediados por la actividad de tirosina cinasa. Veamos ahora los conjuntos de sondas en el chip que pertenecen a el término GO de actividad proteína tirosina cinasa, la cuál tiene el identificador <em>GO:0004713</em>.</p>
+
+<p><code>r
+gN &lt;- featureNames(esetSub)
+tykin &lt;- unique(unlist(lookUp("GO:0004713",
+"hgu95av2", "GO2ALLPROBES")))
+str(tykin)
+sel &lt;- (gN %in% tykin)
+</code></p>
+
+<p>Ahora podermos checar si los genes entre las tirisina cinasas son expresados de manera diferencial, respecto a los otros genes. Utilizaremos una prueba exacta de Fisher, para tablas de contingencias, para revisar las proporciones de los genes expresados diferencialmente son significativas entre dos grupos de genes.</p>
+
+<p><code>r
+tab &lt;- table(pt &lt; 0.05, sel, dnn = c("p &lt; 0.05", "tykin"))
+print(tab)
+</code></p>
+
+<p><code>
+        tykin
+p &lt; 0.05 FALSE TRUE
+   FALSE  1914   26
+   TRUE    434   17
+</code></p>
+
+<p><code>r
+fisher.test(tab)
+</code></p>
+
+<p>```
+	Fisher’s Exact Test for Count Data</p>
+
+<p>data:  tab
+p-value = 0.001297
+alternative hypothesis: true odds ratio is not equal to 1
+95 percent confidence interval:
+ 1.453631 5.573555
+sample estimates:
+odds ratio 
+  2.881814 
+```</p>
+
+<p><strong>Análisis para el enriquecimiento de conjunto de genes</strong>. Ahora queremos buscar el enriquecimiento en la expresión diferencial en todas las categorías GO, no solo para la actividad de tirosina cinasa. Utilizaremos el paquete TopGO para este fin.  Y necesitaremos definir una función que seleccione los genes expresados de manera diferencial.</p>
+
+<p><code>r
+library(topGO) #load the package
+topDiffGenes &lt;- function(allScore) return(allScore &lt; 0.05)
+</code></p>
+
+<p>Ahora estamos listos para hecer un nuevo objeto <em>topGO</em>. Buscaremos en las ontologías en el nivel de función molecular MF.</p>
+
+<p><code>r
+GOdataMF &lt;- new("topGOdata", ontology = "MF",
+allGenes = pBH, geneSel = topDiffGenes, annot = annFUN.db,
+affyLib = "hgu95av2.db")
+</code>
+Ahora podremos correr una prueba de <em>fisher</em>, para todos los procesos biológicos o utilizar algunos otros métodos (Bioinformatics, 2006, 22(13):1600-1607)</p>
+
+<p><code>r
+resultFisher &lt;- runTest(GOdataMF, algorithm = "classic", statistic = "fisher")
+resultKS&lt;- runTest(GOdataMF, algorithm = "classic", statistic = "ks")
+resultFisher.elim&lt;- runTest(GOdataMF, algorithm = "elim", statistic = "fisher")
+resultKS.elim&lt;- runTest(GOdataMF, algorithm = "elim", statistic = "ks")
+</code></p>
+
+<p>Para mostrar los resultados</p>
+
+<p><code>r 
+allRes &lt;- GenTable(GOdataMF, classicFisher = resultFisher,
+classicKS = resultKS,elimFisher = resultFisher.elim, elimKS = resultKS.elim,
+orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 20)
+allRes
+</code>
+<code>
+        GO.ID                                        Term Annotated
+1  GO:0005509                         calcium ion binding        78
+2  GO:0004714 transmembrane receptor protein tyrosine ...         7
+3  GO:0003785                       actin monomer binding         3
+4  GO:0004515 nicotinate-nucleotide adenylyltransferas...         3
+5  GO:0051019    mitogen-activated protein kinase binding        10
+6  GO:0004871                  signal transducer activity       188
+7  GO:0042379                  chemokine receptor binding        10
+8  GO:0038023                 signaling receptor activity        91
+9  GO:0005516                          calmodulin binding        25
+10 GO:0008201                             heparin binding        16
+11 GO:0005088 Ras guanyl-nucleotide exchange factor ac...        26
+12 GO:0015276           ligand-gated ion channel activity         9
+13 GO:0005520          insulin-like growth factor binding         4
+14 GO:0031730             CCR5 chemokine receptor binding         8
+15 GO:0048020              CCR chemokine receptor binding         8
+16 GO:0044325                         ion channel binding        27
+17 GO:0030515                              snoRNA binding         4
+18 GO:0003735          structural constituent of ribosome        25
+19 GO:0050699                           WW domain binding         5
+20 GO:0017112 Rab guanyl-nucleotide exchange factor ac...         6
+   Significant Expected Rank in classicFisher classicFisher classicKS
+1            9     3.57                    20       0.00802   0.00017
+2            1     0.32                   191       0.27977   0.00028
+3            3     0.14                     3       9.3e-05   0.00250
+4            3     0.14                     4       9.3e-05   0.00250
+5            3     0.46                    21       0.00882   0.00354
+6           12     8.60                   147       0.14534   4.2e-06
+7            1     0.46                   235       0.37447   0.00364
+8            9     4.16                    38       0.02102   0.00050
+9            1     1.14                   320       0.69179   0.00747
+10           1     0.73                   279       0.52843   0.00801
+11           5     1.19                    15       0.00554   0.00919
+12           0     0.41                   388       1.00000   0.00925
+13           1     0.18                   152       0.17089   0.00944
+14           1     0.37                   204       0.31282   0.01124
+15           1     0.37                   205       0.31282   0.01124
+16           7     1.23                     6       0.00014   0.01204
+17           0     0.18                   389       1.00000   0.01243
+18           0     1.14                   390       1.00000   0.01295
+19           0     0.23                   391       1.00000   0.01346
+20           2     0.27                    47       0.02755   0.01445
+   elimFisher  elimKS
+1     0.00802 0.00017
+2     0.27977 0.00028
+3     9.3e-05 0.00250
+4     9.3e-05 0.00250
+5     0.00882 0.00354
+6     0.52856 0.00360
+7     0.37447 0.00364
+8     0.27691 0.00717
+9     0.69179 0.00747
+10    0.52843 0.00801
+11    0.00554 0.00919
+12    1.00000 0.00925
+13    0.17089 0.00944
+14    0.31282 0.01124
+15    0.31282 0.01124
+16    0.00014 0.01204
+17    1.00000 0.01243
+18    1.00000 0.01295
+19    1.00000 0.01346
+20    0.02755 0.01445
+</code></p>
+
+<p>Por último queremos buscar genes en una de las categorías GO. La función printGenes, está hecha para esa tarea. Hagámoslo para la actividad proteína tirosina cinasa (<em>GO:0004713</em>) como un ejemplo.</p>
+
+<p><code>r
+gt &lt;- printGenes(GOdataMF,
+whichTerms = "GO:0004713", chip = "hgu95av2.db",
+numChar = 40)
+gt
+</code></p>
+
+<p><code>
+              Chip ID LL.id Symbol.id
+1636_g_at   1636_g_at    25      ABL1
+39730_at     39730_at    25      ABL1
+1635_at       1635_at    25      ABL1
+40480_s_at 40480_s_at  2534       FYN
+2039_s_at   2039_s_at  2534       FYN
+754_s_at     754_s_at   613       BCR
+36643_at     36643_at    NA      &lt;NA&gt;
+38662_at     38662_at  5610   EIF2AK2
+34877_at     34877_at  3716      JAK1
+537_f_at     537_f_at   613       BCR
+2057_g_at   2057_g_at  2260     FGFR1
+1007_s_at   1007_s_at    NA      &lt;NA&gt;
+760_at         760_at  8445     DYRK2
+1333_f_at   1333_f_at   613       BCR
+2056_at       2056_at  2260     FGFR1
+854_at         854_at   640       BLK
+41594_at     41594_at  3716      JAK1
+1065_at       1065_at  2322      FLT3
+34583_at     34583_at  2322      FLT3
+33804_at     33804_at  2185     PTK2B
+40742_at     40742_at  3055       HCK
+1498_at       1498_at  7535     ZAP70
+40936_at     40936_at 51232     CRIM1
+36264_at     36264_at  4145      MATK
+1844_s_at   1844_s_at  5604    MAP2K1
+1810_s_at   1810_s_at  5580     PRKCD
+36909_at     36909_at  7465      WEE1
+993_at         993_at  7297      TYK2
+39931_at     39931_at  8444     DYRK3
+36115_at     36115_at  1198      CLK3
+2059_s_at   2059_s_at  3932       LCK
+2075_s_at   2075_s_at    NA      &lt;NA&gt;
+33238_at     33238_at  3932       LCK
+292_s_at     292_s_at  1195      CLK1
+32833_at     32833_at  1195      CLK1
+1622_at       1622_at  5606    MAP2K3
+1768_s_at   1768_s_at  1445       CSK
+38118_at     38118_at  6464      SHC1
+1008_f_at   1008_f_at  5610   EIF2AK2
+1512_at       1512_at  1859    DYRK1A
+36946_at     36946_at  1859    DYRK1A
+1630_s_at   1630_s_at  6850       SYK
+1130_at       1130_at  5604    MAP2K1
+1402_at       1402_at  4067       LYN
+32616_at     32616_at  4067       LYN
+36885_at     36885_at  6850       SYK
+                                             Gene name raw p-value
+1636_g_at  c-abl oncogene 1, non-receptor tyrosine ...    9.00e-11
+39730_at   c-abl oncogene 1, non-receptor tyrosine ...    5.73e-10
+1635_at    c-abl oncogene 1, non-receptor tyrosine ...    1.95e-07
+40480_s_at       FYN oncogene related to SRC, FGR, YES    0.000341
+2039_s_at        FYN oncogene related to SRC, FGR, YES    0.002151
+754_s_at                     breakpoint cluster region    0.027205
+36643_at                                            NA    0.028651
+38662_at   eukaryotic translation initiation factor...    0.036347
+34877_at                                Janus kinase 1    0.048349
+537_f_at                     breakpoint cluster region    0.065386
+2057_g_at          fibroblast growth factor receptor 1    0.065447
+1007_s_at                                           NA    0.080622
+760_at     dual-specificity tyrosine-(Y)-phosphoryl...    0.084581
+1333_f_at                    breakpoint cluster region    0.116256
+2056_at            fibroblast growth factor receptor 1    0.136657
+854_at                      B lymphoid tyrosine kinase    0.142854
+41594_at                                Janus kinase 1    0.158560
+1065_at                  fms-related tyrosine kinase 3    0.224691
+34583_at                 fms-related tyrosine kinase 3    0.225452
+33804_at                protein tyrosine kinase 2 beta    0.288513
+40742_at                       hemopoietic cell kinase    0.328005
+1498_at    zeta-chain (TCR) associated protein kina...    0.339735
+40936_at   cysteine rich transmembrane BMP regulato...    0.340416
+36264_at      megakaryocyte-associated tyrosine kinase    0.439155
+1844_s_at  mitogen-activated protein kinase kinase ...    0.486525
+1810_s_at                      protein kinase C, delta    0.502015
+36909_at                     WEE1 G2 checkpoint kinase    0.577787
+993_at                               tyrosine kinase 2    0.577787
+39931_at   dual-specificity tyrosine-(Y)-phosphoryl...    0.659157
+36115_at                             CDC-like kinase 3    0.710543
+2059_s_at  lymphocyte-specific protein tyrosine kin...    0.727480
+2075_s_at                                           NA    0.754511
+33238_at   lymphocyte-specific protein tyrosine kin...    0.768520
+292_s_at                             CDC-like kinase 1    0.786830
+32833_at                             CDC-like kinase 1    0.799613
+1622_at    mitogen-activated protein kinase kinase ...    0.807841
+1768_s_at                        c-src tyrosine kinase    0.888941
+38118_at   SHC (Src homology 2 domain containing) t...    0.896863
+1008_f_at  eukaryotic translation initiation factor...    0.909363
+1512_at    dual-specificity tyrosine-(Y)-phosphoryl...    0.918548
+36946_at   dual-specificity tyrosine-(Y)-phosphoryl...    0.924559
+1630_s_at                       spleen tyrosine kinase    0.929048
+1130_at    mitogen-activated protein kinase kinase ...    0.932251
+1402_at    v-yes-1 Yamaguchi sarcoma viral related ...    0.969757
+32616_at   v-yes-1 Yamaguchi sarcoma viral related ...    0.981146
+36885_at                        spleen tyrosine kinase    0.999958
+</code></p>
+
+<p>Este ejercicio está basado y adaptado en una práctica de Stale Nygard de Bioinformatics core facility, OUS/UiO.</p>
+
+<p><ol class="bibliography"></ol></p>
+
+<p>Código Completo:</p>
+
+<p><div><script src='https://gist.github.com/2691965.js'></script>
+<noscript><pre><code>#Analisis de microarreglos
+
+#Instalar programas requeridos
+source(&quot;http://bioconductor.org/biocLite.R&quot;)
+biocLite(c(&quot;affy&quot;,&quot;ALL&quot;,&quot;annotate&quot;,&quot;hgu95av2.db&quot;,&quot;multtest&quot;,&quot;topGO&quot;,&quot;genefilter&quot;))
+
+#Cargar la libreria ALL
+library(ALL)
+data(ALL)
+#Dimension del objeto
+dim(exprs(ALL))
+
+#Definir un objeto ExpressionSet con todas las muestras
+table(ALL$BT)
+table(ALL$mol.biol)
+subset &lt;- intersect(grep(&quot;^B&quot;, as.character(ALL$BT)),
+                    which(as.character(ALL$mol.biol) %in% c(&quot;BCR/ABL&quot;, &quot;NEG&quot;)))
+eset &lt;- ALL[, subset]
+eset$mol.biol &lt;- factor(eset$mol.biol)
+table(eset$mol.biol)
+
+#Filtro 
+
+library(genefilter)
+f1 &lt;- pOverA(0.25, log2(100))
+f2 &lt;- function(x) (IQR(x) &gt; 0.5)
+ff &lt;- filterfun(f1, f2)
+selected &lt;- genefilter(eset, ff)
+sum(selected)
+esetSub &lt;- eset[selected, ]
+
+library(multtest)
+cl &lt;- as.numeric(esetSub$mol.biol == &quot;BCR/ABL&quot;)
+t &lt;- mt.teststat(exprs(esetSub), classlabel = cl, test = &quot;t.equalvar&quot;)
+pt &lt;- 2 * pt(-abs(t), df = ncol(exprs(esetSub)) - 2)
+hist(pt, 50)
+
+pAdjusted &lt;- mt.rawp2adjp(pt, proc = c(&quot;BH&quot;))
+sum(pAdjusted$adjp[, &quot;BH&quot;] &lt; 0.1)
+
+pBH &lt;- pAdjusted$adjp[order(pAdjusted$index), &quot;BH&quot;]
+names(pBH)&lt;-featureNames(esetSub)
+
+library(annotate)
+library(hgu95av2.db)
+diff &lt;- pAdjusted$index[1:10]
+genesymbolsDiff &lt;- unlist(mget(featureNames(esetSub)[diff], hgu95av2SYMBOL))
+genesymbolsDiff
+
+geneSymbols = unlist(mget(featureNames(ALL), hgu95av2SYMBOL))
+ABL1probes &lt;- which(geneSymbols == &quot;ABL1&quot;)
+selected[ABL1probes]
+
+tABL1 &lt;- mt.teststat(exprs(eset)[ABL1probes, ], classlabel = cl,
+                     test = &quot;t.equalvar&quot;)
+ptABL1 &lt;- 2 * pt(-abs(tABL1), df = ncol(exprs(esetSub)) - 2)
+sort(ptABL1)
+
+gN &lt;- featureNames(esetSub)
+tykin &lt;- unique(unlist(lookUp(&quot;GO:0004713&quot;, &quot;hgu95av2&quot;, &quot;GO2ALLPROBES&quot;)))
+str(tykin)
+sel &lt;- (gN %in% tykin)
+
+tab &lt;- table(pt &lt; 0.05, sel, dnn = c(&quot;p &lt; 0.05&quot;, &quot;tykin&quot;))
+print(tab)
+fisher.test(tab)
+
+library(topGO) #load the package
+
+topDiffGenes &lt;- function(allScore) return(allScore &lt; 0.05)
+
+GOdataMF &lt;- new(&quot;topGOdata&quot;, ontology = &quot;MF&quot;,
+                allGenes = pBH, geneSel = topDiffGenes, annot = annFUN.db,
+                affyLib = &quot;hgu95av2.db&quot;)
+
+resultFisher &lt;- runTest(GOdataMF, algorithm = &quot;classic&quot;, statistic = &quot;fisher&quot;)
+
+resultKS&lt;- runTest(GOdataMF, algorithm = &quot;classic&quot;, statistic = &quot;ks&quot;)
+resultFisher.elim&lt;- runTest(GOdataMF, algorithm = &quot;elim&quot;, statistic = &quot;fisher&quot;)
+resultKS.elim&lt;- runTest(GOdataMF, algorithm = &quot;elim&quot;, statistic = &quot;ks&quot;)
+
+allRes &lt;- GenTable(GOdataMF, classicFisher = resultFisher,
+                   classicKS = resultKS,elimFisher = resultFisher.elim, elimKS = resultKS.elim,
+                   orderBy = &quot;elimKS&quot;, ranksOf = &quot;classicFisher&quot;, topNodes = 20)
+allRes
+
+gt &lt;- printGenes(GOdataMF, whichTerms = &quot;GO:0004713&quot;, chip = &quot;hgu95av2.db&quot;,
+                 numChar = 40)
+gt</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>

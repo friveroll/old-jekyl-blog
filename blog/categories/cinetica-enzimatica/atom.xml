@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: cinetica enzimática | The Grumpy Biochemist]]></title>
+  <link href="http://friveroll.github.io/blog/categories/cinetica-enzimatica/atom.xml" rel="self"/>
+  <link href="http://friveroll.github.io/"/>
+  <updated>2016-06-13T10:35:11-05:00</updated>
+  <id>http://friveroll.github.io/</id>
+  <author>
+    <name><![CDATA[Felipe Antonio Riveroll Aguirre]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Utilizando R para analizar datos de cinética]]></title>
+    <link href="http://friveroll.github.io/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica/"/>
+    <updated>2012-05-23T21:52:00-05:00</updated>
+    <id>http://friveroll.github.io/blog/2012/05/23/utilizando-r-para-analizar-datos-de-cinetica</id>
+    <content type="html"><![CDATA[<p>R es un lenguaje de programación estadístico y gráfico, que através del proyecto bioconductor puede ser usado para analisis bioinformáticos, en esta ocasión lo utilizaremos para graficar y analizar datos cinéticos.</p>
+
+<p>El siguiente tutorial, está basado en el problema 1 del capítulo 4 del libro <em>Biochemical Calculations</em> de <em>Irwin H Segel</em>,  y se mostrará como obtener $V_{max}$ y $Km$ a partir del análisis de los datos cinéticos por la gráfica de Lineweaver-Burk.</p>
+
+<p>Primero generamos los vectores $S$ y $v$ para los datos del problema</p>
+
+<p><code>r
+S &lt;- c(2.50e-06, 3.33e-06, 4.00e-06, 5.00e-06,
+       1.00e-05, 2.00e-05, 4.00e-05, 1.00e-04,
+       2.00e-03, 1.00e-02)
+v &lt;- c(24, 30, 34, 40, 60, 80, 96, 109, 119, 120)
+</code></p>
+
+<p>Podemos visualizarlos en una tabla de la siguiente manera:</p>
+
+<p>```r
+data.frame(S, v) -&gt; datos.cinetica
+datos.cinetica</p>
+
+<pre><code>     S  v 1  2.50e-06  24 2  3.33e-06  30 3  4.00e-06  34 4  5.00e-06  40 5  1.00e-05  60 6  2.00e-05  80 7  4.00e-05  96 8  1.00e-04 109 9  2.00e-03 119 10 1.00e-02 120 ```
+</code></pre>
+
+<p>Para poder obtener la grafica a partir de los datos anteriores</p>
+
+<p><code>r
+plot(datos.cinetica, main="V Vs. S", xmain="S", ymain="v")
+</code>
+Ahora necesitamos calcular los recíprocos $(r)$ para $S$ y $v$.</p>
+
+<p><code>r
+r.S &lt;- 1/S
+r.v &lt;- 1/v
+</code></p>
+
+<p>Graficando los recíprocos</p>
+
+<p><code>r
+plot(r.S, r.v, main="Lineweaver-Burk", xlab="1/[S]",  ylab="1/v", pch=20, col="blue")
+</code></p>
+
+<p>Ahora necesitamos hacer la regresion lineal de estos datos y añadir la linea correspondiente a la regresión a nuestra gráfica</p>
+
+<p><code>r
+lm(r.v ~ r.S) -&gt; lineweaver.reg
+abline(lineweaver.reg, col="red")
+</code></p>
+
+<p>Y la grafica final queda de la siguiente forma:</p>
+
+<p><img src="/images/lineweaver.png" /></p>
+
+<p>Cuando calculamos los datos para la regresión lineal, guardamos los resultados en la siguiente variable:</p>
+
+<p>```r
+lineweaver.reg</p>
+
+<p>Call:
+lm(formula = r.v ~ r.S)</p>
+
+<p>Coefficients:
+(Intercept)          r.S
+  8.343e-03    8.344e-08
+```</p>
+
+<p>Intercept, corresponde a la intersección en $Y$, que para este caso es $\frac{1}{V_{max}}$.</p>
+
+<p><code>r
+interseccion.y &lt;- coef(lineweaver.reg)[1]
+r.Vmax &lt;- interseccion.y
+</code></p>
+
+<p>Así que para calcular $V_{max}$</p>
+
+<p><code>r
+Vmax &lt;- 1/r.Vmax
+</code>
+La pendiente está en <em>r.S</em> por lo tanto.</p>
+
+<p><code>r
+pendiente &lt;- coef(lineweaver.reg)[2]
+</code></p>
+
+<p>Para calcular la interseccion en $x$, necesitamos encontrar el valor de $x$ cuando $y = 0$, para la ecuación de la linea recta</p>
+
+<script type="math/tex; mode=display">y = (pendiente)x + interseccion.y</script>
+
+<script type="math/tex; mode=display">0 = (pendiente)x + interseccion.y</script>
+
+<script type="math/tex; mode=display">x=-\frac{interseccion.y}{pendiente}</script>
+
+<p><code>r
+interseccion.x &lt;- -(interseccion.y/pendiente)
+</code></p>
+
+<p>Y como la intersección en $x$ es $\frac{1}{km}$ en este modelo</p>
+
+<p><code>r
+r.km &lt;- interseccion.x
+</code></p>
+
+<p>Ahora podemos calcular $km$ de la siguiente forma</p>
+
+<p><code>r
+km &lt;- -1/r.km
+</code></p>
+
+<p>Ahora guardamos los datos de $Km$ y $V_{max}$ calculados previamente en un vector</p>
+
+<p><code>r
+Lineweaver.Burk &lt;- c(Vmax=as.numeric(Vmax), Km=as.numeric(km))
+</code></p>
+
+<p>Podemos comparar nuestros resultados, con los que se obtienen de la ecuación de Michaelis Menten, por medio de un ajuste no lineal</p>
+
+<p><code>r
+Mfit &lt;- nls(v~(Vmax*S)/(Km+S), datos.cinetica, start=list(Vmax=1, Km=0)) 
+</code></p>
+
+<p>Para poder comparar estos resultados los guardamos en un vector</p>
+
+<p><code>r
+Michaelis.Menten &lt;- c(Vmax=as.numeric(coef(Mfit)[1]), Km=as.numeric(coef(Mfit)[2]))
+</code></p>
+
+<p>Y utilizamos el comando rbind, para crear un data.frame con los resultados para los dos modelos</p>
+
+<p><code>r
+rbind(Lineweaver.Burk, Michaelis.Menten) 
+</code></p>
+
+<p>Ahora podemos comparar los resultados por ambos modelos</p>
+
+<p><code>
+                     Vmax           Km
+Lineweaver.Burk  119.8564 1.000130e-05
+Michaelis.Menten 119.8967 9.997717e-06
+</code></p>
+
+<p>Y finalmente si queremos graficar los datos obtenidos del modelo de Michaelis Menten podemos utilizar</p>
+
+<p><code>r
+plot(S, predict(Mfit), type="l", main="V Vs. S", xlab="S", ylab="v")
+</code></p>
+
+<p><img src="/images/michaelis.png" /></p>
+
+<p><ol class="bibliography"></ol></p>
+
+<p>Código completo</p>
+
+<p><div><script src='https://gist.github.com/2779025.js'></script>
+<noscript><pre><code>#Data from Problem 1 Chapter 4 from
+#Biochemical Calculations by Irwin H Segel
+
+#Set the initial values and get a data.frame
+S &lt;- c(2.5e-06, 3.33e-06, 4.0e-06, 5.0e-06, 1.0e-05, 2.0e-05, 4.0e-05, 1.0e-04, 2.0e-03, 1.0e-02)
+v &lt;- c(24, 30, 34, 40, 60, 80, 96, 109, 119, 120)
+data.frame(S, v) -&gt; datos.cinetica
+
+#Plot the raw data
+plot(datos.cinetica, type=&quot;l&quot;, main=&quot;V Vs. S&quot;, xmain=&quot;S&quot;, ymain=&quot;v&quot;)
+
+#Get a vector from reciprocal values to apply Lineweaver-Burk model
+r.S &lt;- 1/S
+r.v &lt;- 1/v
+
+#Plot the reciprocal from raw data
+plot(r.S, r.v, main=&quot;Lineweaver-Burk&quot;, xlab=&quot;1/[S]&quot;,  ylab=&quot;1/v&quot;, pch=20, col=&quot;blue&quot;)
+
+
+#Use linear regression to get the Lineweaver-Burk model and add a red line to the graph
+lm(r.v ~ r.S) -&gt; lineweaver.reg
+abline(lineweaver.reg, col=&quot;red&quot;)
+
+#In order to get Vmax we need to look for the values at the regression model and calculate the reciprocal
+interseccion.y &lt;- coef(lineweaver.reg)[1]
+r.Vmax &lt;- interseccion.y
+Vmax &lt;- 1/r.Vmax
+
+#Get the slope from the regression model
+pendiente &lt;- coef(lineweaver.reg)[2]
+
+#Get the X intersection value
+interseccion.x &lt;- -(interseccion.y/pendiente)
+
+#Get the Km value, from the reciprocal of X intersection value
+r.km &lt;- interseccion.x
+km &lt;- -1/r.km
+
+#Get Vmax and Km as an R vector from Lineweaver-Burk model
+Lineweaver.Burk &lt;- c(Vmax=as.numeric(Vmax), Km=as.numeric(km))
+
+#Now we obtain the Vmax and Km from Michaelis Menten equation
+Mfit &lt;- nls(v~(Vmax*S)/(Km+S), 
+            datos.cinetica, 
+            start=list(Vmax=1, Km=0))
+
+#Get a vector with the values Vmax and Km from Michaelis Menten non linear regression
+Michaelis.Menten &lt;- c(Vmax=as.numeric(coef(Mfit)[1]), Km=as.numeric(coef(Mfit)[2]))
+
+#Plot the predicted V values from Michaelis Menten non linear regression model
+plot(S, predict(Mfit), type=&quot;l&quot;, main=&quot;V Vs. S&quot;, xlab=&quot;S&quot;, ylab=&quot;v&quot;)
+
+#And finally get a data.frame for value comparission
+rbind(Lineweaver.Burk, Michaelis.Menten)</code></pre></noscript></div>
+</p>
+]]></content>
+  </entry>
+  
+</feed>
