@@ -16,6 +16,7 @@ group :development do
   gem 'liquid', '~> 2.3.0'
   gem 'directory_watcher', '1.4.1'
   gem 'jekyll-scholar', '~> 1.1.0'
+  gem 'jekyll-scholar-extras', :git => 'https://github.com/jgoodall/jekyll-scholar-extras.git'
 end
 
 gem 'sinatra', '~> 1.4.2'

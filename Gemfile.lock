@@ -1,3 +1,13 @@
+GIT
+  remote: https://github.com/jgoodall/jekyll-scholar-extras.git
+  revision: de9c4a1db0b9003b8ce5c2d1c97fb2f55328d2cc
+  specs:
+    jekyll-scholar-extras (0.0.3)
+      bibtex-ruby (>= 2.2)
+      citeproc-ruby (>= 0.0.6)
+      jekyll (>= 0.11.2)
+      jekyll-scholar (>= 0.3.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -77,6 +87,7 @@ DEPENDENCIES
   haml (~> 3.1.7)
   jekyll (~> 0.12)
   jekyll-scholar (~> 1.1.0)
+  jekyll-scholar-extras!
   kramdown (~> 0.13.8)
   liquid (~> 2.3.0)
   pygments.rb (~> 0.3.4)
@@ -87,3 +98,6 @@ DEPENDENCIES
   sass-globbing (~> 1.0.0)
   sinatra (~> 1.4.2)
   stringex (~> 1.4.0)
+
+BUNDLED WITH
+   1.12.5
